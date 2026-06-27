@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S'enlacer 菘蕾西 — 擁抱好空氣 有機精油</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">S'enlacer <span class="cn">菘蕾西</span></div>
+    <div class="navlinks">
+      <a href="index.html#philosophy">品牌理念</a>
+      <a href="about.html">關於我們</a>
+      <a href="products.html">商品系列</a>
+      <a href="promotion.html" style="color:#C9A06B;font-weight:600;">🎉 SALE</a>
+      <a href="about.html#certs">企業採購</a>
+    </div>
+    <a href="products.html" class="cta-btn">探索系列</a>
+    <button id="cart-button" onclick="toggleCart()" style="border:none;padding:8px 12px;background:none;cursor:pointer;display:flex;align-items:center;gap:6px;opacity:.85;transition:opacity .25s;"><span style="font-size:1.2rem;">🛒</span><span id="cart-badge"></span></button>
+  </nav>
+</header>
+
+<div style="background:linear-gradient(90deg,#C9A06B,#A6824F);color:#fff;text-align:center;padding:18px;font-weight:600;letter-spacing:.06em;"><a href="promotion.html" style="color:#fff;text-decoration:none;">🥂 限時優惠 6/23~7/13 | 11款有機精油 SALE →</a></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <span class="eyebrow">ORGANIC AROMATHERAPY · 有機精油品牌</span>
+    <h1 class="serif">擁抱好空氣<br>生活好<em>健康</em></h1>
+    <p class="lead">菘蕾西 S'enlacer，以歐盟有機認證與英國土壤協會認證的精油、基底油與純露，將芳香療法的療癒帶入日常 —— 擁抱安心，療癒身．心．靈。</p>
+    <div class="hero-actions">
+      <a href="products.html" class="btn-primary">探索有機系列</a>
+      <a href="about.html" class="btn-text">了解品牌故事 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">BRAND PHILOSOPHY</span>
+      <h2 class="serif">三重擁抱，回到身心最自然的狀態</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="mark">embrace, 01</span>
+        <h3>擁抱好空氣</h3>
+        <p>純粹植萃香氣，淨化居家與工作空間的氣息，讓每一次呼吸都更安心。</p>
+      </div>
+      <div class="pillar">
+        <span class="mark">embrace, 02</span>
+        <h3>擁抱安心</h3>
+        <p>每一滴皆通過歐盟有機與英國土壤協會雙重認證，從產地到瓶身，安心可追溯。</p>
+      </div>
+      <div class="pillar">
+        <span class="mark">embrace, 03</span>
+        <h3>療癒身．心．靈</h3>
+        <p>結合芳香療法與生活美學，讓有機精油成為日常儀式，照顧的不只是身體。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCT (real photography) -->
+<section class="featured">
+  <div class="featured-photo">
+    <div class="featured-inner">
+      <span class="eyebrow">FEATURED · 本月精選</span>
+      <h2><span class="lat">Organic</span>Cedarwood</h2>
+      <p style="color:#F2E6CB;opacity:.85;font-size:.95rem;max-width:380px;">有機大西洋雪松精油（香柏木）· 產地：摩洛哥 · 萃取部位：樹皮 · 蒸餾法</p>
+      <div class="featured-meta">
+        <span class="price">10ML　$390</span>
+        <span class="old">原價 $890</span>
+        <span class="origin-tag">英國原裝進口・有機認證</span>
+      </div>
+      <div style="margin-top:26px;">
+        <a href="products.html" class="btn-text" style="color:#FAF3E2;border-color:rgba(250,243,226,.6);">查看完整商品系列 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATION -->
+<section class="certs" id="certs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">CERTIFIED ORGANIC</span>
+      <h2 class="serif">有機，是一種對土地的承諾</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <span class="num">EEC</span>
+        <h4>歐盟有機認證</h4>
+        <p>符合歐盟有機農業規範，原料種植與加工皆受嚴格監管，杜絕化學農藥與合成添加物。</p>
+      </div>
+      <div class="cert-card">
+        <span class="num">NOP</span>
+        <h4>美國國家有機計畫</h4>
+        <p>通過 USDA NOP 標準，從種植、萃取到裝瓶全程符合國際有機認證要求。</p>
+      </div>
+      <div class="cert-card">
+        <span class="num">SOIL ASSOCIATION</span>
+        <h4>英國土壤協會認證</h4>
+        <img src="soil-association-logo.jpg" alt="Soil Association Organic Standard 認證標誌" style="width:88px;height:88px;object-fit:contain;background:#fff;border-radius:50%;margin-bottom:16px;display:block;">
+        <p>英國最具公信力的有機認證機構，象徵對土壤健康、生態永續最高規格的堅持。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">PRODUCT RANGE</span>
+      <h2 class="serif">三大系列，量身打造你的芳療儀式</h2>
+      <a href="products.html" class="btn-text" style="display:inline-block;margin-top:18px;">查看完整商品總覽 →</a>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-vial v1"></div>
+        <span class="en">Organic Essential Oil</span>
+        <h3>有機精油</h3>
+        <p>單方與複方精油，萃取自有機認證農場，香氣純粹、效用顯著，適合擴香與調香使用。</p>
+        <div class="sizes">
+          <span class="size-tag">10ML</span>
+          <span class="size-tag">100ML</span>
+          <span class="size-tag">1000ML</span>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-vial v2"></div>
+        <span class="en">Organic Base / Carrier Oil</span>
+        <h3>有機基底油．植物油</h3>
+        <p>冷壓萃取的有機植物油，質地溫和好吸收，是調配按摩油與肌膚保養的最佳基底。</p>
+        <div class="sizes">
+          <span class="size-tag">10ML</span>
+          <span class="size-tag">100ML</span>
+          <span class="size-tag">1000ML</span>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-vial v3"></div>
+        <span class="en">Organic Floral Water</span>
+        <h3>有機純露．花水</h3>
+        <p>蒸氣蒸餾萃取的天然花水，溫和清新，可作噴霧爽膚、空間淨化或日常保養使用。</p>
+        <div class="sizes">
+          <span class="size-tag">10ML</span>
+          <span class="size-tag">100ML</span>
+          <span class="size-tag">1000ML</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN -->
+<section class="origin" id="origin">
+  <div class="wrap">
+    <div>
+      <h2>「s'enlacer」是法文的「相互擁抱」<br>我們把這份溫柔，裝進每一瓶油裡。</h2>
+      <p>英國原裝進口，從產地種植到裝瓶出貨，皆在英國完成有機認證流程，確保每一滴精油都值得信任。</p>
+    </div>
+    <div class="origin-meta">
+      <div>
+        <span class="big">UK</span>
+        <span class="lbl">原裝進口</span>
+      </div>
+      <div>
+        <span class="big">3</span>
+        <span class="lbl">規格 10/100/1000ML</span>
+      </div>
+      <div>
+        <span class="big">2</span>
+        <span class="lbl">國際有機認證</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME SPA (real photography) -->
+<section class="spa-band">
+  <div class="spa-inner">
+    <span class="eyebrow">ORGANIC HOME SPA</span>
+    <h2 class="serif">擁抱．療癒．有機生活美學</h2>
+    <div class="sub">Embrace. Relief of organic life.</div>
+    <p class="spa-quote">願他的左手在我頭下，他的右手環抱我。
+      <cite>Song of Solomon 2:6</cite>
+    </p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2 class="serif">給自己，一個<em>有機</em>的擁抱</h2>
+    <p>從一滴精油開始，讓芳香療法成為日常的療癒儀式。</p>
+    <a href="products.html" class="btn-primary">瀏覽全系列商品</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">S'enlacer 菘蕾西</div>
+        <p>擁抱有機精油品牌。擁抱好空氣，生活好健康，擁抱安心，有機生活，療癒身．心．靈。芳香療法．美學．藝術．工藝品．商店。</p>
+      </div>
+      <div class="foot-col">
+        <h5>探索</h5>
+        <a href="about.html">品牌理念</a>
+        <a href="about.html#certs">有機認證</a>
+        <a href="products.html">商品系列</a>
+      <a href="promotion.html" style="color:#C9A06B;font-weight:600;">🎉 SALE</a>
+      </div>
+      <div class="foot-col">
+        <h5>認證</h5>
+        <a href="about.html#certs">EEC 歐盟有機</a>
+        <a href="about.html#certs">NOP 美國有機</a>
+        <a href="about.html#certs">Soil Association</a>
+      </div>
+      <div class="foot-col">
+        <h5>聯繫</h5>
+        <a href="https://www.facebook.com/senlacer" target="_blank">Facebook 粉專</a>
+        <a href="https://www.instagram.com/songleisi/" target="_blank">Instagram: Songleisi</a>
+        <a href="https://lin.ee/9zUQhq9" target="_blank">LINE 優惠訊息</a>
+        <a href="#">聯絡我們</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 S'enlacer 菘蕾西. All rights reserved.</span>
+      <span>英國原裝進口 · 歐盟有機認證 EEC/NOP · 英國土壤協會認證</span>
+    </div>
+  </div>
+</footer>
+
+<!-- SHOPPING CART SIDEBAR -->
+<div id="cart-sidebar">
+  <div id="cart-sidebar-header">
+    <h3>購物車</h3>
+    <button id="cart-sidebar-close" onclick="closeCart()">✕</button>
+  </div>
+  <div id="cart-content"></div>
+</div>
+
+<script src="cart.js"></script>
+
+</body>
+</html>

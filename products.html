@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>商品系列 — S'enlacer 菘蕾西擁抱 | 有機精油</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Noto+Serif+TC:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; margin-top: 40px; }
+.product-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(74,63,48,.12); transition: all .3s; display: flex; flex-direction: column; }
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(74,63,48,.18); }
+.product-image { width: 100%; height: 320px; object-fit: cover; background: linear-gradient(135deg, #C9A06B, #E5D4C1); display: block; }
+.product-info { padding: 28px; display: flex; flex-direction: column; flex-grow: 1; }
+.product-badge { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: #C9A06B; font-weight: 700; margin-bottom: 8px; }
+.product-name { font-family: 'Noto Serif TC', serif; font-size: 1.2rem; font-weight: 600; color: #4A3F30; margin-bottom: 6px; line-height: 1.3; }
+.product-en { font-family: 'Fraunces', serif; font-size: .95rem; font-style: italic; color: #4A3F30; opacity: .7; margin-bottom: 8px; }
+.product-details { font-size: .85rem; color: #4A3F30; opacity: .75; margin: 8px 0; line-height: 1.6; }
+.product-price { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; color: #C9A06B; margin-top: 12px; font-style: italic; }
+.product-btns { display: flex; gap: 12px; margin-top: 16px; }
+.add-btn, .line-btn { flex: 1; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: .9rem; transition: all .3s; }
+.add-btn { background: #4A3F30; color: #fff; }
+.add-btn:hover { background: #A6824F; }
+.line-btn { background: #fff; border: 1.5px solid #4A3F30; color: #4A3F30; }
+.line-btn:hover { background: #4A3F30; color: #fff; }
+.sec-head { text-align: center; margin-bottom: 40px; }
+.sec-head .eyebrow { font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; color: #C9A06B; font-weight: 700; }
+.sec-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-style: italic; color: #4A3F30; margin-top: 8px; }
+@media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">擁抱 <span class="cn">S'enlacer</span></div>
+    <div class="navlinks">
+      <a href="landing.html">首頁</a>
+      <a href="promotion.html">限時優惠</a>
+      <a href="about.html">關於我們</a>
+    </div>
+    <button id="cart-button" onclick="toggleCart()" style="border:none;padding:8px 12px;background:none;cursor:pointer;display:flex;align-items:center;gap:6px;opacity:.85;"><span style="font-size:1.2rem;">🛒</span><span id="cart-badge"></span></button>
+  </nav>
+</header>
+
+<section style="background: linear-gradient(90deg, #4A3F30, #5C4A36); color: #fff; padding: 60px 20px; text-align: center;">
+  <div class="wrap">
+    <h1 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.5rem);font-style:italic;margin-bottom:16px;">商品系列</h1>
+    <p style="font-size:1.05rem;opacity:.9;margin-bottom:12px;">英國原裝進口有機精油</p>
+    <p style="font-size:.95rem;opacity:.8;">11款精選精油 · 多規格供選 · EEC/NOP/H&B/Soil Association認證</p>
+  </div>
+</section>
+
+<section style="background: #EFE6D6; padding: 60px 20px;">
+  <div class="wrap">
+    
+    <div class="sec-head">
+      <span class="eyebrow">PRODUCTS · 商品系列</span>
+      <h2>有機精油精選</h2>
+      <p style="margin-top: 12px; opacity: .8;">所有商品均通過 EEC · NOP · H&B · Soil Association 認證 · 英國原裝進口</p>
+    </div>
+
+    <div class="product-grid">
+      
+      <!-- 1. 洗髮精 -->
+      <div class="product-card">
+        <img src="shampoo-hero.jpg" alt="洗髮精" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">主打商品</span>
+          <div class="product-name">有機複方精油洗髮精</div>
+          <div class="product-en">Organic Essential Oil Shampoo</div>
+          <div class="product-details">
+            配方：真正薰衣草、快樂鼠尾草、歐薄荷、大西洋雪松、迷迭香<br>
+            350ML $580 / 500ML $750
+          </div>
+          <div class="product-price">$580 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. 薰衣草 (高海拔法國) -->
+      <div class="product-card">
+        <img src="products-10ml.jpg" alt="薰衣草精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機真正薰衣草精油<br><small style="font-size:.85rem;">(高海拔)</small></div>
+          <div class="product-en">Organic Lavender Essential Oil</div>
+          <div class="product-details">
+            Lavandula angustifolia<br>
+            產地：法國 (High Altitude)<br>
+            萃取：花頂部 / 蒸餾法<br>
+            <strong>100ML $3,800元</strong>
+          </div>
+          <div class="product-price">$3,800</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 薰衣草 (保加利亞) -->
+      <div class="product-card">
+        <img src="products-10ml.jpg" alt="薰衣草精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機薰衣草精油</div>
+          <div class="product-en">Organic Lavender Essential Oil</div>
+          <div class="product-details">
+            產地：保加利亞<br>
+            萃取：花頂部 / 蒸餾法<br>
+            50ML $1,800 / 100ML $3,300
+          </div>
+          <div class="product-price">$1,800 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 檸檬尤加利 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="檸檬尤加利" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機檸檬尤加利精油</div>
+          <div class="product-en">Organic Eucalyptus Lemon Essential Oil</div>
+          <div class="product-details">
+            產地：馬達加斯加<br>
+            萃取：葉 / 蒸餾法<br>
+            50ML $1,300 / 100ML $2,300
+          </div>
+          <div class="product-price">$1,300 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. 苦橙葉 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="苦橙葉精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機苦橙葉精油</div>
+          <div class="product-en">Organic Petitgrain Essential Oil</div>
+          <div class="product-details">
+            產地：埃及<br>
+            萃取：葉、枝 / 蒸餾法<br>
+            50ML $2,200 / 100ML $3,900
+          </div>
+          <div class="product-price">$2,200 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. 快樂鼠尾草 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="快樂鼠尾草" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機快樂鼠尾草精油</div>
+          <div class="product-en">Organic Clary Sage Essential Oil</div>
+          <div class="product-details">
+            產地：法國、摩爾多瓦<br>
+            萃取：花 / 蒸餾法<br>
+            50ML $2,500 / 100ML $4,500
+          </div>
+          <div class="product-price">$2,500 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. 澳洲茶樹 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="茶樹精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機澳洲茶樹精油</div>
+          <div class="product-en">Organic Tea Tree Essential Oil</div>
+          <div class="product-details">
+            產地：澳洲<br>
+            萃取：葉 / 蒸餾法<br>
+            50ML $1,800 / 100ML $3,300
+          </div>
+          <div class="product-price">$1,800 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. 澳洲尤加利 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="尤加利精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機澳洲尤加利精油</div>
+          <div class="product-en">Organic Eucalyptus Radiata Essential Oil</div>
+          <div class="product-details">
+            產地：澳大利亞<br>
+            萃取：葉 / 蒸餾法<br>
+            50ML $1,600 / 100ML $2,900
+          </div>
+          <div class="product-price">$1,600 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. 綠薄荷 (留蘭香) -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="綠薄荷精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機綠薄荷精油<br><small style="font-size:.85rem;">(留蘭香)</small></div>
+          <div class="product-en">Organic Spearmint Essential Oil</div>
+          <div class="product-details">
+            產地：印度、巴西<br>
+            萃取：花頂部 / 蒸餾法<br>
+            50ML $1,200 / 100ML $1,900
+          </div>
+          <div class="product-price">$1,200 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. 歐薄荷 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="歐薄荷精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機歐薄荷精油</div>
+          <div class="product-en">Organic Peppermint Essential Oil</div>
+          <div class="product-details">
+            Mentha piperita<br>
+            產地：英國<br>
+            萃取：葉 / 蒸餾法<br>
+            50ML $1,500 / 100ML $2,700
+          </div>
+          <div class="product-price">$1,500 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. 雪松 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="雪松精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機大西洋雪松精油</div>
+          <div class="product-en">Organic Cedarwood Essential Oil</div>
+          <div class="product-details">
+            Atlas (Cedrus atlantica)<br>
+            產地：摩洛哥<br>
+            萃取：樹皮 / 蒸餾法<br>
+            50ML $1,300 / 100ML $2,300
+          </div>
+          <div class="product-price">$1,300 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. 甜橙 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="甜橙精油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">精選精油</span>
+          <div class="product-name">有機甜橙精油</div>
+          <div class="product-en">Organic Orange Essential Oil</div>
+          <div class="product-details">
+            產地：義大利<br>
+            萃取：果皮 / 冷壓法<br>
+            50ML $900 / 100ML $1,500
+          </div>
+          <div class="product-price">$900 起</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. 葡萄籽油 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="葡萄籽油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">基底油/SPA按摩油</span>
+          <div class="product-name">有機葡萄籽油</div>
+          <div class="product-en">Organic Grapeseed Oil</div>
+          <div class="product-details">
+            產地：西班牙、法國<br>
+            萃取：果籽 / 冷壓<br>
+            <strong>100ML $1,500元</strong>
+          </div>
+          <div class="product-price">$1,500</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. 玫瑰果油 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="玫瑰果油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">基底油/SPA按摩油</span>
+          <div class="product-name">有機玫瑰果油<br><small style="font-size:.85rem;">(薔薇果)</small></div>
+          <div class="product-en">Organic Rosehip Oil</div>
+          <div class="product-details">
+            Rosa canina<br>
+            產地：智利、保加利亞<br>
+            萃取：種子 / 冷壓<br>
+            <strong>100ML $1,800元</strong>
+          </div>
+          <div class="product-price">$1,800</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. 聖約翰草油 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="聖約翰草油" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">基底油/SPA按摩油</span>
+          <div class="product-name">有機聖約翰草油</div>
+          <div class="product-en">Organic St. John's Wort Oil</div>
+          <div class="product-details">
+            產地：西班牙、德國<br>
+            萃取：花蕊、花 / 冷壓<br>
+            <strong>100ML $1,600元</strong>
+          </div>
+          <div class="product-price">$1,600</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. 玫瑰純露 -->
+      <div class="product-card">
+        <img src="floral-water-1000ml-new.jpg" alt="玫瑰純露" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">純露/花水</span>
+          <div class="product-name">有機玫瑰純露花水</div>
+          <div class="product-en">Organic Rose Floral Water</div>
+          <div class="product-details">
+            產地：保加利亞<br>
+            <strong>1000ML $3,900元</strong>
+          </div>
+          <div class="product-price">$3,900</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17. 橙花純露 -->
+      <div class="product-card">
+        <img src="floral-water-1000ml-new.jpg" alt="橙花純露" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">純露/花水</span>
+          <div class="product-name">有機橙花純露花水</div>
+          <div class="product-en">Organic Orange Blossom Floral Water</div>
+          <div class="product-details">
+            產地：巴西<br>
+            <strong>1000ML $3,600元</strong>
+          </div>
+          <div class="product-price">$3,600</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18. 薰衣草純露 -->
+      <div class="product-card">
+        <img src="floral-water-1000ml-new.jpg" alt="薰衣草純露" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">純露/花水</span>
+          <div class="product-name">有機薰衣草純露花水</div>
+          <div class="product-en">Organic Lavender Floral Water</div>
+          <div class="product-details">
+            產地：法國<br>
+            <strong>1000ML $3,700元</strong>
+          </div>
+          <div class="product-price">$3,700</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19. 玫瑰天竺葵純露 -->
+      <div class="product-card">
+        <img src="floral-water-1000ml-new.jpg" alt="玫瑰天竺葵純露" class="product-image">
+        <div class="product-info">
+          <span class="product-badge">純露/花水</span>
+          <div class="product-name">有機玫瑰天竺葵純露花水</div>
+          <div class="product-en">Organic Rose Geranium Floral Water</div>
+          <div class="product-details">
+            產地：馬達加斯加、摩洛哥<br>
+            <strong>1000ML $4,000元</strong>
+          </div>
+          <div class="product-price">$4,000</div>
+          <div class="product-btns">
+            <button class="add-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">🛒 購買</button>
+            <button class="line-btn" onclick="window.location.href='https://lin.ee/t9Hj7ef'">LINE</button>
+          </div>
+        </div>
+      <h3 style="font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;margin-bottom:16px;">立即開始有機生活</h3>
+      <p style="opacity: .8; margin-bottom: 24px;">所有商品均為英國原裝進口 · 通過國際有機認證<br>擁抱安心 · 擁抱療癒 · 擁抱有機生活</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://lin.ee/t9Hj7ef" target="_blank" style="padding:12px 28px;background:#4A3F30;color:#fff;text-decoration:none;border-radius:4px;font-weight:600;">📱 LINE 購買</a>
+        <a href="promotion.html" style="padding:12px 28px;background:#C9A06B;color:#4A3F30;text-decoration:none;border-radius:4px;font-weight:600;">🎁 限時優惠</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">擁抱 S'enlacer 菘蕾西</div>
+        <p>英國原裝進口有機精油 · 通過多項國際認證</p>
+      </div>
+      <div class="foot-col">
+        <h5>聯繫方式</h5>
+        <a href="https://lin.ee/t9Hj7ef" target="_blank">LINE 訂購</a>
+        <a href="https://www.instagram.com/songleisi/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/senlacer" target="_blank">Facebook</a>
+      </div>
+      <div class="foot-col">
+        <h5>導航</h5>
+        <a href="landing.html">首頁</a>
+        <a href="promotion.html">限時優惠</a>
+        <a href="about.html">關於我們</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 S'enlacer 菘蕾西</span>
+      <span>Organic · Certified · Authentic</span>
+    </div>
+  </div>
+</footer>
+
+<div id="cart-sidebar">
+  <div id="cart-sidebar-header">
+    <h3>購物車</h3>
+    <button id="cart-sidebar-close" onclick="closeCart()">✕</button>
+  </div>
+  <div id="cart-content"></div>
+</div>
+
+<script src="cart.js"></script>
+
+</body>
+</html>

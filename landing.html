@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>擁抱 S'enlacer — 菘蕾西有機精油品牌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Noto+Serif+TC:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&family=Indie+Flower:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+body{background:#EFE6D6;}
+
+.landing-hero-final {
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:stretch;
+  gap:0;
+}
+
+.landing-left-final {
+  background:#EFE6D6;
+  padding:80px 60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+
+.brand-logo-final {
+  width:140px;
+  height:auto;
+  margin-bottom:48px;
+  object-fit:contain;
+}
+
+.brand-embrace-enlacer {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  font-weight: 600;
+  font-style: italic;
+  color: #4A3F30;
+  line-height: 1.0;
+  margin-bottom: 0;
+  letter-spacing: 0.08em;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  align-items: baseline;
+  gap: 0.15em;
+}
+
+.brand-embrace {
+  display: inline;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1em;
+  font-weight: 700;
+  font-style: normal;
+  color: #4A3F30;
+  letter-spacing: 0.06em;
+}
+
+.brand-enlacer {
+  display: inline;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #4A3F30;
+  letter-spacing: 0.12em;
+  text-transform: none;
+}
+
+.brand-tagline-final {
+  font-size:1.15rem;
+  line-height:1.9;
+  color:#4A3F30;
+  opacity:.9;
+  margin-bottom:32px;
+  max-width:450px;
+  font-weight:500;
+  letter-spacing:.02em;
+}
+
+.brand-vision-final {
+  font-size:.95rem;
+  line-height:1.8;
+  color:#4A3F30;
+  opacity:.8;
+  margin-bottom:32px;
+  max-width:450px;
+}
+
+.product-highlight-final {
+  background:rgba(201,160,107,.12);
+  padding:24px;
+  border-left:4px solid #C9A06B;
+  margin:32px 0;
+  border-radius:2px;
+}
+
+.product-highlight-final h4 {
+  font-family:'Noto Serif TC',serif;
+  font-size:1.1rem;
+  font-weight:500;
+  color:#4A3F30;
+  margin-bottom:8px;
+}
+
+.product-highlight-final p {
+  font-size:.9rem;
+  color:#4A3F30;
+  opacity:.8;
+  margin:0;
+}
+
+.certs-badges-final {
+  display:flex;
+  gap:12px;
+  margin:28px 0;
+  flex-wrap:wrap;
+  font-size:.8rem;
+}
+
+.cert-badge-final {
+  background:#fff;
+  padding:8px 14px;
+  border-radius:20px;
+  border:1px solid #C9A06B;
+  color:#4A3F30;
+  font-weight:600;
+}
+
+.landing-cta-final {
+  display:flex;
+  gap:16px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.cta-btn-final {
+  padding:16px 36px;
+  background:#4A3F30;
+  color:#EFE6D6;
+  border:none;
+  border-radius:4px;
+  font-weight:600;
+  font-size:.95rem;
+  cursor:pointer;
+  transition:background .3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.cta-btn-final:hover {
+  background:#A6824F;
+}
+
+.cta-btn-secondary-final {
+  padding:16px 36px;
+  border:2px solid #4A3F30;
+  background:transparent;
+  color:#4A3F30;
+  border-radius:4px;
+  font-weight:600;
+  font-size:.95rem;
+  cursor:pointer;
+  transition:all .3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.cta-btn-secondary-final:hover {
+  background:#4A3F30;
+  color:#EFE6D6;
+}
+
+.landing-right-final {
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+
+.landing-right-final img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.landing-badge-final {
+  position:absolute;
+  top:30px;
+  right:30px;
+  background:rgba(201,160,107,.95);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:999px;
+  font-size:.85rem;
+  font-weight:600;
+  letter-spacing:.05em;
+  backdrop-filter:blur(10px);
+}
+
+.landing-footer-final {
+  grid-column:1/-1;
+  background:#4A3F30;
+  color:#EFE6D6;
+  padding:60px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:50px;
+}
+
+.landing-footer-final h4 {
+  font-family:'Fraunces',serif;
+  font-size:1.15rem;
+  margin-bottom:16px;
+  font-weight:400;
+  font-style:italic;
+}
+
+.landing-footer-final p {
+  font-size:.9rem;
+  opacity:.85;
+  line-height:1.7;
+  margin:0;
+}
+
+.landing-footer-final a {
+  color:#EFE6D6;
+  text-decoration:none;
+  opacity:.85;
+  transition:opacity .3s;
+  display:block;
+  margin-bottom:8px;
+  font-size:.9rem;
+}
+
+.landing-footer-final a:hover {
+  opacity:1;
+}
+
+@media (max-width:1000px) {
+  .landing-hero-final {
+    grid-template-columns:1fr;
+  }
+  .landing-right-final {
+    height:500px;
+  }
+  .landing-left-final {
+    padding:60px 32px;
+  }
+  .landing-footer-final {
+    grid-template-columns:repeat(2,1fr);
+    padding:40px 32px;
+    gap:30px;
+  }
+}
+
+@media (max-width:600px) {
+  .landing-left-final {
+    padding:40px 20px;
+  }
+  .brand-embrace {
+    font-size:1.6rem;
+  }
+  .brand-enlacer {
+    font-size:1.8rem;
+  }
+  .landing-cta-final {
+    flex-direction:column;
+  }
+  .cta-btn-final, .cta-btn-secondary-final {
+    width:100%;
+    text-align:center;
+  }
+  .landing-footer-final {
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="landing-hero-final">
+  <!-- LEFT: BRAND + PRODUCT INFO -->
+  <div class="landing-left-final">
+    <img src="logo-main.jpg" alt="擁抱 S'enlacer LOGO" class="brand-logo-final">
+    
+    <div class="brand-embrace-enlacer">
+      <span class="brand-embrace">擁抱</span>
+      <span class="brand-enlacer">S'enlacer</span>
+    </div>
+    
+    <div class="brand-tagline-final">擁抱安心 · 有機生活 · 療癒身心靈</div>
+
+    <div class="brand-vision-final">
+      S'enlacer 取自法文「相互擁抱」之意。英國原裝進口有機精油，透過植物療法與芳香療法融入日常，讓擁抱成為生活儀式——從擁抱好空氣，到療癒身心靈。
+    </div>
+
+    <div class="product-highlight-final">
+      <h4>🌿 英國原裝進口 1000ML 有機精油</h4>
+      <p>EEC/NOP/H&B · Soil Association 多項認證</p>
+    </div>
+
+    <div class="certs-badges-final">
+      <span class="cert-badge-final">EEC</span>
+      <span class="cert-badge-final">NOP</span>
+      <span class="cert-badge-final">H&B</span>
+      <span class="cert-badge-final">Soil Association</span>
+    </div>
+
+    <p style="font-size:.85rem;opacity:.75;color:#4A3F30;margin:28px 0;">
+      有機精油 · 有機基底油 · 有機純露<br>
+      適合個人、家庭、店面、企業採購
+    </p>
+
+    <div class="landing-cta-final">
+      <button class="cta-btn-final" onclick="window.location.href='products.html'">🛒 探索商品</button>
+      <a href="https://lin.ee/t9Hj7ef" target="_blank" class="cta-btn-secondary-final">📱 LINE 購買</a>
+    </div>
+  </div>
+
+  <!-- RIGHT: HERO IMAGE -->
+  <div class="landing-right-final">
+    <img src="homepage-brand-philosophy.jpg" alt="擁抱 S'enlacer — 有機生活美學">
+    <div class="landing-badge-final">✨ Organic Embrace</div>
+  </div>
+
+  <!-- FOOTER INFO -->
+  <div class="landing-footer-final">
+    <div>
+      <h4>品牌故事</h4>
+      <p>菘蕾西以「擁抱」為核心，將有機精油融入芳香療法與生活美學，讓每一個靈魂都能在自然懷抱中找到療癒。</p>
+    </div>
+    <div>
+      <h4>有機承諾</h4>
+      <p>英國原裝進口，通過 EEC、NOP、H&B、Soil Association 認證，確保每一滴精油都經過嚴格的有機把關。</p>
+    </div>
+    <div>
+      <h4>購買方式</h4>
+      <p>
+        <a href="products.html">線上購物</a>
+        <a href="https://lin.ee/t9Hj7ef" target="_blank">LINE 訂購</a>
+        <a href="about.html">企業採購</a>
+      </p>
+    </div>
+    <div>
+      <h4>聯繫我們</h4>
+      <p>
+        <a href="https://www.facebook.com/senlacer" target="_blank">Facebook 粉專</a>
+        <a href="https://www.instagram.com/songleisi/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/groups/senlacer/" target="_blank">SPA 私塾</a>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script src="cart.js"></script>
+
+</body>
+</html>
