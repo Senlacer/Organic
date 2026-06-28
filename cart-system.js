@@ -33,7 +33,7 @@ class ShoppingCart {
     
     this.saveCart();
     this.updateCartBadge();
-    alert(`已添加 ${product.name} 到購物車`);
+    this.showToast(`✓ 已加入購物車：${product.name}`);
   }
 
   // 更新商品數量
@@ -264,6 +264,30 @@ class ShoppingCart {
 
       window.open(this.lineUrl, '_blank');
     });
+  }
+
+
+  // 顯示優雅的提示條（取代alert）
+  showToast(message, duration = 2500) {
+    let toast = document.getElementById('senlacer-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'senlacer-toast';
+      toast.style.cssText = `
+        position: fixed; top: 24px; right: 24px; z-index: 2000;
+        background: #4A3F30; color: #fff; padding: 14px 24px;
+        border-radius: 8px; font-size: 0.95rem; box-shadow: 0 4px 16px rgba(0,0,0,.2);
+        transform: translateX(120%); transition: transform .35s ease;
+        max-width: 320px; line-height: 1.5;
+      `;
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    requestAnimationFrame(() => { toast.style.transform = 'translateX(0)'; });
+    clearTimeout(this._toastTimer);
+    this._toastTimer = setTimeout(() => {
+      toast.style.transform = 'translateX(120%)';
+    }, duration);
   }
 
   // 清空購物車
