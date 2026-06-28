@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+    <meta charset="UTF-8">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>商品系列 — S'enlacer 菘蕾西擁抱 | 有機精油</title>
@@ -33,6 +34,7 @@
 <body>
 
 <header>
+    <meta charset="UTF-8">
   <nav>
     <div class="logo">擁抱 <span class="cn">S'enlacer</span></div>
     <div class="navlinks">
@@ -84,7 +86,7 @@
 
       <!-- 2. 薰衣草 (高海拔法國) -->
       <div class="product-card">
-        <img src="products-10ml.jpg" alt="薰衣草精油" class="product-image">
+        <img src="products-100ml.jpg" alt="薰衣草精油" class="product-image">
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機真正薰衣草精油<br><small style="font-size:.85rem;">(高海拔)</small></div>
@@ -486,7 +488,7 @@
   <div id="cart-content"></div>
 </div>
 
-<script src="cart.js"></script>
+<script src="cart-system.js"></script>
 
 
 <!-- 精油美好經文 -->
@@ -502,6 +504,38 @@
       <p style="font-size: 14px; color: #C9A06B; margin-top: 12px;">雅歌 7:6 · Song of Solomon 7:6</p>
       <p style="font-size: 14px; color: #5C4A36; margin-top: 20px; opacity: 0.8;">企業採購、團購、代理洽詢</p>
       <a href="https://lin.ee/t9Hj7ef" target="_blank" class="add-btn" style="display: inline-block; margin-top: 16px; padding: 12px 24px; text-decoration: none; color: white;">📱 LINE 企業客服</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- 有機認證區塊 -->
+<section style="background: #EFE6D6; padding: 60px 20px; text-align: center;">
+  <div class="wrap">
+    <h2 style="font-family:'Fraunces',serif;font-size:2.2rem;font-style:italic;color:#4A3F30;margin-bottom:30px;">有機認證保障</h2>
+    <div style="display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;max-width:800px;margin:0 auto;">
+      <div style="text-align:center;">
+        <img src="soil-association-logo.jpg" alt="Soil Association 有機認證" style="max-width:120px;margin-bottom:12px;">
+        <p style="font-size:.9rem;color:#4A3F30;">Soil Association<br>英國土壤協會認證</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-size:1.2rem;font-weight:700;color:#C9A06B;margin-bottom:8px;">EEC/NOP/H&B</p>
+        <p style="font-size:.9rem;color:#4A3F30;">歐盟有機認證</p>
+      </div>
+    </div>
+    <p style="font-size:.85rem;color:#4A3F30;opacity:.75;margin-top:30px;">
+      所有產品均通過 EEC · NOP · H&B · Soil Association 認證<br>
+      英國原裝進口，品質保證
+    </p>
+  </div>
+</section>
+
+
+<!-- 購物車區域 -->
+<section style="background:#EFE6D6;padding:60px 20px;">
+  <div class="wrap">
+    <div id="cart-items">
+      <!-- 購物車內容將在此渲染 -->
     </div>
   </div>
 </section>
