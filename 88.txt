@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>88父親節專項 - 菘蕾西 S'enlacer 擁抱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ink: #4A3F30;
+            --amber: #C9A06B;
+            --linen: #EFE6D6;
+            --soil: #5C4A36;
+            --gold: #D4AF37;
+            --cedar: #6B4423;
+            --orange: #FF8C00;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Noto Serif TC', 'Fraunces', serif;
+            background-color: var(--linen);
+            color: var(--ink);
+            line-height: 1.8;
+        }
+
+        /* 頂部導航 */
+        header {
+            background-color: var(--linen);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--amber);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--ink);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--amber);
+        }
+
+        /* 主要內容容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* 英雄區域 - 標題和核心信息 */
+        .hero-section {
+            background: linear-gradient(135deg, var(--linen) 0%, #F5EEE5 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero-section h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 64px;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--cedar);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero-section .tagline {
+            font-size: 28px;
+            color: var(--amber);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .hero-section .bible-verse {
+            font-size: 18px;
+            color: var(--soil);
+            font-style: italic;
+            margin-top: 30px;
+            line-height: 1.8;
+        }
+
+        /* 聖經經文框 */
+        .scripture-box {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-left: 5px solid var(--gold);
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 8px;
+        }
+
+        .scripture-box h3 {
+            color: var(--cedar);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .scripture-box p {
+            color: var(--ink);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .scripture-reference {
+            color: var(--amber);
+            font-weight: 600;
+            font-style: italic;
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        /* 促銷產品區域 */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--linen) 0%, #F5EEE5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--amber);
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-name {
+            font-family: 'Fraunces', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+
+        .product-name-en {
+            font-size: 16px;
+            color: var(--amber);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .product-details {
+            font-size: 14px;
+            color: var(--soil);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .product-details p {
+            margin-bottom: 8px;
+        }
+
+        .product-details strong {
+            color: var(--cedar);
+            font-weight: 600;
+        }
+
+        .meaning {
+            background-color: rgba(212, 175, 55, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: var(--cedar);
+            line-height: 1.7;
+        }
+
+        .price-section {
+            background-color: var(--linen);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .price {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--cedar);
+            margin-bottom: 5px;
+        }
+
+        .price-note {
+            font-size: 14px;
+            color: var(--amber);
+            font-weight: 600;
+        }
+
+        .btn-buy {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--cedar) 0%, var(--amber) 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .btn-buy:hover {
+            transform: scale(1.05);
+        }
+
+        /* 品牌理念區域 */
+        .philosophy-section {
+            background-color: rgba(212, 175, 55, 0.05);
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+
+        .philosophy-section h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--cedar);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .philosophy-text {
+            font-size: 18px;
+            line-height: 2;
+            color: var(--ink);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background-color: rgba(212, 175, 55, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--cedar);
+        }
+
+        /* 促銷信息 */
+        .promotion-banner {
+            background: linear-gradient(135deg, var(--cedar) 0%, var(--amber) 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .promotion-banner h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .promotion-banner p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .promo-date {
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        /* 父親節主題 */
+        .father-day-message {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(107, 68, 35, 0.05) 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 60px 0;
+            border: 2px solid var(--amber);
+        }
+
+        .father-day-message h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--cedar);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .father-day-message p {
+            font-size: 18px;
+            color: var(--ink);
+            line-height: 2;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 42px;
+            }
+
+            .hero-section .tagline {
+                font-size: 22px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-section h2 {
+                font-size: 36px;
+            }
+
+            .promotion-banner h2 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* 頁腳 */
+        footer {
+            background-color: var(--soil);
+            color: var(--linen);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: var(--amber);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<!-- 88優惠促銷海報 -->
+<section style="width:100%;margin:0;padding:0;overflow:hidden;">
+  <img src="promotion-88-exclusive.jpg" alt="菘蕾西88優惠促銷" style="width:100%;height:auto;display:block;">
+</section>
+
+
+    <!-- 導航 -->
+    <header>
+    <meta charset="UTF-8">
+        <div class="header-container">
+            <a href="landing.html" class="logo-section">擁抱 S'enlacer</a>
+            <nav class="nav-links">
+                <a href="landing.html">首頁</a>
+                <a href="products.html">商品</a>
+                <a href="about.html">關於我們</a>
+                <a href="father-day-88.html" style="color: var(--cedar); font-weight: 700;">88父親節</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要內容 -->
+    <main class="container">
+        <!-- 英雄區域 - 汽車背景 -->
+        <section class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('aromatherapy-porsche-hero.jpg') center/cover no-repeat; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+            <h1 style="color: white;">88 父親節專項</h1>
+            <p class="tagline" style="color: #FFD700;">給偉大父親的力量</p>
+            <p class="bible-verse" style="color: white;">
+                「疲乏的，祂賜能力；軟弱的，祂加力量。」<br>
+                <em>AROMATHERAPY — 以賽亞書 40:29</em>
+            </p>
+        </section>
+
+        <!-- 促銷橫幅 -->
+        <section class="promotion-banner">
+            <h2>限時促銷</h2>
+            <p>任選單支精油</p>
+            <p style="font-size: 52px; font-weight: 700; color: #FFD700;">$88</p>
+            <p class="promo-date">6月28日 ~ 8月8日</p>
+        </section>
+
+        <!-- 父親節祝福 -->
+        <section class="father-day-message">
+            <h2>給偉大父親的祝福</h2>
+            <p>
+                父親如同聖經中的雪松，象徵堅固、力量與高貴。<br>
+                願每位偉大的父親都能感受到來自天父的恩典與力量。<br>
+                用芳香療法，為父親帶來寧靜、堅定與能力。
+            </p>
+        </section>
+
+        <!-- 產品展示 -->
+        <section class="products-grid">
+            <!-- 大西洋雪松精油 -->
+            <div class="product-card">
+                <img src="cedarwood-10ml-hero.jpg" alt="有機大西洋雪松精油10ML" style="width: 100%; height: 350px; object-fit: cover;">
+                <div class="product-info">
+                    <h3 class="product-name">有機大西洋雪松精油</h3>
+                    <p class="product-name-en">Organic Cedarwood Essential Oil<br>Atlas (Cedrus atlantica)</p>
+                    
+                    <div class="product-details">
+                        <p><strong>產地：</strong>摩洛哥</p>
+                        <p><strong>規格：</strong>10ML</p>
+                        <p><strong>萃取：</strong>樹皮 / 蒸餾法</p>
+                    </div>
+
+                    <div class="meaning">
+                        <strong>品牌故事：</strong><br>
+                        學名「Cedrus atlantica」源自阿拉伯語「kedros」，意思是「<span class="highlight">力量</span>」。象徵莊嚴、有力、高貴、雄壯。在聖經中，香柏木代表向上與生命。
+                    </div>
+
+                    <div class="scripture-box" style="margin: 15px 0; padding: 15px; border-left: 4px solid #6B4423;">
+                        <p style="font-size: 14px; margin: 0;">
+                            「但那等候耶和華的，必重新得力。他們必如鷹展翅上騰，他們奔跑卻不困倦，行走卻不疲乏。」<br>
+                            <span class="scripture-reference">以賽亞書 40:31</span>
+                        </p>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">$88</div>
+                        <div class="price-note">88父親節促銷價</div>
+                    </div>
+                    <button class="btn-buy" onclick="window.location.href='https://lin.ee/t9Hj7ef'">加入購物 →</button>
+                </div>
+            </div>
+
+            <!-- 有機甜橙精油 -->
+            <div class="product-card">
+                <img src="orange-10ml-hero.jpg" alt="有機甜橙精油10ML" style="width: 100%; height: 350px; object-fit: cover;">
+                <div class="product-info">
+                    <h3 class="product-name">有機甜橙精油</h3>
+                    <p class="product-name-en">Organic Orange Essential Oil</p>
+                    
+                    <div class="product-details">
+                        <p><strong>產地：</strong>義大利</p>
+                        <p><strong>規格：</strong>10ML</p>
+                        <p><strong>萃取：</strong>果皮 / 冷壓法</p>
+                    </div>
+
+                    <div class="meaning">
+                        <strong>品牌故事：</strong><br>
+                        橙色象徵溫暖、光芒與<span class="highlight">喜樂</span>。甜橙精油帶來陽光般的能量，為父親的內心注入希望與溫暖，象徵上帝的恩典與眷顧。
+                    </div>
+
+                    <div class="scripture-box" style="margin: 15px 0; padding: 15px; border-left: 4px solid #FF8C00;">
+                        <p style="font-size: 14px; margin: 0;">
+                            「因為我耶和華－ 你的上帝必攙扶你的右手， 對你說：不要害怕！ 我必幫助你。」<br>
+                            <span class="scripture-reference">以賽亞書 41:13</span>
+                        </p>
+                    </div>
+
+                    <div class="price-section">
+                        <div class="price">$88</div>
+                        <div class="price-note">88父親節促銷價</div>
+                    </div>
+                    <button class="btn-buy" onclick="window.location.href='https://lin.ee/t9Hj7ef'">加入購物 →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 品牌理念區域 -->
+        <section class="philosophy-section">
+            <h2>品牌理念：力量之樹</h2>
+            
+            <div class="philosophy-text">
+                <span class="highlight">大西洋雪松</span>是上帝森林中高貴樹木之王。在希伯來文中，香柏木代表「堅固」，被稱為「能量之樹」。大西洋雪松的學名「Cedrus atlantica」來自阿拉伯語「kedros」，意思是「力量」。
+            </div>
+
+            <div class="philosophy-text">
+                這種古老而雄偉的樹木，旺盛繁茂，樹齡悠久，象徵著父愛的永恆與堅定。在聖經中，香柏木是「向上」與「生命」的象徵，代表著靈性的提升與生命的持續。
+            </div>
+
+            <div class="philosophy-text">
+                大西洋雪松精油可以幫助我們：
+                <ul style="margin: 15px 0 0 20px;">
+                    <li>提升持續力與忍耐力</li>
+                    <li>發揮高度的韌性</li>
+                    <li>在心中難以說出口的壓力時沉靜下來</li>
+                    <li>帶來堅實的支持力量</li>
+                </ul>
+            </div>
+
+            <div class="scripture-box" style="margin-top: 30px;">
+                <h3>聖經中的力量應許</h3>
+                <p>「你不要害怕，因為我與你同在； 不要驚惶，因為我是你的上帝。 我必堅固你，我必幫助你； 我必用我公義的右手扶持你。」</p>
+                <p class="scripture-reference">以賽亞書 41:10</p>
+            </div>
+        </section>
+
+        <!-- 行動呼籲 -->
+        <section style="text-align: center; padding: 40px; background-color: rgba(212, 175, 55, 0.1); border-radius: 15px; margin: 60px 0;">
+            <h2 style="font-family: 'Fraunces', serif; font-size: 36px; color: var(--cedar); margin-bottom: 20px;">
+                為偉大的父親選擇力量
+            </h2>
+            <p style="font-size: 18px; color: var(--ink); margin-bottom: 30px; line-height: 1.8;">
+                透過天然有機精油，與父親一起經歷上帝的恩典。<br>
+                讓每一滴精油都成為愛的傳遞，力量的祝福。
+            </p>
+            <button class="btn-buy" style="max-width: 300px; margin: 0 auto; display: block;" onclick="window.location.href='https://lin.ee/t9Hj7ef'">
+                立即購買 →
+            </button>
+        </section>
+    </main>
+
+    <!-- 頁腳 -->
+    <div style="text-align: center; padding: 30px; color: #C9A06B; font-style: italic;">
+                <p>「願祂喜悅我的默想， 祂是我喜樂的泉源。」詩篇 104:34</p>
+                <p>「My meditation of him shall be sweet: I will be glad in the LORD.」Psalm 104:34</p>
+            </div>
+            <footer>
+        <p>菘蕾西 S'enlacer 擁抱 — 有機精油的療癒之旅</p>
+        <p>88父親節專項促銷 | 6月28日 ~ 8月8日</p>
+        <div class="footer-links">
+            <a href="landing.html">首頁</a>
+            <a href="products.html">商品</a>
+            <a href="about.html">關於我們</a>
+            <a href="https://www.facebook.com/senlacer">Facebook</a>
+            <a href="https://lin.ee/t9Hj7ef">LINE購買</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 12px; opacity: 0.8;">
+            c 2024 菘蕾西 S'enlacer 擁抱 | EEC/NOP/H&B/Soil Association認證 | 英國原裝進口
+        </p>
+    </footer>
+
+<!-- 有機認證區塊 -->
+<section style="background: #EFE6D6; padding: 60px 20px; text-align: center;">
+  <div class="wrap">
+    <h2 style="font-family:'Fraunces',serif;font-size:2.2rem;font-style:italic;color:#4A3F30;margin-bottom:30px;">有機認證保障</h2>
+    <div style="display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;max-width:800px;margin:0 auto;">
+      <div style="text-align:center;">
+        <img src="soil-association-logo.jpg" alt="Soil Association 有機認證" style="max-width:120px;margin-bottom:12px;">
+        <p style="font-size:.9rem;color:#4A3F30;">Soil Association<br>英國土壤協會認證</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-size:1.2rem;font-weight:700;color:#C9A06B;margin-bottom:8px;">EEC/NOP/H&B</p>
+        <p style="font-size:.9rem;color:#4A3F30;">歐盟有機認證</p>
+      </div>
+    </div>
+    <p style="font-size:.85rem;color:#4A3F30;opacity:.75;margin-top:30px;">
+      所有產品均通過 EEC · NOP · H&B · Soil Association 認證<br>
+      英國原裝進口，品質保證
+    </p>
+  </div>
+</section>
+
+
+    <!-- 夕陽洞穴SPA背景圖 -->
+      <div class="wrap">
+        <h1 style="font-family:'Fraunces',serif;font-size:2.8rem;font-style:italic;margin-bottom:20px;">88 父親節精油禮贈</h1>
+        <p style="font-size:1.2rem;margin-bottom:30px;">一份給爸爸最溫柔的療癒禮物</p>
+        <a href="products.html" class="btn-primary" style="padding:15px 40px;font-size:1.1rem;">立即選購</a>
+      </div>
+    </section>
+
+
+<!-- 聖托里尼看海背景 -->
+<section style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('santorini-cliff-embrace.jpg'); background-size: cover; background-position: center; background-attachment: fixed; padding: 120px 20px; text-align: center; color: white; margin: 60px 0;">
+  <div class="wrap">
+    <h2 style="font-family:'Fraunces',serif;font-size:2.5rem;font-style:italic;margin-bottom:20px;text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+      享受療癒時刻
+    </h2>
+    <p style="font-size:1.2rem;margin-bottom:30px;text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">
+      讓有機精油帶你到海邊，感受自然的擁抱
+    </p>
+    <a href="products.html" class="btn-primary" style="padding:15px 40px;font-size:1.1rem;">探索商品</a>
+  </div>
+</section>
+
+
+</body>
+</html>
