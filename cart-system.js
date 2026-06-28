@@ -155,8 +155,8 @@ class ShoppingCart {
             </p>
           </div>
 
-          <!-- ATM轉帳資訊 - 只在結帳時顯示 -->
-          <div id="atm-info" style="background:white;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #C9A06B;">
+          <!-- ATM轉帳資訊 - 預設隱藏，點擊確認結帳後才顯示 -->
+          <div id="atm-info" style="display:none;background:white;padding:15px;border-radius:8px;margin-bottom:15px;border-left:4px solid #C9A06B;">
             <h5 style="color:#4A3F30;margin:0 0 10px 0;">💳 ATM轉帳資訊</h5>
             <p style="margin:5px 0;color:#5C4A36;">
               <strong>銀行：</strong>${this.atmInfo.bank}
@@ -197,6 +197,13 @@ class ShoppingCart {
       return;
     }
 
+    // 點擊確認結帳後，才顯示ATM轉帳資訊區塊
+    const atmDiv = document.getElementById('atm-info');
+    if (atmDiv && atmDiv.style.display === 'none') {
+      atmDiv.style.display = 'block';
+      atmDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
     const total = this.getTotal();
     const orderNumber = 'ORDER-' + Date.now();
     
@@ -234,12 +241,27 @@ class ShoppingCart {
     navigator.clipboard.writeText(orderDetail).then(() => {
       alert('訂單已複製！\n\n請點擊下方LINE客服按鈕\n將訂單信息貼上傳送給客服');
       
+      // 清空購物車
+      this.items = [];
+      this.saveCart();
+      this.renderCart();
+      this.updateCartBadge();
+      if (typeof renderCartSidebar === 'function') renderCartSidebar();
+
       // 打開LINE
       setTimeout(() => {
         window.open(this.lineUrl, '_blank');
       }, 500);
     }).catch(() => {
       alert('訂單內容:\n\n' + orderDetail + '\n\n請複製以上內容傳給LINE客服');
+      
+      // 清空購物車
+      this.items = [];
+      this.saveCart();
+      this.renderCart();
+      this.updateCartBadge();
+      if (typeof renderCartSidebar === 'function') renderCartSidebar();
+
       window.open(this.lineUrl, '_blank');
     });
   }

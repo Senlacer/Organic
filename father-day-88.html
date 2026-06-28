@@ -2,7 +2,6 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>88父親節專項 - 菘蕾西 S'enlacer 擁抱</title>
     <style>
@@ -406,11 +405,23 @@
             text-decoration: underline;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital@0;1&family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- 88優惠促銷海報 -->
 <section style="width:100%;margin:0;padding:0;overflow:hidden;">
-  <img src="promotion-88-exclusive.jpg" alt="菘蕾西88優惠促銷" style="width:100%;height:auto;display:block;">
+  <img src="cedarwood-10ml-hero.jpg" alt="菘蕾西88優惠促銷" style="width:100%;height:auto;display:block;" />
+
+<!-- 擁抱好空氣．生活好健康 標語區塊 -->
+<section style="background:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),url('spa-santorini-embrace-correct.jpg');background-size:cover;background-position:center;padding:100px 20px;text-align:center;color:#fff;">
+  <div class="wrap">
+    <p style="letter-spacing:2px;font-size:.85rem;opacity:.85;margin-bottom:16px;">ORGANIC AROMATHERAPY · 88 父親節限定</p>
+    <h1 style="font-family:'Fraunces',serif;font-style:italic;font-size:2.8rem;margin-bottom:14px;text-shadow:2px 2px 10px rgba(0,0,0,.4);">擁抱好空氣 · 生活好健康</h1>
+    <p style="font-size:1.1rem;max-width:560px;margin:0 auto;text-shadow:1px 1px 6px rgba(0,0,0,.4);">菘蕾西 S'enlacer，獻給爸爸的有機精油療癒禮，6月28日～8月8日任選單支 $88 元。</p>
+  </div>
+</section>
+
+
 </section>
 
 
@@ -419,6 +430,9 @@
     <meta charset="UTF-8">
         <div class="header-container">
             <a href="landing.html" class="logo-section">擁抱 S'enlacer</a>
+            <div id="cart-icon" onclick="toggleCart()" style="position:relative;cursor:pointer;font-size:22px;margin-right:16px;display:inline-block;">
+                🛒<span id="cart-badge" style="position:absolute;top:-8px;right:-10px;background:#C9A06B;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;display:none;align-items:center;justify-content:center;">0</span>
+            </div>
             <nav class="nav-links">
                 <a href="landing.html">首頁</a>
                 <a href="products.html">商品</a>
@@ -462,7 +476,7 @@
         <section class="products-grid">
             <!-- 大西洋雪松精油 -->
             <div class="product-card">
-                <img src="cedarwood-10ml-hero.jpg" alt="有機大西洋雪松精油10ML" style="width: 100%; height: 350px; object-fit: cover;">
+                <img src="cedarwood-10ml-hero.jpg" alt="有機大西洋雪松精油10ML" style="width: 100%; height: 350px; object-fit: cover;" />
                 <div class="product-info">
                     <h3 class="product-name">有機大西洋雪松精油</h3>
                     <p class="product-name-en">Organic Cedarwood Essential Oil<br>Atlas (Cedrus atlantica)</p>
@@ -489,13 +503,13 @@
                         <div class="price">$88</div>
                         <div class="price-note">88父親節促銷價</div>
                     </div>
-                    <button class="btn-buy" onclick="window.location.href='https://lin.ee/t9Hj7ef'">加入購物 →</button>
+                    <button class="btn-buy" onclick="window.cart.addToCart({id:'cedarwood-88', name:'有機大西洋雪松精油 10ML（88父親節價）', size:'10ML', price:88, quantity:1}); window.cart.updateCartBadge();">加入購物車 →</button>
                 </div>
             </div>
 
             <!-- 有機甜橙精油 -->
             <div class="product-card">
-                <img src="orange-10ml-hero.jpg" alt="有機甜橙精油10ML" style="width: 100%; height: 350px; object-fit: cover;">
+                <img src="orange-10ml-hero.jpg" alt="有機甜橙精油10ML" style="width: 100%; height: 350px; object-fit: cover;" />
                 <div class="product-info">
                     <h3 class="product-name">有機甜橙精油</h3>
                     <p class="product-name-en">Organic Orange Essential Oil</p>
@@ -522,7 +536,7 @@
                         <div class="price">$88</div>
                         <div class="price-note">88父親節促銷價</div>
                     </div>
-                    <button class="btn-buy" onclick="window.location.href='https://lin.ee/t9Hj7ef'">加入購物 →</button>
+                    <button class="btn-buy" onclick="window.cart.addToCart({id:'orange-88', name:'有機甜橙精油 10ML（88父親節價）', size:'10ML', price:88, quantity:1}); window.cart.updateCartBadge();">加入購物車 →</button>
                 </div>
             </div>
         </section>
@@ -587,7 +601,7 @@
             <a href="https://lin.ee/t9Hj7ef">LINE購買</a>
         </div>
         <p style="margin-top: 20px; font-size: 12px; opacity: 0.8;">
-            c 2026 菘蕾西 S'enlacer 擁抱 | EEC/NOP/H&B/Soil Association認證 | 英國原裝進口
+            © 2024 菘蕾西 S'enlacer 擁抱 | EEC/NOP/H&B/Soil Association認證 | 英國原裝進口
         </p>
     </footer>
 
@@ -597,7 +611,7 @@
     <h2 style="font-family:'Fraunces',serif;font-size:2.2rem;font-style:italic;color:#4A3F30;margin-bottom:30px;">有機認證保障</h2>
     <div style="display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;max-width:800px;margin:0 auto;">
       <div style="text-align:center;">
-        <img src="soil-association-logo.jpg" alt="Soil Association 有機認證" style="max-width:120px;margin-bottom:12px;">
+        <img src="soil-association-logo.jpg" alt="Soil Association 有機認證" style="max-width:120px;margin-bottom:12px;" />
         <p style="font-size:.9rem;color:#4A3F30;">Soil Association<br>英國土壤協會認證</p>
       </div>
       <div style="text-align:center;">
@@ -635,6 +649,59 @@
   </div>
 </section>
 
+
+
+<!-- 購物車側欄 -->
+<div id="cart-sidebar" style="position: fixed; right: -400px; top: 0; width: 400px; max-width: 90vw; height: 100vh; background: white; box-shadow: -2px 0 10px rgba(0,0,0,0.15); z-index: 999; overflow-y: auto; transition: right 0.3s ease; padding: 20px; box-sizing: border-box;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 style="margin: 0; font-family: 'Fraunces', serif; color: #4A3F30;">購物車</h3>
+        <button onclick="toggleCart()" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #4A3F30;">✕</button>
+    </div>
+    <div id="cart-items-sidebar" style="min-height: 200px;"></div>
+    <div id="cart-total" style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #EFE6D6; text-align: right;">
+        <p style="font-size: 1.2rem; color: #C9A06B; font-weight: bold;">總計: $<span id="total-price">0</span></p>
+    </div>
+    <button onclick="window.cart.checkout()" style="width:100%;padding:14px;background:#4A3F30;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:bold;cursor:pointer;margin-top:10px;">確認結帳</button>
+</div>
+<div id="cart-overlay" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: none; z-index: 998;" onclick="toggleCart()"></div>
+
+<script src="cart-system.js"></script>
+<script>
+function toggleCart() {
+    const sidebar = document.getElementById('cart-sidebar');
+    const overlay = document.getElementById('cart-overlay');
+    if (sidebar.style.right === '0px') {
+        sidebar.style.right = '-400px';
+        overlay.style.display = 'none';
+    } else {
+        sidebar.style.right = '0px';
+        overlay.style.display = 'block';
+        renderCartSidebar();
+    }
+}
+function renderCartSidebar() {
+    const items = window.cart.items;
+    const container = document.getElementById('cart-items-sidebar');
+    const totalEl = document.getElementById('total-price');
+    if (items.length === 0) {
+        container.innerHTML = '<p style="text-align:center;color:#999;">購物車為空</p>';
+        totalEl.textContent = '0';
+        return;
+    }
+    let html = '';
+    items.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        html += `<div style="padding:10px 0;border-bottom:1px solid #EFE6D6;display:flex;justify-content:space-between;align-items:center;">
+            <div><p style="margin:0;font-weight:bold;font-size:.9rem;">${item.name}</p>
+            <p style="margin:5px 0 0 0;font-size:.85rem;color:#999;">${item.quantity} × $${item.price}</p></div>
+            <div style="text-align:right;"><p style="margin:0;color:#C9A06B;font-weight:bold;">$${subtotal}</p>
+            <button onclick="window.cart.removeItem(${index});renderCartSidebar();" style="background:#d9534f;color:#fff;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:.75rem;margin-top:4px;">刪除</button></div>
+        </div>`;
+    });
+    container.innerHTML = html;
+    totalEl.textContent = window.cart.getTotal().toLocaleString();
+}
+</script>
 
 </body>
 </html>
