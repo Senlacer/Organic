@@ -42,7 +42,7 @@
 <header>
     <meta charset="UTF-8">
   <nav>
-    <div class="logo">擁抱 <span class="cn">S'enlacer</span></div>
+    <a href="landing.html" class="logo"><img src="senlacer-logo-nav.png" alt="擁抱 S'enlacer" style="height:38px;width:auto;display:block;"></a>
     <div class="navlinks">
       <a href="landing.html">首頁</a>
       <a href="promotion.html">限時優惠</a>
@@ -81,11 +81,31 @@
           <div class="product-en">Organic Essential Oil Shampoo</div>
           <div class="product-details">
             配方：真正薰衣草、快樂鼠尾草、歐薄荷、大西洋雪松、迷迭香<br>
-            350ML $580 / 500ML $750
+            單一容量 500ML $750
           </div>
-          <div class="product-price">$580 起</div>
+          <div class="product-price">$750</div>
+
+          <!-- 加購選項 -->
+          <div style="margin:14px 0;padding:12px 14px;background:#F3ECE0;border-radius:10px;border:1px dashed #B89368;">
+            <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;color:#5C4A3C;cursor:pointer;">
+              <input type="checkbox" id="addon-orange-shampoo" style="width:16px;height:16px;accent-color:#B89368;">
+              <span>✨ 加購 <strong>有機甜橙精油 10ML</strong>（原價$390）只要加購價 <strong style="color:#B97A5A;">$27</strong></span>
+            </label>
+            <p style="margin:6px 0 0 24px;font-size:.85rem;color:#9C7A52;">
+              洗髮精＋甜橙精油 全套優惠價 <strong style="font-size:1.05rem;">$777</strong> 🍀 幸運數字優惠
+            </p>
+          </div>
+
           <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-1', name:'有機複方精油洗髮精', size:'', price:580, quantity:1}); toggleCart();">🛒 加入購物車</button>
+            <button class="add-btn" onclick="
+              var addon = document.getElementById('addon-orange-shampoo').checked;
+              if (addon) {
+                window.cart.addToCart({id:'product-1-bundle', name:'有機複方精油洗髮精500ML＋加購甜橙精油10ML（幸運777組合）', size:'500ML+10ML', price:777, quantity:1});
+              } else {
+                window.cart.addToCart({id:'product-1', name:'有機複方精油洗髮精 500ML', size:'500ML', price:750, quantity:1});
+              }
+              toggleCart();
+            ">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>

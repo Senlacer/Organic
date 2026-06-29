@@ -436,7 +436,7 @@
     <header>
     <meta charset="UTF-8">
         <div class="header-container">
-            <a href="landing.html" class="logo-section">擁抱 S'enlacer</a>
+            <a href="landing.html" class="logo-section"><img src="senlacer-logo-nav.png" alt="擁抱 S'enlacer" style="height:36px;width:auto;display:block;"></a>
             <div id="cart-icon" onclick="toggleCart()" style="position:relative;cursor:pointer;font-size:22px;margin-right:16px;display:inline-block;">
                 🛒<span id="cart-badge" style="position:absolute;top:-8px;right:-10px;background:#B89368;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;display:none;align-items:center;justify-content:center;">0</span>
             </div>
@@ -455,6 +455,9 @@
         <section class="hero-section" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('aromatherapy-porsche-hero.jpg') center/cover no-repeat; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
             <h1 style="color: white;">88 父親節專項</h1>
             <p class="tagline" style="color: #FFD700;">給偉大父親的力量</p>
+            <p style="color:#F3ECE0;font-size:1.05rem;max-width:600px;margin:0 auto 12px;text-shadow:1px 1px 6px rgba(0,0,0,.5);">
+              不只是父親，每一個需要力量的人，也很適合 —— 為需要力量的人加持力量。
+            </p>
             <p class="bible-verse" style="color: white;">
                 「疲乏的，祂賜能力；軟弱的，祂加力量。」<br>
                 <em>AROMATHERAPY — 以賽亞書 40:29</em>
@@ -511,7 +514,19 @@
                         <div class="price">$88</div>
                         <div class="price-note">88父親節促銷價</div>
                     </div>
-                    <button class="btn-buy" onclick="window.cart.addToCart({id:'cedarwood-88', name:'有機大西洋雪松精油 10ML（88父親節價）', size:'10ML', price:88, quantity:1}); window.cart.updateCartBadge();">加入購物車 →</button>
+                    <p style="font-size:13px;color:#9C7A52;margin:8px 0;">💡 促銷商品圖示僅為10ML精油瓶身（不含木盒包裝）</p>
+                    <div style="margin:10px 0;padding:10px 12px;background:#F3ECE0;border-radius:8px;border:1px dashed #B89368;">
+                        <label style="display:flex;align-items:center;gap:8px;font-size:.88rem;color:#5C4A3C;cursor:pointer;">
+                            <input type="checkbox" id="addon-box-cedar" style="width:15px;height:15px;accent-color:#B89368;">
+                            <span>🎁 如需贈禮，加購原木精緻收藏盒包裝 +$88</span>
+                        </label>
+                    </div>
+                    <button class="btn-buy" onclick="
+                        var box = document.getElementById('addon-box-cedar').checked;
+                        var p = box ? 176 : 88;
+                        var nm = box ? '有機大西洋雪松精油 10ML＋原木收藏盒（88父親節價）' : '有機大西洋雪松精油 10ML（88父親節價）';
+                        window.cart.addToCart({id:'cedarwood-88', name:nm, size:'10ML', price:p, quantity:1}); window.cart.updateCartBadge();
+                    ">加入購物車 →</button>
                 </div>
             </div>
 
@@ -545,7 +560,19 @@
                         <div class="price">$88</div>
                         <div class="price-note">88父親節促銷價</div>
                     </div>
-                    <button class="btn-buy" onclick="window.cart.addToCart({id:'orange-88', name:'有機甜橙精油 10ML（88父親節價）', size:'10ML', price:88, quantity:1}); window.cart.updateCartBadge();">加入購物車 →</button>
+                    <p style="font-size:13px;color:#9C7A52;margin:8px 0;">💡 促銷商品圖示僅為10ML精油瓶身（不含木盒包裝）</p>
+                    <div style="margin:10px 0;padding:10px 12px;background:#F3ECE0;border-radius:8px;border:1px dashed #B89368;">
+                        <label style="display:flex;align-items:center;gap:8px;font-size:.88rem;color:#5C4A3C;cursor:pointer;">
+                            <input type="checkbox" id="addon-box-orange" style="width:15px;height:15px;accent-color:#B89368;">
+                            <span>🎁 如需贈禮，加購原木精緻收藏盒包裝 +$88</span>
+                        </label>
+                    </div>
+                    <button class="btn-buy" onclick="
+                        var box = document.getElementById('addon-box-orange').checked;
+                        var p = box ? 176 : 88;
+                        var nm = box ? '有機甜橙精油 10ML＋原木收藏盒（88父親節價）' : '有機甜橙精油 10ML（88父親節價）';
+                        window.cart.addToCart({id:'orange-88', name:nm, size:'10ML', price:p, quantity:1}); window.cart.updateCartBadge();
+                    ">加入購物車 →</button>
                 </div>
             </div>
         </section>
