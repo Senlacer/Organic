@@ -1,4 +1,4 @@
-:root{--ink:#4A3F30;--soil:#5C4A36;--amber:#C9A06B;--amber-deep:#A6824F;--linen:#EFE6D6;--linen-dim:#E3D7C0;--sage:#9C8868;--white:#FBF7EE;}
+:root{--ink:#5C4A3C;--soil:#4A3B2F;--amber:#B89368;--amber-deep:#9C7A52;--linen:#F3ECE0;--linen-dim:#E8DFD0;--sage:#8C8169;--white:#FBF8F3;--terracotta:#B97A5A;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--linen);color:var(--ink);font-family:'Noto Sans TC','Inter',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
@@ -45,7 +45,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 @media (max-width:860px){.pillars{grid-template-columns:1fr;gap:46px;}
 }
 .featured{position:relative;background:var(--white);}
-.featured-photo{position:relative;min-height:560px;background:url('cedarwood-10ml-hero.jpg') center 60%/cover no-repeat;display:flex;align-items:flex-end;}
+.featured-photo{position:relative;min-height:560px;background:url('cedarwood-product-real.jpg') center 60%/cover no-repeat;display:flex;align-items:flex-end;}
 .featured-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,6,0) 35%,rgba(20,14,6,.55) 100%);}
 .featured-inner{position:relative;z-index:2;padding:48px 32px 56px;max-width:1180px;margin:0 auto;width:100%;}
 .featured-inner .eyebrow{color:#F0DDB0;}
@@ -106,7 +106,7 @@ footer{background:var(--ink);color:var(--linen);padding:80px 0 36px;}
 }
 .page-banner{position:relative;min-height:46vh;display:flex;align-items:flex-end;padding-top:90px;overflow:hidden;}
 .page-banner.bg-coastal{background:url('santorini-cliff-embrace.jpg') center 35%/cover no-repeat;}
-.page-banner.bg-cedar{background:url('cedarwood-10ml-hero.jpg') center 55%/cover no-repeat;}
+.page-banner.bg-cedar{background:url('cedarwood-product-real.jpg') center 55%/cover no-repeat;}
 .page-banner::before{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,14,6,.6) 0%,rgba(20,14,6,.15) 60%,rgba(20,14,6,.05) 100%);}
 .page-banner-inner{position:relative;z-index:2;padding:0 32px 56px;max-width:1180px;margin:0 auto;width:100%;}
 .page-banner .eyebrow{color:#F0DDB0;}
@@ -153,21 +153,21 @@ footer{background:var(--ink);color:var(--linen);padding:80px 0 36px;}
 .spa-band::before{content:'';position:absolute;inset:0;background:rgba(20,14,6,.32);}
 .spa-inner{position:relative;z-index:2;max-width:620px;padding:0 32px;}
 .spa-inner .eyebrow{color:#F6EFDD;}
-.spa-inner h2{font-family:'Fraunces',serif;font-weight:400;color:#FBF7EE;font-size:clamp(1.9rem,4vw,2.8rem);margin:14px 0 10px;text-shadow:0 4px 24px rgba(0,0,0,.3);}
+.spa-inner h2{font-family:'Fraunces',serif;font-weight:400;color:#FBF8F3;font-size:clamp(1.9rem,4vw,2.8rem);margin:14px 0 10px;text-shadow:0 4px 24px rgba(0,0,0,.3);}
 .spa-inner .sub{font-family:'Fraunces',serif;font-style:italic;color:#F0DDB0;font-size:1.1rem;margin-bottom:26px;}
-.spa-quote{font-family:'Fraunces',serif;font-style:italic;color:#FBF7EE;opacity:.92;font-size:1.02rem;line-height:1.8;}
+.spa-quote{font-family:'Fraunces',serif;font-style:italic;color:#FBF8F3;opacity:.92;font-size:1.02rem;line-height:1.8;}
 .spa-quote cite{display:block;margin-top:10px;font-style:normal;font-size:.78rem;letter-spacing:.08em;opacity:.7;}
 .scripture{font-family:'Fraunces',serif;font-style:italic;font-size:.92rem;color:var(--amber-deep);opacity:.85;line-height:1.7;margin-top:14px;}
 .scripture cite{display:block;font-style:normal;font-size:.74rem;letter-spacing:.06em;opacity:.7;margin-top:4px;}
 .lifestyle-strip{position:relative;min-height:46vh;background:url('embrace-woman-organic.jpg') center 25%/cover no-repeat;display:flex;align-items:center;}
 .lifestyle-strip::before{content:'';position:absolute;inset:0;background:rgba(20,14,6,.25);}
 .lifestyle-strip-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;width:100%;padding:0 32px;}
-.lifestyle-strip h3{font-family:'Fraunces',serif;font-style:italic;color:#FBF7EE;font-size:clamp(1.6rem,3vw,2.3rem);text-shadow:0 4px 24px rgba(0,0,0,.3);max-width:480px;}
+.lifestyle-strip h3{font-family:'Fraunces',serif;font-style:italic;color:#FBF8F3;font-size:clamp(1.6rem,3vw,2.3rem);text-shadow:0 4px 24px rgba(0,0,0,.3);max-width:480px;}
 .page-banner.bg-santorini{background:url('spa-santorini-embrace-correct.jpg') center 30%/cover no-repeat;}
 .page-banner.bg-boho{background:url('spa-lantern-organic.jpg') center 25%/cover no-repeat;}
 #cart-button{position:relative;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;opacity:.85;transition:opacity .25s;background:transparent;border:none;font-size:.9rem;color:var(--ink);}
 #cart-button:hover{opacity:1;}
-#cart-badge{position:absolute;top:-8px;right:-8px;background:#C9A06B;color:#fff;width:20px;height:20px;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;}
+#cart-badge{position:absolute;top:-8px;right:-8px;background:#B89368;color:#fff;width:20px;height:20px;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;}
 #cart-sidebar{position:fixed;right:-380px;top:0;width:360px;height:100vh;background:#fff;box-shadow:-2px 0 20px rgba(0,0,0,.1);z-index:1000;transition:right .3s ease;border-left:1px solid rgba(74,63,48,.1);}
 #cart-sidebar.open{right:0;}
 #cart-sidebar-header{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid rgba(74,63,48,.1);}

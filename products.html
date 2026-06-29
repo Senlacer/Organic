@@ -13,27 +13,27 @@
 .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 32px; margin-top: 40px; }
 .product-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(74,63,48,.12); transition: all .3s; display: flex; flex-direction: column; }
 .product-card:hover { transform: translateY(-6px); box-shadow: 0 8px 24px rgba(74,63,48,.18); }
-.product-image { width: 100%; height: 320px; object-fit: cover; background: linear-gradient(135deg, #C9A06B, #E5D4C1); display: block; }
+.product-image { width: 100%; height: 320px; object-fit: cover; background: linear-gradient(135deg, #B89368, #E5D4C1); display: block; }
 .product-info { padding: 28px; display: flex; flex-direction: column; flex-grow: 1; }
-.product-badge { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: #C9A06B; font-weight: 700; margin-bottom: 8px; }
-.product-name { font-family: 'Noto Serif TC', serif; font-size: 1.2rem; font-weight: 600; color: #4A3F30; margin-bottom: 6px; line-height: 1.3; }
-.product-en { font-family: 'Fraunces', serif; font-size: .95rem; font-style: italic; color: #4A3F30; opacity: .7; margin-bottom: 8px; }
-.product-details { font-size: .85rem; color: #4A3F30; opacity: .75; margin: 8px 0; line-height: 1.6; }
-.product-price { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; color: #C9A06B; margin-top: 12px; font-style: italic; }
+.product-badge { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: #B89368; font-weight: 700; margin-bottom: 8px; }
+.product-name { font-family: 'Noto Serif TC', serif; font-size: 1.2rem; font-weight: 600; color: #5C4A3C; margin-bottom: 6px; line-height: 1.3; }
+.product-en { font-family: 'Fraunces', serif; font-size: .95rem; font-style: italic; color: #5C4A3C; opacity: .7; margin-bottom: 8px; }
+.product-details { font-size: .85rem; color: #5C4A3C; opacity: .75; margin: 8px 0; line-height: 1.6; }
+.product-price { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 600; color: #B89368; margin-top: 12px; font-style: italic; }
 .product-btns { display: flex; gap: 12px; margin-top: 16px; }
 .add-btn, .line-btn { flex: 1; padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: .9rem; transition: all .3s; }
-.add-btn { background: #4A3F30; color: #fff; }
-.add-btn:hover { background: #A6824F; }
-.line-btn { background: #fff; border: 1.5px solid #4A3F30; color: #4A3F30; }
-.line-btn:hover { background: #4A3F30; color: #fff; }
+.add-btn { background: #5C4A3C; color: #fff; }
+.add-btn:hover { background: #9C7A52; }
+.line-btn { background: #fff; border: 1.5px solid #5C4A3C; color: #5C4A3C; }
+.line-btn:hover { background: #5C4A3C; color: #fff; }
 .sec-head { text-align: center; margin-bottom: 40px; }
-.sec-head .eyebrow { font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; color: #C9A06B; font-weight: 700; }
-.sec-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-style: italic; color: #4A3F30; margin-top: 8px; }
+.sec-head .eyebrow { font-size: .9rem; text-transform: uppercase; letter-spacing: .1em; color: #B89368; font-weight: 700; }
+.sec-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-style: italic; color: #5C4A3C; margin-top: 8px; }
 @media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } }
 </style>
     <meta property="og:title" content="商品系列 — 菘蕾西 S'enlacer">
     <meta property="og:description" content="19款有機精油、純露、SPA按摩油，線上選購">
-    <meta property="og:image" content="products-100ml.jpg">
+    <meta property="og:image" content="products-50-100ml-real.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -46,14 +46,14 @@
     <div class="navlinks">
       <a href="landing.html">首頁</a>
       <a href="promotion.html">限時優惠</a>
-      <a href="father-day-88.html" style="color:#C9A06B;font-weight:700;">88父親節</a>
+      <a href="father-day-88.html" style="color:#B89368;font-weight:700;">88父親節</a>
       <a href="about.html">關於我們</a>
     </div>
     <button id="cart-button" onclick="toggleCart()" style="border:none;padding:8px 12px;background:none;cursor:pointer;display:flex;align-items:center;gap:6px;opacity:.85;"><span style="font-size:1.2rem;">🛒</span><span id="cart-badge"></span></button>
   </nav>
 </header>
 
-<section style="background: linear-gradient(90deg, #4A3F30, #5C4A36); color: #fff; padding: 60px 20px; text-align: center;">
+<section style="background: linear-gradient(90deg, #5C4A3C, #4A3B2F); color: #fff; padding: 60px 20px; text-align: center;">
   <div class="wrap">
     <h1 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.5rem);font-style:italic;margin-bottom:16px;">商品系列</h1>
     <p style="font-size:1.05rem;opacity:.9;margin-bottom:12px;">英國原裝進口有機精油</p>
@@ -61,7 +61,7 @@
   </div>
 </section>
 
-<section style="background: #EFE6D6; padding: 60px 20px;">
+<section style="background: #F3ECE0; padding: 60px 20px;">
   <div class="wrap">
     
     <div class="sec-head">
@@ -93,7 +93,7 @@
 
       <!-- 2. 薰衣草 (高海拔法國) -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="薰衣草精油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="薰衣草精油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機真正薰衣草精油<br><small style="font-size:.85rem;">(高海拔)</small></div>
@@ -134,7 +134,7 @@
 
       <!-- 4. 檸檬尤加利 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="檸檬尤加利" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="檸檬尤加利" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機檸檬尤加利精油</div>
@@ -154,7 +154,7 @@
 
       <!-- 5. 苦橙葉 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="苦橙葉精油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="苦橙葉精油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機苦橙葉精油</div>
@@ -174,7 +174,7 @@
 
       <!-- 6. 快樂鼠尾草 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="快樂鼠尾草" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="快樂鼠尾草" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機快樂鼠尾草精油</div>
@@ -194,7 +194,7 @@
 
       <!-- 7. 澳洲茶樹 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="茶樹精油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="茶樹精油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機澳洲茶樹精油</div>
@@ -214,7 +214,7 @@
 
       <!-- 8. 澳洲尤加利 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="尤加利精油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="尤加利精油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機澳洲尤加利精油</div>
@@ -234,7 +234,7 @@
 
       <!-- 9. 綠薄荷 (留蘭香) -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="綠薄荷精油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="綠薄荷精油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機綠薄荷精油<br><small style="font-size:.85rem;">(留蘭香)</small></div>
@@ -254,7 +254,7 @@
 
       <!-- 10. 歐薄荷 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="歐薄荷精油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="歐薄荷精油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機歐薄荷精油</div>
@@ -275,7 +275,7 @@
 
       <!-- 11. 雪松 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="雪松精油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="雪松精油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機大西洋雪松精油</div>
@@ -296,7 +296,7 @@
 
       <!-- 12. 甜橙 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="甜橙精油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="甜橙精油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">精選精油</span>
           <div class="product-name">有機甜橙精油</div>
@@ -316,7 +316,7 @@
 
       <!-- 13. 葡萄籽油 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="葡萄籽油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="葡萄籽油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">基底油/SPA按摩油</span>
           <div class="product-name">有機葡萄籽油</div>
@@ -336,7 +336,7 @@
 
       <!-- 14. 玫瑰果油 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="玫瑰果油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="玫瑰果油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">基底油/SPA按摩油</span>
           <div class="product-name">有機玫瑰果油<br><small style="font-size:.85rem;">(薔薇果)</small></div>
@@ -357,7 +357,7 @@
 
       <!-- 15. 聖約翰草油 -->
       <div class="product-card">
-        <img src="products-100ml.jpg" alt="聖約翰草油" class="product-image" loading="lazy" />
+        <img src="products-50-100ml-real.jpg" alt="聖約翰草油" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">基底油/SPA按摩油</span>
           <div class="product-name">有機聖約翰草油</div>
@@ -377,7 +377,7 @@
 
       <!-- 16. 玫瑰純露 -->
       <div class="product-card">
-        <img src="floral-water-1000ml-new.jpg" alt="玫瑰純露" class="product-image" loading="lazy" />
+        <img src="product-1000ml-corporate.jpg" alt="玫瑰純露" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">純露/花水</span>
           <div class="product-name">有機玫瑰純露花水</div>
@@ -396,7 +396,7 @@
 
       <!-- 17. 橙花純露 -->
       <div class="product-card">
-        <img src="floral-water-1000ml-new.jpg" alt="橙花純露" class="product-image" loading="lazy" />
+        <img src="product-1000ml-corporate.jpg" alt="橙花純露" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">純露/花水</span>
           <div class="product-name">有機橙花純露花水</div>
@@ -415,7 +415,7 @@
 
       <!-- 18. 薰衣草純露 -->
       <div class="product-card">
-        <img src="floral-water-1000ml-new.jpg" alt="薰衣草純露" class="product-image" loading="lazy" />
+        <img src="product-1000ml-corporate.jpg" alt="薰衣草純露" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">純露/花水</span>
           <div class="product-name">有機薰衣草純露花水</div>
@@ -434,7 +434,7 @@
 
       <!-- 19. 玫瑰天竺葵純露 -->
       <div class="product-card">
-        <img src="floral-water-1000ml-new.jpg" alt="玫瑰天竺葵純露" class="product-image" loading="lazy" />
+        <img src="product-1000ml-corporate.jpg" alt="玫瑰天竺葵純露" class="product-image" loading="lazy" />
         <div class="product-info">
           <span class="product-badge">純露/花水</span>
           <div class="product-name">有機玫瑰天竺葵純露花水</div>
@@ -452,8 +452,8 @@
       <h3 style="font-family:'Fraunces',serif;font-style:italic;font-size:1.5rem;margin-bottom:16px;">立即開始有機生活</h3>
       <p style="opacity: .8; margin-bottom: 24px;">所有商品均為英國原裝進口 · 通過國際有機認證<br>擁抱安心 · 擁抱療癒 · 擁抱有機生活</p>
       <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="https://lin.ee/t9Hj7ef" target="_blank" style="padding:12px 28px;background:#4A3F30;color:#fff;text-decoration:none;border-radius:4px;font-weight:600;">📱 LINE 購買</a>
-        <a href="promotion.html" style="padding:12px 28px;background:#C9A06B;color:#4A3F30;text-decoration:none;border-radius:4px;font-weight:600;">🎁 限時優惠</a>
+        <a href="https://lin.ee/t9Hj7ef" target="_blank" style="padding:12px 28px;background:#5C4A3C;color:#fff;text-decoration:none;border-radius:4px;font-weight:600;">📱 LINE 購買</a>
+        <a href="promotion.html" style="padding:12px 28px;background:#B89368;color:#5C4A3C;text-decoration:none;border-radius:4px;font-weight:600;">🎁 限時優惠</a>
       </div>
     </div>
 
@@ -477,7 +477,7 @@
         <h5>導航</h5>
         <a href="landing.html">首頁</a>
         <a href="promotion.html">限時優惠</a>
-      <a href="father-day-88.html" style="color:#C9A06B;font-weight:700;">88父親節</a>
+      <a href="father-day-88.html" style="color:#B89368;font-weight:700;">88父親節</a>
         <a href="about.html">關於我們</a>
       </div>
     </div>
@@ -495,8 +495,8 @@
   </div>
   <div id="cart-items-sidebar" style="padding:20px;min-height:200px;"></div>
   <div id="cart-total-box" style="padding:20px;border-top:1px solid rgba(74,63,48,.1);">
-    <p style="font-size:1.2rem;color:#C9A06B;font-weight:bold;text-align:right;">總計: $<span id="total-price">0</span></p>
-    <button onclick="window.cart.checkout()" style="width:100%;padding:14px;background:#4A3F30;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:bold;cursor:pointer;margin-top:8px;">確認結帳</button>
+    <p style="font-size:1.2rem;color:#B89368;font-weight:bold;text-align:right;">總計: $<span id="total-price">0</span></p>
+    <button onclick="window.cart.checkout()" style="width:100%;padding:14px;background:#5C4A3C;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:bold;cursor:pointer;margin-top:8px;">確認結帳</button>
   </div>
 </div>
 <div id="cart-overlay" onclick="toggleCart()" style="position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.3);z-index:999;display:none;"></div>
@@ -505,17 +505,17 @@
 
 
 <!-- 精油美好經文 -->
-<section style="background: linear-gradient(135deg, #EFE6D6 0%, #F5EEE5 100%); padding: 60px 20px; text-align: center;">
+<section style="background: linear-gradient(135deg, #F3ECE0 0%, #F5EEE5 100%); padding: 60px 20px; text-align: center;">
   <div class="wrap">
-    <div style="padding: 40px 20px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(107, 68, 35, 0.05) 100%); border-radius: 12px; border: 2px solid #C9A06B;">
-      <p style="font-size: 18px; color: #4A3F30; font-style: italic; margin-bottom: 15px; line-height: 1.8; font-family: 'Noto Serif TC', serif;">
+    <div style="padding: 40px 20px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(107, 68, 35, 0.05) 100%); border-radius: 12px; border: 2px solid #B89368;">
+      <p style="font-size: 18px; color: #5C4A3C; font-style: italic; margin-bottom: 15px; line-height: 1.8; font-family: 'Noto Serif TC', serif;">
         「我所愛的，你何其美好！何其可悅，使人歡暢喜樂！」
       </p>
-      <p style="font-size: 16px; color: #5C4A36; font-style: italic; line-height: 1.8; font-family: 'Fraunces', serif;">
+      <p style="font-size: 16px; color: #4A3B2F; font-style: italic; line-height: 1.8; font-family: 'Fraunces', serif;">
         「How fair and how pleasant art thou, O love, for delights!」
       </p>
-      <p style="font-size: 14px; color: #C9A06B; margin-top: 12px;">雅歌 7:6 · Song of Solomon 7:6</p>
-      <p style="font-size: 14px; color: #5C4A36; margin-top: 20px; opacity: 0.8;">企業採購、團購、代理洽詢</p>
+      <p style="font-size: 14px; color: #B89368; margin-top: 12px;">雅歌 7:6 · Song of Solomon 7:6</p>
+      <p style="font-size: 14px; color: #4A3B2F; margin-top: 20px; opacity: 0.8;">企業採購、團購、代理洽詢</p>
       <a href="https://lin.ee/t9Hj7ef" target="_blank" class="add-btn" style="display: inline-block; margin-top: 16px; padding: 12px 24px; text-decoration: none; color: white;">📱 LINE 企業客服</a>
     </div>
   </div>
@@ -523,20 +523,20 @@
 
 
 <!-- 有機認證區塊 -->
-<section style="background: #EFE6D6; padding: 60px 20px; text-align: center;">
+<section style="background: #F3ECE0; padding: 60px 20px; text-align: center;">
   <div class="wrap">
-    <h2 style="font-family:'Fraunces',serif;font-size:2.2rem;font-style:italic;color:#4A3F30;margin-bottom:30px;">有機認證保障</h2>
+    <h2 style="font-family:'Fraunces',serif;font-size:2.2rem;font-style:italic;color:#5C4A3C;margin-bottom:30px;">有機認證保障</h2>
     <div style="display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;max-width:800px;margin:0 auto;">
       <div style="text-align:center;">
         <img src="soil-association-logo.jpg" alt="Soil Association 有機認證" style="max-width:120px;margin-bottom:12px;" />
-        <p style="font-size:.9rem;color:#4A3F30;">Soil Association<br>英國土壤協會認證</p>
+        <p style="font-size:.9rem;color:#5C4A3C;">Soil Association<br>英國土壤協會認證</p>
       </div>
       <div style="text-align:center;">
-        <p style="font-size:1.2rem;font-weight:700;color:#C9A06B;margin-bottom:8px;">EEC/NOP/H&B</p>
-        <p style="font-size:.9rem;color:#4A3F30;">歐盟有機認證</p>
+        <p style="font-size:1.2rem;font-weight:700;color:#B89368;margin-bottom:8px;">EEC/NOP/H&B</p>
+        <p style="font-size:.9rem;color:#5C4A3C;">歐盟有機認證</p>
       </div>
     </div>
-    <p style="font-size:.85rem;color:#4A3F30;opacity:.75;margin-top:30px;">
+    <p style="font-size:.85rem;color:#5C4A3C;opacity:.75;margin-top:30px;">
       所有產品均通過 EEC · NOP · H&B · Soil Association 認證<br>
       英國原裝進口，品質保證
     </p>
@@ -578,16 +578,16 @@ function renderCartSidebar() {
     items.forEach((item, index) => {
         const subtotal = item.price * item.quantity;
         html += `
-            <div style="padding:12px 0;border-bottom:1px solid #EFE6D6;display:flex;justify-content:space-between;align-items:center;">
+            <div style="padding:12px 0;border-bottom:1px solid #F3ECE0;display:flex;justify-content:space-between;align-items:center;">
                 <div>
-                    <p style="margin:0;font-weight:bold;font-size:.9rem;color:#4A3F30;">${item.name}</p>
+                    <p style="margin:0;font-weight:bold;font-size:.9rem;color:#5C4A3C;">${item.name}</p>
                     <p style="margin:5px 0 0 0;font-size:.85rem;color:#999;">
-                        <input type="number" min="1" value="${item.quantity}" onchange="window.cart.updateQuantity(${index}, this.value); renderCartSidebar();" style="width:50px;padding:3px;text-align:center;border:1px solid #C9A06B;border-radius:4px;">
+                        <input type="number" min="1" value="${item.quantity}" onchange="window.cart.updateQuantity(${index}, this.value); renderCartSidebar();" style="width:50px;padding:3px;text-align:center;border:1px solid #B89368;border-radius:4px;">
                         × $${item.price}
                     </p>
                 </div>
                 <div style="text-align:right;">
-                    <p style="margin:0;color:#C9A06B;font-weight:bold;">$${subtotal}</p>
+                    <p style="margin:0;color:#B89368;font-weight:bold;">$${subtotal}</p>
                     <button onclick="window.cart.removeItem(${index}); renderCartSidebar();" style="background:#d9534f;color:#fff;border:none;padding:4px 10px;border-radius:3px;cursor:pointer;font-size:.75rem;margin-top:5px;">刪除</button>
                 </div>
             </div>
