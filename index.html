@@ -30,8 +30,58 @@
       <a href="about.html#certs">企業採購</a>
     </div>
     <a href="products.html" class="cta-btn">探索系列</a>
-    <button id="cart-button" onclick="toggleCart()" style="border:none;padding:8px 12px;background:none;cursor:pointer;display:flex;align-items:center;gap:6px;opacity:.85;transition:opacity .25s;"><span style="font-size:1.2rem;">🛒</span><span id="cart-badge"></span></button>
+    
   </nav>
+<button id="cart-button" onclick="toggleCart()" style="
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 500;
+  border: none;
+  background: #5C4A3C;
+  color: #F3ECE0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(92, 74, 60, 0.3);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: relative;
+">
+  🛒
+  <span id="cart-badge" style="
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #B97A5A;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid #F3ECE0;
+  "></span>
+</button>
+<style>
+  @media (max-width: 768px) {
+    #cart-button {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+      top: 20px;
+      right: 20px;
+    }
+  }
+</style>
 </header>
 
 <div style="background:linear-gradient(90deg,#B89368,#9C7A52);color:#fff;text-align:center;padding:18px;font-weight:600;letter-spacing:.06em;"><a href="promotion.html" style="color:#fff;text-decoration:none;">🥂 限時優惠 6/23~7/13 | 11款有機精油 SALE →</a></div>
@@ -274,5 +324,59 @@
   </p>
 </section>
 
+<script>
+
+function toggleCart() {
+    const sidebar = document.getElementById('cart-sidebar');
+    const overlay = document.getElementById('cart-overlay');
+    const isOpen = sidebar.classList.contains('open');
+
+    if (isOpen) {
+        sidebar.classList.remove('open');
+        overlay.style.display = 'none';
+    } else {
+        sidebar.classList.add('open');
+        overlay.style.display = 'block';
+        renderCartSidebar();
+    }
+}
+
+function renderCartSidebar() {
+    const items = window.cart.items;
+    const container = document.getElementById('cart-items-sidebar');
+    const totalEl = document.getElementById('total-price');
+
+    if (items.length === 0) {
+        container.innerHTML = '<p style="text-align:center;color:#999;padding:40px 20px;">購物車為空</p>';
+        totalEl.textContent = '0';
+        return;
+    }
+
+    let html = '<div style="max-height:60vh;overflow-y:auto;">';
+    items.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        html += `
+            <div style="padding:12px 0;border-bottom:1px solid #EFE6D6;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                    <p style="margin:0;font-weight:bold;font-size:.9rem;color:#4A3F30;">${item.name}</p>
+                    <p style="margin:5px 0 0 0;font-size:.85rem;color:#999;">
+                        <input type="number" min="1" value="${item.quantity}" onchange="window.cart.updateQuantity(${index}, this.value); renderCartSidebar();" style="width:50px;padding:3px;text-align:center;border:1px solid #B89368;border-radius:4px;">
+                        × $${item.price}
+                    </p>
+                </div>
+                <div style="text-align:right;">
+                    <p style="margin:0;color:#B89368;font-weight:bold;">$${subtotal}</p>
+                    <button onclick="window.cart.removeItem(${index}); renderCartSidebar();" style="background:#d9534f;color:#fff;border:none;padding:4px 10px;border-radius:3px;cursor:pointer;font-size:.75rem;margin-top:5px;">刪除</button>
+                </div>
+            </div>
+        `;
+    });
+    html += '</div>';
+
+    container.innerHTML = html;
+    totalEl.textContent = window.cart.getTotal().toLocaleString();
+}
+
+</script>
 </body>
 </html>

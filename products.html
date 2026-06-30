@@ -49,8 +49,58 @@
       <a href="father-day-88.html" style="color:#B89368;font-weight:700;">88父親節</a>
       <a href="about.html">關於我們</a>
     </div>
-    <button id="cart-button" onclick="toggleCart()" style="border:none;padding:8px 12px;background:none;cursor:pointer;display:flex;align-items:center;gap:6px;opacity:.85;"><span style="font-size:1.2rem;">🛒</span><span id="cart-badge"></span></button>
+    
   </nav>
+<button id="cart-button" onclick="toggleCart()" style="
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 500;
+  border: none;
+  background: #5C4A3C;
+  color: #F3ECE0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(92, 74, 60, 0.3);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: relative;
+">
+  🛒
+  <span id="cart-badge" style="
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #B97A5A;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid #F3ECE0;
+  "></span>
+</button>
+<style>
+  @media (max-width: 768px) {
+    #cart-button {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+      top: 20px;
+      right: 20px;
+    }
+  }
+</style>
 </header>
 
 <section style="background: linear-gradient(90deg, #5C4A3C, #4A3B2F); color: #fff; padding: 60px 20px; text-align: center;">
@@ -567,7 +617,10 @@
 
 
 
+
+
 <script>
+
 function toggleCart() {
     const sidebar = document.getElementById('cart-sidebar');
     const overlay = document.getElementById('cart-overlay');
@@ -589,7 +642,7 @@ function renderCartSidebar() {
     const totalEl = document.getElementById('total-price');
 
     if (items.length === 0) {
-        container.innerHTML = '<p style="text-align:center;color:#999;">購物車為空</p>';
+        container.innerHTML = '<p style="text-align:center;color:#999;padding:40px 20px;">購物車為空</p>';
         totalEl.textContent = '0';
         return;
     }
@@ -598,9 +651,9 @@ function renderCartSidebar() {
     items.forEach((item, index) => {
         const subtotal = item.price * item.quantity;
         html += `
-            <div style="padding:12px 0;border-bottom:1px solid #F3ECE0;display:flex;justify-content:space-between;align-items:center;">
+            <div style="padding:12px 0;border-bottom:1px solid #EFE6D6;display:flex;justify-content:space-between;align-items:center;">
                 <div>
-                    <p style="margin:0;font-weight:bold;font-size:.9rem;color:#5C4A3C;">${item.name}</p>
+                    <p style="margin:0;font-weight:bold;font-size:.9rem;color:#4A3F30;">${item.name}</p>
                     <p style="margin:5px 0 0 0;font-size:.85rem;color:#999;">
                         <input type="number" min="1" value="${item.quantity}" onchange="window.cart.updateQuantity(${index}, this.value); renderCartSidebar();" style="width:50px;padding:3px;text-align:center;border:1px solid #B89368;border-radius:4px;">
                         × $${item.price}
@@ -619,11 +672,6 @@ function renderCartSidebar() {
     totalEl.textContent = window.cart.getTotal().toLocaleString();
 }
 
-// 監聽localStorage購物車變化，更新角標數字
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.cart) window.cart.updateCartBadge();
-});
 </script>
-
 </body>
 </html>

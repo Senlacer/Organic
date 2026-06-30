@@ -289,6 +289,56 @@ body{background:#F3ECE0;}
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+<button id="cart-button" onclick="toggleCart()" style="
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 500;
+  border: none;
+  background: #5C4A3C;
+  color: #F3ECE0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(92, 74, 60, 0.3);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: relative;
+">
+  🛒
+  <span id="cart-badge" style="
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #B97A5A;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid #F3ECE0;
+  "></span>
+</button>
+<style>
+  @media (max-width: 768px) {
+    #cart-button {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+      top: 20px;
+      right: 20px;
+    }
+  }
+</style>
 
 <div class="landing-hero-final">
   <!-- LEFT: BRAND + PRODUCT INFO -->
@@ -387,6 +437,74 @@ body{background:#F3ECE0;}
     </p>
   </div>
 </section>
+
+<script>
+
+function toggleCart() {
+    const sidebar = document.getElementById('cart-sidebar');
+    const overlay = document.getElementById('cart-overlay');
+    const isOpen = sidebar.classList.contains('open');
+
+    if (isOpen) {
+        sidebar.classList.remove('open');
+        overlay.style.display = 'none';
+    } else {
+        sidebar.classList.add('open');
+        overlay.style.display = 'block';
+        renderCartSidebar();
+    }
+}
+
+function renderCartSidebar() {
+    const items = window.cart.items;
+    const container = document.getElementById('cart-items-sidebar');
+    const totalEl = document.getElementById('total-price');
+
+    if (items.length === 0) {
+        container.innerHTML = '<p style="text-align:center;color:#999;padding:40px 20px;">購物車為空</p>';
+        totalEl.textContent = '0';
+        return;
+    }
+
+    let html = '<div style="max-height:60vh;overflow-y:auto;">';
+    items.forEach((item, index) => {
+        const subtotal = item.price * item.quantity;
+        html += `
+            <div style="padding:12px 0;border-bottom:1px solid #EFE6D6;display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                    <p style="margin:0;font-weight:bold;font-size:.9rem;color:#4A3F30;">${item.name}</p>
+                    <p style="margin:5px 0 0 0;font-size:.85rem;color:#999;">
+                        <input type="number" min="1" value="${item.quantity}" onchange="window.cart.updateQuantity(${index}, this.value); renderCartSidebar();" style="width:50px;padding:3px;text-align:center;border:1px solid #B89368;border-radius:4px;">
+                        × $${item.price}
+                    </p>
+                </div>
+                <div style="text-align:right;">
+                    <p style="margin:0;color:#B89368;font-weight:bold;">$${subtotal}</p>
+                    <button onclick="window.cart.removeItem(${index}); renderCartSidebar();" style="background:#d9534f;color:#fff;border:none;padding:4px 10px;border-radius:3px;cursor:pointer;font-size:.75rem;margin-top:5px;">刪除</button>
+                </div>
+            </div>
+        `;
+    });
+    html += '</div>';
+
+    container.innerHTML = html;
+    totalEl.textContent = window.cart.getTotal().toLocaleString();
+}
+
+</script>
+
+<div id="cart-sidebar">
+  <div id="cart-sidebar-header">
+    <h3>購物車</h3>
+    <button id="cart-sidebar-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div id="cart-items-sidebar" style="padding:20px;min-height:200px;"></div>
+  <div id="cart-total-box" style="padding:20px;border-top:1px solid rgba(74,63,48,.1);">
+    <p style="font-size:1.2rem;color:#B89368;font-weight:bold;text-align:right;">總計: $<span id="total-price">0</span></p>
+    <button onclick="window.cart.checkout()" style="width:100%;padding:14px;background:#4A3F30;color:#fff;border:none;border-radius:6px;font-size:1rem;font-weight:bold;cursor:pointer;margin-top:8px;">確認結帳</button>
+  </div>
+</div>
+<div id="cart-overlay" onclick="toggleCart()" style="position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.3);z-index:999;display:none;"></div>
 
 </body>
 </html>
