@@ -437,7 +437,9 @@
     <meta charset="UTF-8">
         <div class="header-container">
             <a href="landing.html" class="logo-section"><img src="senlacer-logo-nav.png" alt="擁抱 S'enlacer" style="height:36px;width:auto;display:block;"></a>
-            
+            <div id="cart-icon" onclick="toggleCart()" style="position:relative;cursor:pointer;font-size:22px;margin-right:16px;display:inline-block;">
+                🛒<span id="cart-badge" style="position:absolute;top:-8px;right:-10px;background:#B89368;color:#fff;border-radius:50%;width:18px;height:18px;font-size:11px;display:none;align-items:center;justify-content:center;">0</span>
+            </div>
             <nav class="nav-links">
                 <a href="landing.html">首頁</a>
                 <a href="products.html">商品</a>
@@ -445,57 +447,7 @@
                 <a href="father-day-88.html" style="color: var(--cedar); font-weight: 700;">88父親節</a>
             </nav>
         </div>
-    <button id="cart-button" onclick="toggleCart()" style="
-  position: fixed;
-  top: 24px;
-  right: 24px;
-  z-index: 500;
-  border: none;
-  background: #5C4A3C;
-  color: #F3ECE0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(92, 74, 60, 0.3);
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-  padding: 0;
-  position: relative;
-">
-  🛒
-  <span id="cart-badge" style="
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: #B97A5A;
-    color: #fff;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: bold;
-    border: 2px solid #F3ECE0;
-  "></span>
-</button>
-<style>
-  @media (max-width: 768px) {
-    #cart-button {
-      width: 45px;
-      height: 45px;
-      font-size: 1.3rem;
-      top: 20px;
-      right: 20px;
-    }
-  }
-</style>
-</header>
+    </header>
 
     <!-- 主要內容 -->
     <main class="container">
@@ -753,61 +705,42 @@
 <div id="cart-overlay" style="position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: none; z-index: 998;" onclick="toggleCart()"></div>
 
 <script src="cart-system.js"></script>
-
-
 <script>
-
 function toggleCart() {
     const sidebar = document.getElementById('cart-sidebar');
     const overlay = document.getElementById('cart-overlay');
-    const isOpen = sidebar.classList.contains('open');
-
-    if (isOpen) {
-        sidebar.classList.remove('open');
+    if (sidebar.style.right === '0px') {
+        sidebar.style.right = '-400px';
         overlay.style.display = 'none';
     } else {
-        sidebar.classList.add('open');
+        sidebar.style.right = '0px';
         overlay.style.display = 'block';
         renderCartSidebar();
     }
 }
-
 function renderCartSidebar() {
     const items = window.cart.items;
     const container = document.getElementById('cart-items-sidebar');
     const totalEl = document.getElementById('total-price');
-
     if (items.length === 0) {
-        container.innerHTML = '<p style="text-align:center;color:#999;padding:40px 20px;">購物車為空</p>';
+        container.innerHTML = '<p style="text-align:center;color:#999;">購物車為空</p>';
         totalEl.textContent = '0';
         return;
     }
-
-    let html = '<div style="max-height:60vh;overflow-y:auto;">';
+    let html = '';
     items.forEach((item, index) => {
         const subtotal = item.price * item.quantity;
-        html += `
-            <div style="padding:12px 0;border-bottom:1px solid #EFE6D6;display:flex;justify-content:space-between;align-items:center;">
-                <div>
-                    <p style="margin:0;font-weight:bold;font-size:.9rem;color:#4A3F30;">${item.name}</p>
-                    <p style="margin:5px 0 0 0;font-size:.85rem;color:#999;">
-                        <input type="number" min="1" value="${item.quantity}" onchange="window.cart.updateQuantity(${index}, this.value); renderCartSidebar();" style="width:50px;padding:3px;text-align:center;border:1px solid #B89368;border-radius:4px;">
-                        × $${item.price}
-                    </p>
-                </div>
-                <div style="text-align:right;">
-                    <p style="margin:0;color:#B89368;font-weight:bold;">$${subtotal}</p>
-                    <button onclick="window.cart.removeItem(${index}); renderCartSidebar();" style="background:#d9534f;color:#fff;border:none;padding:4px 10px;border-radius:3px;cursor:pointer;font-size:.75rem;margin-top:5px;">刪除</button>
-                </div>
-            </div>
-        `;
+        html += `<div style="padding:10px 0;border-bottom:1px solid #F3ECE0;display:flex;justify-content:space-between;align-items:center;">
+            <div><p style="margin:0;font-weight:bold;font-size:.9rem;">${item.name}</p>
+            <p style="margin:5px 0 0 0;font-size:.85rem;color:#999;">${item.quantity} × $${item.price}</p></div>
+            <div style="text-align:right;"><p style="margin:0;color:#B89368;font-weight:bold;">$${subtotal}</p>
+            <button onclick="window.cart.removeItem(${index});renderCartSidebar();" style="background:#d9534f;color:#fff;border:none;padding:4px 8px;border-radius:3px;cursor:pointer;font-size:.75rem;margin-top:4px;">刪除</button></div>
+        </div>`;
     });
-    html += '</div>';
-
     container.innerHTML = html;
     totalEl.textContent = window.cart.getTotal().toLocaleString();
 }
-
 </script>
+
 </body>
 </html>
