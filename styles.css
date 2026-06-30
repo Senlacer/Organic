@@ -186,3 +186,24 @@ footer{background:var(--ink);color:var(--linen);padding:80px 0 36px;}
 @keyframes slideIn{from{opacity:0;transform:translateY(10px);}
 to{opacity:1;transform:translateY(0);}
 }
+
+
+/* 防止文字複製與圖片拖拽 */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+img {
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+a, button {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}

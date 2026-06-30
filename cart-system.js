@@ -197,13 +197,6 @@ class ShoppingCart {
       return;
     }
 
-    // 點擊確認結帳後，才顯示ATM轉帳資訊區塊
-    const atmDiv = document.getElementById('atm-info');
-    if (atmDiv && atmDiv.style.display === 'none') {
-      atmDiv.style.display = 'block';
-      atmDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
     const total = this.getTotal();
     const orderNumber = 'ORDER-' + Date.now();
     
