@@ -5,429 +5,362 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>訂單確認 - 菘蕾西 S'enlacer</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital@0;1&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- html2canvas for 圖片下載 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         :root{--ink:#5C4A3C;--soil:#4A3B2F;--amber:#B89368;--amber-deep:#9C7A52;--linen:#F3ECE0;--linen-dim:#E8DFD0;--sage:#8C8169;--white:#FBF8F3;--terracotta:#B97A5A;}
-        body { background: var(--linen); color: var(--ink); }
-        .order-container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        .order-step { margin: 40px 0; }
-        .order-summary { background: var(--white); padding: 24px; border-radius: 10px; margin-bottom: 30px; border: 1px solid var(--linen-dim); }
-        .order-summary h3 { color: var(--ink); font-family: 'Fraunces', serif; }
-        .summary-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--linen-dim); }
-        .summary-total { font-size: 1.3rem; font-weight: bold; color: var(--amber-deep); text-align: right; padding: 15px 0; }
-        .form-group { margin: 15px 0; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: var(--ink); }
-        .form-group input, .form-group select, .form-group textarea { 
-            width: 100%; padding: 10px; border: 1px solid var(--amber); border-radius: 4px; font-family: inherit; background: var(--white); color: var(--ink);
-        }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .btn-group { display: flex; gap: 15px; margin: 20px 0; }
-        .btn { padding: 12px 30px; border: none; border-radius: 30px; cursor: pointer; font-size: 1rem; transition: all .3s; }
-        .btn-submit { background: var(--ink); color: var(--linen); }
-        .btn-submit:hover { background: var(--soil); }
-        .btn-back { background: var(--linen-dim); color: var(--ink); }
-        .btn-back:hover { background: var(--sage); color: #fff; }
-        .btn-download { background: var(--amber); color: #fff; }
-        .btn-download:hover { background: var(--amber-deep); }
-        .hidden { display: none; }
-        .success-box { background: var(--white); border: 2px solid var(--amber); padding: 30px 20px; border-radius: 10px; text-align: center; }
-        .order-number { font-size: 1.5rem; color: var(--amber-deep); font-weight: bold; margin: 10px 0; }
-        h2 { color: var(--ink); font-family: 'Fraunces', serif; }
-        @media (max-width: 768px) {
-            .form-row { grid-template-columns: 1fr; }
+        body{background:var(--linen);color:var(--ink);font-family:'Noto Sans TC',sans-serif;}
+        .order-wrap{max-width:760px;margin:0 auto;padding:40px 20px;}
+        h2{font-family:'Fraunces',serif;font-style:italic;color:var(--ink);text-align:center;margin-bottom:28px;}
+        h3{color:var(--ink);font-size:1rem;margin:20px 0 10px;border-bottom:1px solid var(--linen-dim);padding-bottom:6px;}
+        .summary-box{background:var(--white);border:1px solid var(--linen-dim);border-radius:10px;padding:20px;margin-bottom:28px;}
+        .summary-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--linen-dim);font-size:.9rem;}
+        .summary-row:last-child{border-bottom:none;}
+        .summary-total{font-size:1.2rem;font-weight:700;color:var(--amber-deep);text-align:right;padding:14px 0 0;margin-top:8px;border-top:2px solid var(--amber);}
+        .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:12px;}
+        .form-group{margin-bottom:12px;}
+        .form-group label{display:block;font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:5px;}
+        .form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1px solid var(--amber);border-radius:6px;font-family:inherit;font-size:.9rem;background:var(--white);color:var(--ink);box-sizing:border-box;}
+        .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--amber-deep);box-shadow:0 0 0 2px rgba(184,147,104,.15);}
+        .atm-box{background:#fff8f0;border:1px solid var(--amber);border-radius:8px;padding:18px 20px;margin:20px 0;}
+        .atm-box h4{color:var(--amber-deep);margin:0 0 12px;font-size:1rem;}
+        .atm-row{display:flex;justify-content:space-between;padding:5px 0;font-size:.9rem;color:var(--ink);}
+        .atm-row .label{color:var(--sage);}
+        .atm-row .val{font-weight:600;}
+        .btn{display:inline-block;padding:13px 32px;border:none;border-radius:30px;cursor:pointer;font-size:.95rem;font-family:inherit;transition:all .3s;text-decoration:none;}
+        .btn-main{background:var(--ink);color:var(--linen);width:100%;margin-top:10px;}
+        .btn-main:hover{background:var(--soil);}
+        .btn-dl{background:var(--amber);color:#fff;}
+        .btn-dl:hover{background:var(--amber-deep);}
+        .btn-line{background:#06C755;color:#fff;}
+        .btn-back{background:var(--linen-dim);color:var(--ink);}
+        .hidden{display:none;}
+        /* 訂單完成頁 */
+        .success-card{background:var(--white);border:2px solid var(--amber);border-radius:12px;padding:30px 24px;text-align:center;margin-bottom:24px;}
+        .success-icon{font-size:3rem;margin-bottom:12px;}
+        .order-num{font-size:1.2rem;font-weight:700;color:var(--amber-deep);margin:8px 0;}
+        .step-list{background:var(--linen);border-radius:8px;padding:20px 24px;text-align:left;margin:20px 0;}
+        .step-list p{margin:6px 0;font-size:.9rem;color:var(--ink);line-height:1.6;}
+        /* 收據圖片區域 */
+        #receipt-render{background:#fff;border-radius:10px;padding:28px;font-family:'Noto Sans TC',sans-serif;color:#333;display:none;}
+        #receipt-render .r-logo{font-size:1.3rem;font-weight:700;color:#4A3B2F;margin-bottom:4px;}
+        #receipt-render .r-title{font-size:1.1rem;color:#B89368;margin-bottom:20px;}
+        #receipt-render .r-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f0ebe3;font-size:.88rem;}
+        #receipt-render .r-total{font-size:1.1rem;font-weight:700;color:#9C7A52;text-align:right;margin-top:12px;}
+        #receipt-render .r-atm{background:#fff8f0;border-radius:6px;padding:14px;margin-top:14px;font-size:.85rem;}
+        #receipt-render .r-step{margin-top:14px;font-size:.82rem;color:#666;line-height:1.8;}
+        .btn-group{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px;}
+        @media(max-width:600px){
+            .form-row{grid-template-columns:1fr;}
+            .btn-group{flex-direction:column;}
+            .btn-group .btn{width:100%;text-align:center;}
         }
     </style>
 </head>
-<body style="padding-top: 0;">
-<header style="margin-top: 0;">
+<body>
+<header>
     <nav>
-        <a href="landing.html" class="logo" style="height: 40px;">
-            <img src="senlacer-logo-nav.png" alt="S'enlacer 菘蕾西" style="height: 40px; width: auto;">
+        <a href="landing.html" class="logo">
+            <img src="senlacer-logo-nav.png" alt="S'enlacer 菘蕾西" style="height:38px;width:auto;">
         </a>
-    
-</nav>
+        <div class="navlinks">
+            <a href="products.html">商品系列</a>
+            <a href="father-day-88.html" style="color:#B89368;font-weight:700;">88父親節</a>
+        </div>
+    </nav>
 </header>
 
-<main class="order-container">
-    <!-- 步驟1：訂單摘要 -->
-    <div id="step1" class="order-step">
-        <h2 style="color: #4A3F30; text-align: center;">📋 訂單確認</h2>
-        <div class="order-summary">
-            <h3>訂單摘要</h3>
-            <div id="order-summary-items"></div>
-            <div class="summary-total">
-                總計: $<span id="order-total">0</span>
+<main class="order-wrap">
+
+    <!-- 步驟1：訂單摘要 + 表單 -->
+    <div id="step-form">
+        <h2>📋 訂單確認</h2>
+
+        <div class="summary-box">
+            <h3>購買商品</h3>
+            <div id="summary-items"></div>
+            <div class="summary-total">訂單總計：$<span id="summary-total">0</span></div>
+        </div>
+
+        <!-- ATM轉帳資訊 -->
+        <div class="atm-box">
+            <h4>💳 ATM 轉帳資訊</h4>
+            <div class="atm-row"><span class="label">銀行名稱</span><span class="val">玉山銀行台中分行</span></div>
+            <div class="atm-row"><span class="label">銀行代號</span><span class="val">808</span></div>
+            <div class="atm-row"><span class="label">轉帳帳號</span><span class="val">1366-940-008489</span></div>
+            <div style="margin-top:10px;font-size:.82rem;color:var(--sage);">
+                ✅ 完成轉帳後，請截圖轉帳收據或提供帳號後五碼，連同訂單號碼一起上傳至 LINE 客服確認。
             </div>
         </div>
-    </div>
 
-    <!-- 步驟2：填寫訂購資訊 -->
-    <div id="step2" class="order-step">
-        <h3 style="color: #4A3F30;">📝 請填寫訂購資訊</h3>
-        
         <form id="order-form" onsubmit="submitOrder(event)">
+            <h3>📝 訂購者資訊</h3>
             <div class="form-row">
+                <div class="form-group">
+                    <label>訂購者姓名 *</label>
+                    <input type="text" name="orderer-name" required placeholder="請填寫姓名">
+                </div>
                 <div class="form-group">
                     <label>訂購者電話 *</label>
                     <input type="tel" name="phone" required placeholder="09XX-XXX-XXX">
                 </div>
-                <div class="form-group">
-                    <label>訂購者 EMAIL *</label>
-                    <input type="email" name="email" required placeholder="example@email.com">
-                </div>
             </div>
-
             <div class="form-group">
-                <label>訂購者姓名 *</label>
-                <input type="text" name="orderer-name" required placeholder="請填寫姓名">
+                <label>訂購者 EMAIL *</label>
+                <input type="email" name="email" required placeholder="用於接收訂單確認信">
             </div>
 
+            <h3>📦 收件人資訊</h3>
             <div class="form-row">
                 <div class="form-group">
                     <label>收件人姓名 *</label>
-                    <input type="text" name="receiver-name" required placeholder="請填寫姓名">
+                    <input type="text" name="receiver-name" required placeholder="請填寫收件人姓名">
                 </div>
                 <div class="form-group">
-                    <label>收件方式 *</label>
-                    <select name="delivery-method" required onchange="toggleAddressInput()">
-                        <option value="">請選擇</option>
-                        <option value="711">7-11 店到店寄送</option>
-                        <option value="address">自行填寫收件地址</option>
-                    </select>
+                    <label>收件人電話 *</label>
+                    <input type="tel" name="receiver-phone" required placeholder="收件人聯絡電話">
                 </div>
             </div>
-
-            <div id="address-input-group" class="hidden">
-                <div class="form-group">
-                    <label>收件地址 *</label>
-                    <textarea name="receiver-address" placeholder="請填寫完整收件地址" rows="3"></textarea>
-                </div>
+            <div class="form-group">
+                <label>收件方式 *</label>
+                <select name="delivery" required onchange="toggleDelivery(this.value)">
+                    <option value="">請選擇配送方式</option>
+                    <option value="711">7-11 店到店寄送</option>
+                    <option value="address">宅配到府</option>
+                </select>
             </div>
-
-            <div id="711-input-group" class="hidden">
+            <div id="input-711" class="hidden">
                 <div class="form-group">
                     <label>7-11 分店名稱 *</label>
-                    <input type="text" name="store-name" placeholder="例：台北中山門市">
-                    <small style="color: #999;">請填寫或提供店號</small>
+                    <input type="text" name="store-name" placeholder="例：台北中山門市（請提供店號或分店名）">
                 </div>
             </div>
-
+            <div id="input-address" class="hidden">
+                <div class="form-group">
+                    <label>收件地址 *</label>
+                    <textarea name="receiver-address" rows="3" placeholder="請填寫完整收件地址（含縣市、區、路、號）"></textarea>
+                </div>
+            </div>
             <div class="form-group">
                 <label>備註（選填）</label>
-                <textarea name="remarks" placeholder="有任何特殊需求嗎？" rows="3"></textarea>
+                <textarea name="remarks" rows="2" placeholder="有任何特殊需求請填寫"></textarea>
             </div>
 
-            <div class="btn-group">
-                <button type="button" class="btn btn-back" onclick="goBackToCart()">← 返回購物車</button>
-                <button type="submit" class="btn btn-submit">確認訂單 →</button>
+            <div style="display:flex;gap:12px;margin-top:16px;">
+                <button type="button" class="btn btn-back" onclick="history.back()" style="flex:1;">← 返回修改</button>
+                <button type="submit" class="btn btn-main" style="flex:2;">確認送出訂單 →</button>
             </div>
         </form>
     </div>
 
-    <!-- 步驟3：訂單完成 -->
-    <div id="step3" class="order-step hidden">
-        <div class="success-box">
-            <h2 style="color: var(--amber-deep); margin: 0;">✨ 訂單已完成 ✨</h2>
-            <p style="font-size: 1.1rem; color: #333; margin: 15px 0;">感謝您的購買！</p>
-            <div class="order-number" id="final-order-number"></div>
-            <p style="color: #666; margin: 15px 0;">
-                確認信已寄送至您的 EMAIL<br>
-                <strong id="confirm-email"></strong>
-            </p>
-            <p style="background: var(--linen); padding: 12px; border-radius: 6px; margin: 15px 0; color: var(--soil); border: 1px solid var(--amber);">
-                📧 請查收確認信，如有任何問題歡迎透過 LINE 客服洽詢
-            </p>
+    <!-- 步驟2：訂單完成 -->
+    <div id="step-done" class="hidden">
+        <div class="success-card">
+            <div class="success-icon">🎉</div>
+            <h2 style="color:var(--amber-deep);margin:0;">訂單已成功送出！</h2>
+            <p style="color:var(--sage);margin:8px 0 0;">感謝您的購買，我們會盡快為您服務</p>
+            <div class="order-num" id="done-order-num"></div>
         </div>
 
-        <div style="text-align: center; margin: 30px 0;">
-            <h3 style="color: #4A3F30;">📱 接續聯絡</h3>
-            <p style="font-size: 1rem; color: #666; margin: 10px 0;">掃描下方 QR Code 或點擊按鈕加入 LINE 客服</p>
-            <button class="btn btn-submit" onclick="window.open('https://lin.ee/9zUQhq9', '_blank')" style="margin: 10px;">
-                💬 加入 LINE 客服
-            </button>
+        <!-- 可截圖的收據區域 -->
+        <div id="receipt-render">
+            <div class="r-logo">菘蕾西 S'enlacer 擁抱</div>
+            <div class="r-title">訂單收據 / Order Receipt</div>
+            <div id="r-order-num" style="font-size:.82rem;color:#888;margin-bottom:14px;"></div>
+
+            <div id="r-items"></div>
+            <div class="r-total">訂單總計：$<span id="r-total"></span></div>
+
+            <div class="r-atm">
+                <strong>💳 ATM 轉帳資訊</strong><br>
+                銀行：玉山銀行台中分行（代號：808）<br>
+                帳號：1366-940-008489<br>
+                轉帳備註：請填寫訂單號碼
+            </div>
+
+            <div id="r-buyer" style="margin-top:14px;font-size:.85rem;line-height:1.8;"></div>
+
+            <div class="r-step">
+                <strong>完成訂單步驟：</strong><br>
+                1️⃣ 完成 ATM 轉帳<br>
+                2️⃣ 截圖轉帳收據，或記下帳號後五碼<br>
+                3️⃣ 上傳此訂單圖片 + 轉帳收據截圖至 LINE 客服<br>
+                4️⃣ 客服確認後即開始備貨、排單、安排出貨<br><br>
+                LINE 客服：lin.ee/9zUQhq9 ｜ Email：Love.senlacer@gmail.com
+            </div>
         </div>
 
-        <div style="text-align: center; margin: 30px 0;">
-            <button class="btn btn-download" onclick="downloadReceipt()">📥 下載訂單收據</button>
+        <div class="step-list">
+            <p><strong>📋 後續步驟</strong></p>
+            <p>1️⃣ 下載或截圖此訂單收據</p>
+            <p>2️⃣ 完成 ATM 轉帳（玉山銀行 808 ｜ 1366-940-008489）</p>
+            <p>3️⃣ 轉帳後截圖收據，或記下<strong>帳號後五碼</strong></p>
+            <p>4️⃣ 上傳至 LINE 客服：訂單號碼 + 轉帳金額 + 收據截圖</p>
+            <p>5️⃣ 客服確認後立即備貨出貨 🚀</p>
+            <p style="margin-top:12px;color:var(--sage);font-size:.85rem;">📧 訂單確認信已發送至您的 EMAIL，請查收</p>
         </div>
 
-        <div style="text-align: center; margin: 30px 0;">
-            <a href="products.html" class="btn btn-submit" style="text-decoration: none; display: inline-block;">
-                🛍️ 繼續購物
-            </a>
+        <div class="btn-group">
+            <button class="btn btn-dl" onclick="downloadReceiptImage()">📥 下載訂單圖片</button>
+            <a href="https://lin.ee/9zUQhq9" target="_blank" class="btn btn-line">💬 前往 LINE 客服</a>
+            <a href="products.html" class="btn btn-back">🛍️ 繼續購物</a>
         </div>
     </div>
+
 </main>
 
 <script src="cart-system.js"></script>
 <script>
-    // ═══ EMAIL 發送功能 ═══
-    async function sendOrderEmail(formData) {
-        try {
-            const orderText = formatOrderEmail(formData);
-            
-            // 使用 FormSubmit.co 發送EMAIL
-            // 自動發送給: Love.senlacer@gmail.com 和 顧客EMAIL
-            const emailData = new FormData();
-            emailData.append('email', formData.email);
-            emailData.append('_subject', `菘蕾西訂單確認 - ${formData.orderNumber}`);
-            emailData.append('_cc', 'Love.senlacer@gmail.com');
-            emailData.append('_captcha', 'false');
-            emailData.append('message', orderText);
-
-            await fetch('https://formsubmit.co/Love.senlacer@gmail.com', {
-                method: 'POST',
-                body: emailData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                console.log('✅ 訂單EMAIL已發送');
-            });
-        } catch (error) {
-            console.error('EMAIL發送錯誤:', error);
-        }
+// 初始化訂單摘要
+window.addEventListener('DOMContentLoaded', function(){
+    var items = window.cart ? window.cart.items : [];
+    var con = document.getElementById('summary-items');
+    var tot = document.getElementById('summary-total');
+    if(!items.length){
+        con.innerHTML='<p style="color:var(--sage);text-align:center;">購物車為空，<a href="products.html">返回選購</a></p>';
+        return;
     }
-
-    function formatOrderEmail(order) {
-        let text = `
-====================================
-菘蕾西 S'enlacer 訂單確認
-====================================
-
-訂單編號: ${order.orderNumber}
-訂購時間: ${order.timestamp}
-
-【訂購者資訊】
-姓名: ${order.ordererName}
-電話: ${order.phone}
-EMAIL: ${order.email}
-
-【收件人資訊】
-姓名: ${order.receiverName}
-${order.deliveryMethod === '711' ? `7-11分店: ${order.storeName}` : `收件地址: ${order.receiverAddress}`}
-
-【購買商品】
-`;
-
-        order.items.forEach(item => {
-            text += `• ${item.name} (${item.size})\n  數量: ${item.quantity} × $${item.price} = $${item.price * item.quantity}\n`;
-        });
-
-        text += `
-────────────────────────────────
-訂單總計: $${order.total.toLocaleString()}
-────────────────────────────────
-
-【轉帳資訊】
-銀行: 玉山銀行台中分行
-代號: 808
-帳號: 1366-940-008489
-轉帳備註: 請填訂單編號 ${order.orderNumber}
-
-【後續步驟】
-1. 完成ATM轉帳
-2. 截圖轉帳收據
-3. 將收據截圖傳給LINE客服
-   LINE: https://lin.ee/9zUQhq9
-4. 客服確認收款後即開始備貨出貨
-
-${order.remarks ? `【備註】\n${order.remarks}\n` : ''}
-
-感謝您的購買！
-菘蕾西 S'enlacer 擁抱
-
-聯絡方式：
-LINE客服: https://lin.ee/9zUQhq9
-公司EMAIL: Love.senlacer@gmail.com
-        `;
-
-        return text;
-    }
-
-    // ═══ 頁面加載時顯示訂單摘要 ═══
-    window.addEventListener('DOMContentLoaded', function() {
-        displayOrderSummary();
+    var html='';
+    var total=0;
+    items.forEach(function(item){
+        var sub=item.price*item.quantity;
+        total+=sub;
+        html+='<div class="summary-row"><span>'+item.name+(item.size?' ('+item.size+')':'')+'<br><small style="color:var(--sage);">× '+item.quantity+'</small></span><span style="font-weight:600;color:var(--amber-deep);">$'+sub.toLocaleString()+'</span></div>';
     });
+    con.innerHTML=html;
+    tot.textContent=total.toLocaleString();
+});
 
-    function displayOrderSummary() {
-        const items = window.cart.items;
-        const container = document.getElementById('order-summary-items');
-        const totalEl = document.getElementById('order-total');
+function toggleDelivery(val){
+    document.getElementById('input-711').classList.toggle('hidden', val!=='711');
+    document.getElementById('input-address').classList.toggle('hidden', val!=='address');
+}
 
-        if (items.length === 0) {
-            container.innerHTML = '<p style="text-align:center;color:#999;">購物車為空</p>';
-            return;
-        }
+function submitOrder(e){
+    e.preventDefault();
+    var f = document.getElementById('order-form');
+    var orderNum = 'SE-' + Date.now();
+    var ts = new Date().toLocaleString('zh-TW');
+    var items = window.cart ? window.cart.items : [];
+    var total = items.reduce(function(s,i){return s+i.price*i.quantity;},0);
 
-        let html = '';
-        items.forEach((item, index) => {
-            const subtotal = item.price * item.quantity;
-            html += `
-                <div class="summary-item">
-                    <div>
-                        <strong>${item.name}</strong><br>
-                        <small style="color:#999;">${item.size ? '規格: ' + item.size : ''}  × ${item.quantity}</small>
-                    </div>
-                    <div style="text-align:right;">
-                        <div>$${item.price}</div>
-                        <strong style="color:#B89368;">$${subtotal}</strong>
-                    </div>
-                </div>
-            `;
-        });
+    var delivery = f.querySelector('[name="delivery"]').value;
+    var address = delivery==='711'
+        ? '7-11店到店：' + (f.querySelector('[name="store-name"]').value||'')
+        : '宅配：' + (f.querySelector('[name="receiver-address"]').value||'');
 
-        container.innerHTML = html;
-        totalEl.textContent = window.cart.getTotal().toLocaleString();
-    }
+    var orderData = {
+        orderNum: orderNum,
+        time: ts,
+        ordererName: f.querySelector('[name="orderer-name"]').value,
+        phone: f.querySelector('[name="phone"]').value,
+        email: f.querySelector('[name="email"]').value,
+        receiverName: f.querySelector('[name="receiver-name"]').value,
+        receiverPhone: f.querySelector('[name="receiver-phone"]').value,
+        delivery: address,
+        remarks: f.querySelector('[name="remarks"]').value,
+        items: items,
+        total: total
+    };
 
-    function toggleAddressInput() {
-        const method = document.querySelector('select[name="delivery-method"]').value;
-        document.getElementById('address-input-group').classList.toggle('hidden', method !== 'address');
-        document.getElementById('711-input-group').classList.toggle('hidden', method !== '711');
+    window.currentOrder = orderData;
 
-        // 清空未選項的輸入
-        if (method !== 'address') document.querySelector('textarea[name="receiver-address"]').value = '';
-        if (method !== '711') document.querySelector('input[name="store-name"]').value = '';
-    }
+    // 建立收據HTML
+    buildReceipt(orderData);
 
-    function submitOrder(event) {
-        event.preventDefault();
+    // 清空購物車
+    if(window.cart){ window.cart.items=[]; window.cart.saveCart(); }
 
-        const formData = {
-            orderNumber: 'ORDER-' + Date.now(),
-            timestamp: new Date().toLocaleString('zh-TW'),
-            items: window.cart.items,
-            total: window.cart.getTotal(),
-            phone: document.querySelector('input[name="phone"]').value,
-            email: document.querySelector('input[name="email"]').value,
-            ordererName: document.querySelector('input[name="orderer-name"]').value,
-            receiverName: document.querySelector('input[name="receiver-name"]').value,
-            deliveryMethod: document.querySelector('select[name="delivery-method"]').value,
-            receiverAddress: document.querySelector('textarea[name="receiver-address"]').value,
-            storeName: document.querySelector('input[name="store-name"]').value,
-            remarks: document.querySelector('textarea[name="remarks"]').value
-        };
+    // 隱藏表單，顯示完成頁
+    document.getElementById('step-form').classList.add('hidden');
+    var done = document.getElementById('step-done');
+    done.classList.remove('hidden');
+    document.getElementById('done-order-num').textContent = '訂單號碼：' + orderNum;
 
-        // 儲存訂單到localStorage
-        localStorage.setItem('senlacer_order_' + formData.orderNumber, JSON.stringify(formData));
-        window.currentOrder = formData;
+    // 發送EMAIL（使用FormSubmit）
+    sendEmail(orderData);
+}
 
-        // 隱藏表單，顯示完成頁面
-        document.getElementById('step1').style.display = 'none';
-        document.getElementById('step2').style.display = 'none';
-        document.getElementById('step3').classList.remove('hidden');
+function buildReceipt(o){
+    var r = document.getElementById('receipt-render');
+    r.style.display = 'block';
 
-        // 顯示訂單編號和EMAIL
-        document.getElementById('final-order-number').textContent = '訂單編號: ' + formData.orderNumber;
-        document.getElementById('confirm-email').textContent = formData.email;
+    document.getElementById('r-order-num').textContent = '訂單號碼：'+o.orderNum+' ｜ '+o.time;
 
-        // 清空購物車
-        window.cart.items = [];
-        window.cart.saveCart();
+    var rItems='';
+    o.items.forEach(function(i){
+        rItems+='<div class="r-row"><span>'+i.name+(i.size?' ('+i.size+')':'')+'</span><span>×'+i.quantity+' $'+(i.price*i.quantity).toLocaleString()+'</span></div>';
+    });
+    document.getElementById('r-items').innerHTML=rItems;
+    document.getElementById('r-total').textContent=o.total.toLocaleString();
 
-        // 🚀 發送確認EMAIL給顧客和公司
-        sendOrderEmail(formData);
-    }
+    document.getElementById('r-buyer').innerHTML=
+        '<strong>訂購人：</strong>'+o.ordererName+' ｜ '+o.phone+'<br>'+
+        '<strong>收件人：</strong>'+o.receiverName+' ｜ '+o.receiverPhone+'<br>'+
+        '<strong>配送方式：</strong>'+o.delivery+
+        (o.remarks?'<br><strong>備註：</strong>'+o.remarks:'');
+}
 
+function downloadReceiptImage(){
+    var el = document.getElementById('receipt-render');
+    if(!el){ alert('收據不存在'); return; }
+    el.style.display='block';
 
-    function downloadReceipt() {
-        if (!window.currentOrder) return;
+    html2canvas(el, {
+        backgroundColor:'#ffffff',
+        scale: 2,
+        useCORS: true
+    }).then(function(canvas){
+        var link = document.createElement('a');
+        link.download = '菘蕾西訂單_' + (window.currentOrder ? window.currentOrder.orderNum : Date.now()) + '.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+    }).catch(function(err){
+        alert('圖片下載失敗，請截圖儲存。');
+        console.error(err);
+    });
+}
 
-        const order = window.currentOrder;
-        let text = `
-菘蕾西 S'enlacer 訂單收據
-═══════════════════════════════════
+function sendEmail(o){
+    var body = '【菘蕾西 S\'enlacer 訂單確認】\n\n';
+    body += '訂單號碼：'+o.orderNum+'\n';
+    body += '訂購時間：'+o.time+'\n\n';
+    body += '【訂購者】\n姓名：'+o.ordererName+'\n電話：'+o.phone+'\nEMAIL：'+o.email+'\n\n';
+    body += '【收件人】\n姓名：'+o.receiverName+'\n電話：'+o.receiverPhone+'\n配送：'+o.delivery+'\n\n';
+    body += '【商品】\n';
+    o.items.forEach(function(i){
+        body += '・'+i.name+(i.size?' ('+i.size+')':'')+'× '+i.quantity+' = $'+i.price*i.quantity+'\n';
+    });
+    body += '\n訂單總計：$'+o.total.toLocaleString()+'\n\n';
+    body += '【ATM轉帳】\n玉山銀行台中分行（代號808）\n帳號：1366-940-008489\n備註：'+o.orderNum+'\n\n';
+    if(o.remarks) body += '【備註】'+o.remarks+'\n\n';
+    body += '轉帳完成後，請截圖收據或帳號後五碼，\n連同此訂單號碼上傳至LINE客服確認。\nhttps://lin.ee/9zUQhq9';
 
-訂單編號: ${order.orderNumber}
-訂購時間: ${order.timestamp}
+    // 使用FormSubmit.co發送（無需後端）
+    var fd = new FormData();
+    fd.append('_to',       'Love.senlacer@gmail.com');
+    fd.append('_cc',        o.email);
+    fd.append('_subject',  '菘蕾西訂單確認 - ' + o.orderNum);
+    fd.append('_captcha',  'false');
+    fd.append('_template', 'table');
+    fd.append('訂單號碼',   o.orderNum);
+    fd.append('訂購者',     o.ordererName + ' / ' + o.phone);
+    fd.append('收件人',     o.receiverName + ' / ' + o.receiverPhone);
+    fd.append('配送方式',   o.delivery);
+    fd.append('訂單總計',   '$' + o.total.toLocaleString());
+    fd.append('完整訊息',   body);
 
-───────────────────────────────────
-訂購者資訊
-───────────────────────────────────
-姓名: ${order.ordererName}
-電話: ${order.phone}
-EMAIL: ${order.email}
-
-───────────────────────────────────
-收件人資訊
-───────────────────────────────────
-姓名: ${order.receiverName}
-${order.deliveryMethod === '711' ? `7-11分店: ${order.storeName}` : `地址: ${order.receiverAddress}`}
-
-───────────────────────────────────
-購買商品
-───────────────────────────────────
-`;
-
-        order.items.forEach(item => {
-            text += `${item.name} (${item.size})\n數量: ${item.quantity} × $${item.price} = $${item.price * item.quantity}\n`;
-        });
-
-        text += `
-───────────────────────────────────
-總計: $${order.total.toLocaleString()}
-───────────────────────────────────
-
-${order.remarks ? `備註: ${order.remarks}\n` : ''}
-
-感謝您的購買！
-菘蕾西 S'enlacer
-        `;
-
-        // 下載為txt檔
-        const blob = new Blob([text], { type: 'text/plain' });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `訂單_${order.orderNumber}.txt`;
-        a.click();
-        window.URL.revokeObjectURL(url);
-    }
-
-    function goBackToCart() {
-        window.location.href = 'products.html';
-    }
+    fetch('https://formsubmit.co/Love.senlacer@gmail.com', {
+        method: 'POST',
+        body: fd
+    }).then(function(res){
+        console.log('✅ Email sent:', res.status);
+    }).catch(function(err){
+        console.warn('Email error:', err);
+    });
+}
 </script>
-<div id="cart-button-float" onclick="toggleCart()" style="
-  position: fixed;
-  top: auto;
-  right: auto;
-  bottom: 40px;
-  left: calc(50% + 480px);
-  z-index: 500;
-  border: none;
-  background: #FBF8F3;
-  color: #5C4A3C;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(92, 74, 60, 0.2);
-  font-size: 1.8rem;
-  transition: all 0.3s ease;
-  padding: 0;
-  border: 2px solid #B89368;
-">
-  🛒
-  <span id="cart-badge" style="
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #B97A5A;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border: 2px solid #F3ECE0;
-  "></span>
-</div>
-
 </body>
 </html>

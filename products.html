@@ -111,87 +111,13 @@
           </div>
           <div class="product-price">$3,800</div>
           <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-2', name:'有機真正薰衣草精油', size:'', price:3800, quantity:1}); toggleCart();">🛒 加入購物車</button>
-            <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. 薰衣草 (保加利亞) -->
-      <div class="product-card">
-        <img src="lavender-authentic-50-100ml.jpg" alt="薰衣草精油" class="product-image" loading="lazy" />
-        <div class="product-info">
-          <span class="product-badge">精選精油</span>
-          <div class="product-name">有機薰衣草精油</div>
-          <div class="product-en">Organic Lavender Essential Oil</div>
-          <div class="product-details">
-            產地：保加利亞<br>
-            萃取：花頂部 / 蒸餾法<br>
-            50ML $1,800 / 100ML $3,300
-          </div>
-          <div class="product-price">$1,800 起</div>
-          <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-3', name:'有機薰衣草精油', size:'', price:1800, quantity:1}); toggleCart();">🛒 加入購物車</button>
-            <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. 檸檬尤加利 -->
-      <div class="product-card">
-        <img src="products-50-100ml-real.jpg" alt="檸檬尤加利" class="product-image" loading="lazy" />
-        <div class="product-info">
-          <span class="product-badge">精選精油</span>
-          <div class="product-name">有機檸檬尤加利精油</div>
-          <div class="product-en">Organic Eucalyptus Lemon Essential Oil</div>
-          <div class="product-details">
-            產地：馬達加斯加<br>
-            萃取：葉 / 蒸餾法<br>
-            50ML $1,300 / 100ML $2,300
-          </div>
-          <div class="product-price">$1,300 起</div>
-          <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-4', name:'有機檸檬尤加利精油', size:'', price:1300, quantity:1}); toggleCart();">🛒 加入購物車</button>
-            <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. 苦橙葉 -->
-      <div class="product-card">
-        <img src="products-50-100ml-real.jpg" alt="苦橙葉精油" class="product-image" loading="lazy" />
-        <div class="product-info">
-          <span class="product-badge">精選精油</span>
-          <div class="product-name">有機苦橙葉精油</div>
-          <div class="product-en">Organic Petitgrain Essential Oil</div>
-          <div class="product-details">
-            產地：埃及<br>
-            萃取：葉、枝 / 蒸餾法<br>
-            50ML $2,200 / 100ML $3,900
-          </div>
-          <div class="product-price">$2,200 起</div>
-          <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-5', name:'有機苦橙葉精油', size:'', price:2200, quantity:1}); toggleCart();">🛒 加入購物車</button>
-            <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. 快樂鼠尾草 -->
-      <div class="product-card">
-        <img src="products-50-100ml-real.jpg" alt="快樂鼠尾草" class="product-image" loading="lazy" />
-        <div class="product-info">
-          <span class="product-badge">精選精油</span>
-          <div class="product-name">有機快樂鼠尾草精油</div>
-          <div class="product-en">Organic Clary Sage Essential Oil</div>
-          <div class="product-details">
-            產地：法國、摩爾多瓦<br>
-            萃取：花 / 蒸餾法<br>
-            50ML $2,500 / 100ML $4,500
-          </div>
-          <div class="product-price">$2,500 起</div>
-          <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-6', name:'有機快樂鼠尾草精油', size:'', price:2500, quantity:1}); toggleCart();">🛒 加入購物車</button>
+            <div style="margin:8px 0;">
+              <select id="size-product-6" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius(20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
+                <option value="2500" data-size="50ML">50ML — $2,500</option>
+                <option value="4500" data-size="100ML">100ML — $4,500</option>
+              </select>
+            </div>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-6');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-6'+opt.dataset.size,name:'有機甜橙精油50-100ML',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>
@@ -211,7 +137,13 @@
           </div>
           <div class="product-price">$1,800 起</div>
           <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-7', name:'有機澳洲茶樹精油', size:'', price:1800, quantity:1}); toggleCart();">🛒 加入購物車</button>
+            <div style="margin:8px 0;">
+              <select id="size-product-7" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius(20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
+                <option value="1800" data-size="50ML">50ML — $1,800</option>
+                <option value="3300" data-size="100ML">100ML — $3,300</option>
+              </select>
+            </div>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-7');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-7'+opt.dataset.size,name:'有機澳洲茶樹精油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>
@@ -231,7 +163,13 @@
           </div>
           <div class="product-price">$1,600 起</div>
           <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-8', name:'有機澳洲尤加利精油', size:'', price:1600, quantity:1}); toggleCart();">🛒 加入購物車</button>
+            <div style="margin:8px 0;">
+              <select id="size-product-8" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius(20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
+                <option value="1600" data-size="50ML">50ML — $1,600</option>
+                <option value="2900" data-size="100ML">100ML — $2,900</option>
+              </select>
+            </div>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-8');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-8'+opt.dataset.size,name:'有機澳洲尤加利精油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>
@@ -251,7 +189,13 @@
           </div>
           <div class="product-price">$1,200 起</div>
           <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-9', name:'有機綠薄荷精油', size:'', price:1200, quantity:1}); toggleCart();">🛒 加入購物車</button>
+            <div style="margin:8px 0;">
+              <select id="size-product-9" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius(20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
+                <option value="1200" data-size="50ML">50ML — $1,200</option>
+                <option value="1900" data-size="100ML">100ML — $1,900</option>
+              </select>
+            </div>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-9');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-9'+opt.dataset.size,name:'有機綠薄荷精油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>
@@ -272,7 +216,13 @@
           </div>
           <div class="product-price">$1,500 起</div>
           <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-10', name:'有機歐薄荷精油', size:'', price:1500, quantity:1}); toggleCart();">🛒 加入購物車</button>
+            <div style="margin:8px 0;">
+              <select id="size-product-10" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius(20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
+                <option value="1500" data-size="50ML">50ML — $1,500</option>
+                <option value="2700" data-size="100ML">100ML — $2,700</option>
+              </select>
+            </div>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-10');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-10'+opt.dataset.size,name:'有機大西洋雪松精油50-100ML',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>
@@ -293,7 +243,13 @@
           </div>
           <div class="product-price">$1,300 起</div>
           <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-11', name:'有機大西洋雪松精油', size:'', price:1300, quantity:1}); toggleCart();">🛒 加入購物車</button>
+            <div style="margin:8px 0;">
+              <select id="size-product-11" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius(20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
+                <option value="1300" data-size="50ML">50ML — $1,300</option>
+                <option value="2300" data-size="100ML">100ML — $2,300</option>
+              </select>
+            </div>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-11');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-11'+opt.dataset.size,name:'有機歐薄荷精油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>
@@ -313,7 +269,13 @@
           </div>
           <div class="product-price">$900 起</div>
           <div class="product-btns">
-            <button class="add-btn" onclick="window.cart.addToCart({id:'product-12', name:'有機甜橙精油', size:'', price:900, quantity:1}); toggleCart();">🛒 加入購物車</button>
+            <div style="margin:8px 0;">
+              <select id="size-product-12" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius(20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
+                <option value="900" data-size="50ML">50ML — $900</option>
+                <option value="1500" data-size="100ML">100ML — $1,500</option>
+              </select>
+            </div>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-12');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-12'+opt.dataset.size,name:'有機快樂鼠尾草精油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>

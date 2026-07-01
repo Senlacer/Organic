@@ -254,3 +254,24 @@ a, button {
 #cart-total-box{padding:20px;border-top:1px solid var(--linen-dim);}
 #cart-items-sidebar{flex:1;overflow-y:auto;}
 #cart-sidebar{display:flex;flex-direction:column;}
+
+/* ══════════════════════════════════════════
+   修復補充：缺失CSS定義
+   ══════════════════════════════════════════ */
+
+/* promotion.html 頁首 */
+.promo-banner{background:var(--ink);color:var(--linen);text-align:center;padding:12px 20px;font-size:.85rem;letter-spacing:.08em;}
+.promo-head{text-align:center;padding:60px 20px 20px;background:var(--linen);}
+.promo-head h2{font-family:'Fraunces',serif;font-style:italic;font-size:2rem;color:var(--ink);margin-bottom:8px;}
+.promo-head p{color:var(--sage);font-size:.95rem;}
+.promo-ctas{display:flex;justify-content:center;gap:16px;padding:20px;flex-wrap:wrap;}
+.promo-cta-link{color:var(--amber-deep);font-weight:600;text-decoration:none;font-size:.95rem;transition:color .3s;}
+.promo-cta-link:hover{color:var(--ink);}
+.promo-call-action{text-align:center;padding:40px 20px;background:var(--linen);}
+
+/* 購物車nav badge */
+.cart-nav-badge{display:none;position:absolute;top:-8px;right:-14px;background:#B97A5A;color:#fff;width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;font-size:.68rem;font-weight:bold;}
+
+/* landing.html 購物車固定連結 */
+#cart-nav-link{text-decoration:none;transition:all .3s;}
+#cart-nav-link:hover{box-shadow:0 4px 16px rgba(92,74,60,.2)!important;}
