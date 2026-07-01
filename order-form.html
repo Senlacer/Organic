@@ -202,6 +202,9 @@
             <p style="margin-top:12px;color:var(--sage);font-size:.85rem;">📧 訂單確認信已發送至您的 EMAIL，請查收</p>
         </div>
 
+        <div id="line-browser-hint" style="display:none;background:#E8F5E9;border:1px solid #4CAF50;border-radius:8px;padding:14px 18px;margin-bottom:14px;font-size:.88rem;color:#2E7D32;">
+            📱 <strong>LINE 瀏覽器提示</strong>：如無法下載圖片，請點右上角「⋯」選「在瀏覽器中開啟」，再點下載即可。<br>或直接截圖保存此頁面訂單資料。
+        </div>
         <div class="btn-group">
             <button class="btn btn-dl" onclick="downloadReceiptImage()">📥 下載訂單圖片</button>
             <a href="https://lin.ee/9zUQhq9" target="_blank" class="btn btn-line">💬 前往 LINE 客服</a>
@@ -303,25 +306,7 @@ function buildReceipt(o){
         (o.remarks?'<br><strong>備註：</strong>'+o.remarks:'');
 }
 
-function downloadReceiptImage(){
-    var el = document.getElementById('receipt-render');
-    if(!el){ alert('收據不存在'); return; }
-    el.style.display='block';
 
-    html2canvas(el, {
-        backgroundColor:'#ffffff',
-        scale: 2,
-        useCORS: true
-    }).then(function(canvas){
-        var link = document.createElement('a');
-        link.download = '菘蕾西訂單_' + (window.currentOrder ? window.currentOrder.orderNum : Date.now()) + '.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-    }).catch(function(err){
-        alert('圖片下載失敗，請截圖儲存。');
-        console.error(err);
-    });
-}
 
 function sendEmail(o){
     var body = '【菘蕾西 S\'enlacer 訂單確認】\n\n';

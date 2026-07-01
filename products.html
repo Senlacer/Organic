@@ -117,7 +117,7 @@
                 <option value="3800" data-size="100ML">100ML — $3,800</option>
               </select>
             </div>
-            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-6');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-6'+opt.dataset.size,name:'有機真正薰衣草精油50-100ML',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-6');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-6'+opt.dataset.size,name:'有機真正薰衣草精油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>
@@ -222,7 +222,7 @@
                 <option value="2700" data-size="100ML">100ML — $2,700</option>
               </select>
             </div>
-            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-10');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-10'+opt.dataset.size,name:'有機歐薄荷精油50-100ML',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-10');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-10'+opt.dataset.size,name:'有機歐薄荷精油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
             <button class="line-btn" onclick="window.open('https://lin.ee/t9Hj7ef','_blank')">LINE</button>
           </div>
         </div>
@@ -506,53 +506,12 @@
 
 
 
-<div id="cart-button-float" onclick="toggleCart()" style="
-  position: fixed;
-  top: auto;
-  right: auto;
-  bottom: 40px;
-  left: calc(50% + 480px);
-  z-index: 500;
-  border: none;
-  background: #FBF8F3;
-  color: #5C4A3C;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(92, 74, 60, 0.2);
-  font-size: 1.8rem;
-  transition: all 0.3s ease;
-  padding: 0;
-  border: 2px solid #B89368;
-">
-  🛒
-  <span id="cart-badge" style="
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: #B97A5A;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border: 2px solid #F3ECE0;
-  "></span>
-</div>
 
 
 <!-- 購物車側欄 -->
 <div id="cart-sidebar">
   <div id="cart-sidebar-header">
-    <h3>🛒 購物車</h3>
+    <h3>🛒 購物車<span id="cart-badge" style="display:none;background:#B97A5A;color:#fff;width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center;font-size:.72rem;font-weight:bold;margin-left:8px;"></span></h3>
     <button id="cart-sidebar-close" onclick="toggleCart()" aria-label="關閉購物車">✕</button>
   </div>
   <div id="cart-items-sidebar"></div>
