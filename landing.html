@@ -2,404 +2,391 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>擁抱 S'enlacer — 菘蕾西有機精油品牌</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="菘蕾西 S'enlacer，以歐盟有機認證與英國土壤協會認證的精油、基底油與純露，將芳香療法的療癒帶入日常。擁抱安心，療癒身．心．靈。">
+<title>擁抱 S'enlacer — 菘蕾西有機精油品牌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Noto+Serif+TC:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;600&family=Caveat:wght@400;500;600;700&family=Indie+Flower:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+body{background:#F3ECE0;}
+
+.landing-hero-final {
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:stretch;
+  gap:0;
+}
+
+.landing-left-final {
+  background:#F3ECE0;
+  padding:80px 60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+
+.brand-logo-final {
+  width:140px;
+  height:auto;
+  margin-bottom:48px;
+  object-fit:contain;
+}
+
+.brand-embrace-enlacer {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  font-weight: 600;
+  font-style: italic;
+  color: #5C4A3C;
+  line-height: 1.0;
+  margin-bottom: 0;
+  letter-spacing: 0.08em;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  align-items: baseline;
+  gap: 0.15em;
+}
+
+.brand-embrace {
+  display: inline;
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1em;
+  font-weight: 700;
+  font-style: normal;
+  color: #5C4A3C;
+  letter-spacing: 0.06em;
+}
+
+.brand-enlacer {
+  display: inline;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: #5C4A3C;
+  letter-spacing: 0.12em;
+  text-transform: none;
+}
+
+.brand-tagline-final {
+  font-size:1.15rem;
+  line-height:1.9;
+  color:#5C4A3C;
+  opacity:.9;
+  margin-bottom:32px;
+  max-width:450px;
+  font-weight:500;
+  letter-spacing:.02em;
+}
+
+.brand-vision-final {
+  font-size:.95rem;
+  line-height:1.8;
+  color:#5C4A3C;
+  opacity:.8;
+  margin-bottom:32px;
+  max-width:450px;
+}
+
+.product-highlight-final {
+  background:rgba(201,160,107,.12);
+  padding:24px;
+  border-left:4px solid #B89368;
+  margin:32px 0;
+  border-radius:2px;
+}
+
+.product-highlight-final h4 {
+  font-family:'Noto Serif TC',serif;
+  font-size:1.1rem;
+  font-weight:500;
+  color:#5C4A3C;
+  margin-bottom:8px;
+}
+
+.product-highlight-final p {
+  font-size:.9rem;
+  color:#5C4A3C;
+  opacity:.8;
+  margin:0;
+}
+
+.certs-badges-final {
+  display:flex;
+  gap:12px;
+  margin:28px 0;
+  flex-wrap:wrap;
+  font-size:.8rem;
+}
+
+.cert-badge-final {
+  background:#fff;
+  padding:8px 14px;
+  border-radius:20px;
+  border:1px solid #B89368;
+  color:#5C4A3C;
+  font-weight:600;
+}
+
+.landing-cta-final {
+  display:flex;
+  gap:16px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.cta-btn-final {
+  padding:16px 36px;
+  background:#5C4A3C;
+  color:#F3ECE0;
+  border:none;
+  border-radius:4px;
+  font-weight:600;
+  font-size:.95rem;
+  cursor:pointer;
+  transition:background .3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.cta-btn-final:hover {
+  background:#9C7A52;
+}
+
+.cta-btn-secondary-final {
+  padding:16px 36px;
+  border:2px solid #5C4A3C;
+  background:transparent;
+  color:#5C4A3C;
+  border-radius:4px;
+  font-weight:600;
+  font-size:.95rem;
+  cursor:pointer;
+  transition:all .3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.cta-btn-secondary-final:hover {
+  background:#5C4A3C;
+  color:#F3ECE0;
+}
+
+.landing-right-final {
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+}
+
+.landing-right-final img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.landing-badge-final {
+  position:absolute;
+  top:30px;
+  right:30px;
+  background:rgba(201,160,107,.95);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:999px;
+  font-size:.85rem;
+  font-weight:600;
+  letter-spacing:.05em;
+  backdrop-filter:blur(10px);
+}
+
+.landing-footer-final {
+  grid-column:1/-1;
+  background:#5C4A3C;
+  color:#F3ECE0;
+  padding:60px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:50px;
+}
+
+.landing-footer-final h4 {
+  font-family:'Fraunces',serif;
+  font-size:1.15rem;
+  margin-bottom:16px;
+  font-weight:400;
+  font-style:italic;
+}
+
+.landing-footer-final p {
+  font-size:.9rem;
+  opacity:.85;
+  line-height:1.7;
+  margin:0;
+}
+
+.landing-footer-final a {
+  color:#F3ECE0;
+  text-decoration:none;
+  opacity:.85;
+  transition:opacity .3s;
+  display:block;
+  margin-bottom:8px;
+  font-size:.9rem;
+}
+
+.landing-footer-final a:hover {
+  opacity:1;
+}
+
+@media (max-width:1000px) {
+  .landing-hero-final {
+    grid-template-columns:1fr;
+  }
+  .landing-right-final {
+    height:500px;
+  }
+  .landing-left-final {
+    padding:60px 32px;
+  }
+  .landing-footer-final {
+    grid-template-columns:repeat(2,1fr);
+    padding:40px 32px;
+    gap:30px;
+  }
+}
+
+@media (max-width:600px) {
+  .landing-left-final {
+    padding:40px 20px;
+  }
+  .brand-embrace {
+    font-size:1.6rem;
+  }
+  .brand-enlacer {
+    font-size:1.8rem;
+  }
+  .landing-cta-final {
+    flex-direction:column;
+  }
+  .cta-btn-final, .cta-btn-secondary-final {
+    width:100%;
+    text-align:center;
+  }
+  .landing-footer-final {
+    grid-template-columns:1fr;
+  }
+}
+</style>
     <meta property="og:title" content="菘蕾西 S'enlacer 擁抱 — 有機精油的療癒之旅">
     <meta property="og:description" content="擁抱好空氣．生活好健康，英國原裝進口有機精油品牌">
     <meta property="og:image" content="spa-santorini-embrace-correct.jpg">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-
-        /* ── 導覽列 ── */
-        .nav-landing{
-            position:fixed;top:0;left:0;right:0;z-index:200;
-            background:rgba(74,59,47,.85);
-            backdrop-filter:blur(10px);
-            -webkit-backdrop-filter:blur(10px);
-        }
-        .nav-landing .inner{
-            max-width:1280px;margin:0 auto;
-            display:flex;align-items:center;justify-content:space-between;
-            padding:0 40px;height:62px;
-        }
-        .nav-landing .nav-links{display:flex;align-items:center;gap:28px;}
-        .nav-landing .nav-links a{
-            color:#E8DFD0;font-size:.85rem;text-decoration:none;
-            letter-spacing:.04em;transition:color .3s;
-        }
-        .nav-landing .nav-links a:hover{color:#B89368;}
-        .nav-landing .nav-links a.highlight{color:#FFD700;font-weight:600;}
-        .nav-cart{
-            color:#E8DFD0;font-size:.85rem;cursor:pointer;
-            background:rgba(184,147,104,.25);border:1px solid rgba(184,147,104,.5);
-            padding:7px 18px;border-radius:20px;position:relative;
-            transition:all .3s;text-decoration:none;
-        }
-        .nav-cart:hover{background:rgba(184,147,104,.45);}
-
-        /* ── Hero 全螢幕 ── */
-        .hero{
-            height:100vh;min-height:600px;
-            position:relative;
-            background:url('spa-santorini-embrace-correct.jpg') center/cover no-repeat;
-            display:flex;align-items:center;justify-content:center;
-            text-align:center;color:#fff;
-        }
-        .hero::before{
-            content:'';position:absolute;inset:0;
-            background:linear-gradient(160deg,rgba(74,59,47,.55) 0%,rgba(0,0,0,.25) 100%);
-        }
-        .hero-content{position:relative;z-index:1;padding:0 20px;max-width:780px;}
-        .hero-logo{margin-bottom:22px;}
-        .hero-logo img{max-width:280px;width:72%;filter:brightness(0) invert(1);}
-        .hero-tagline{
-            font-family:'Fraunces',serif;font-style:italic;
-            font-size:clamp(1.8rem,4vw,3rem);
-            font-weight:400;letter-spacing:.04em;
-            text-shadow:0 2px 12px rgba(0,0,0,.4);
-            margin-bottom:12px;
-        }
-        .hero-sub{
-            font-size:clamp(.85rem,1.5vw,1rem);
-            color:rgba(255,255,255,.82);letter-spacing:.12em;
-            margin-bottom:36px;
-        }
-        .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-        .hero-btns a{
-            padding:13px 34px;border-radius:30px;
-            font-size:.92rem;font-weight:600;text-decoration:none;
-            letter-spacing:.04em;transition:all .3s;
-        }
-        .btn-primary{background:#B89368;color:#fff;}
-        .btn-primary:hover{background:#9C7A52;transform:translateY(-2px);}
-        .btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5);}
-        .btn-ghost:hover{background:rgba(255,255,255,.25);}
-        .btn-88{background:#FFD700;color:#4A3B2F;font-weight:700;}
-        .btn-88:hover{background:#F0C800;transform:translateY(-2px);}
-        .hero-scroll{
-            position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
-            color:rgba(255,255,255,.6);font-size:.75rem;letter-spacing:.15em;
-            animation:bounce 2s infinite;
-        }
-        @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(6px);}}
-
-        /* ── 品牌介紹 ── */
-        .section-brand{
-            display:grid;grid-template-columns:1fr 1fr;
-            min-height:520px;
-        }
-        .brand-img{overflow:hidden;}
-        .brand-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s;}
-        .brand-img:hover img{transform:scale(1.03);}
-        .brand-text{
-            background:#F3ECE0;padding:72px 64px;
-            display:flex;flex-direction:column;justify-content:center;
-        }
-        .brand-text .eyebrow{
-            font-size:.75rem;letter-spacing:.2em;color:#B89368;
-            font-weight:600;margin-bottom:16px;
-        }
-        .brand-text h2{
-            font-family:'Fraunces',serif;font-style:italic;
-            font-size:2rem;color:#4A3B2F;margin-bottom:20px;line-height:1.3;
-        }
-        .brand-text p{
-            color:#5C4A3C;line-height:1.9;font-size:.95rem;margin-bottom:24px;
-        }
-        .brand-text .link-more{
-            color:#B89368;font-weight:600;text-decoration:none;font-size:.9rem;
-            border-bottom:1px solid #B89368;padding-bottom:2px;transition:all .3s;
-        }
-        .brand-text .link-more:hover{color:#4A3B2F;border-color:#4A3B2F;}
-
-        /* ── 特色三欄 ── */
-        .section-features{
-            background:#FBF8F3;padding:80px 40px;text-align:center;
-        }
-        .section-features h2{
-            font-family:'Fraunces',serif;font-style:italic;
-            font-size:1.8rem;color:#4A3B2F;margin-bottom:50px;
-        }
-        .features-grid{
-            display:grid;grid-template-columns:repeat(3,1fr);gap:40px;
-            max-width:960px;margin:0 auto;
-        }
-        .feature-item .icon{font-size:2.2rem;margin-bottom:16px;}
-        .feature-item h3{
-            font-family:'Fraunces',serif;font-size:1.1rem;
-            color:#4A3B2F;margin-bottom:10px;
-        }
-        .feature-item p{font-size:.88rem;color:#8C8169;line-height:1.75;}
-
-        /* ── 認證區 ── */
-        .section-certs{
-            background:#4A3B2F;color:#F3ECE0;
-            padding:60px 40px;text-align:center;
-        }
-        .section-certs h2{
-            font-family:'Fraunces',serif;font-style:italic;
-            font-size:1.5rem;margin-bottom:28px;color:#E8DFD0;
-        }
-        .cert-row{
-            display:flex;justify-content:center;align-items:center;
-            gap:16px;flex-wrap:wrap;margin-bottom:24px;
-        }
-        .cert-chip{
-            background:rgba(184,147,104,.25);border:1px solid rgba(184,147,104,.5);
-            color:#E8DFD0;padding:10px 24px;border-radius:20px;
-            font-size:.82rem;letter-spacing:.08em;
-        }
-        .cert-note{font-size:.82rem;color:rgba(232,223,208,.65);margin-top:8px;}
-        .cert-logo{max-width:80px;margin:16px auto 0;display:block;border-radius:6px;}
-
-        /* ── 商品預覽 CTA ── */
-        .section-cta{
-            position:relative;
-            background:url('embrace-woman-organic.jpg') center/cover no-repeat;
-            padding:120px 20px;text-align:center;color:#fff;
-        }
-        .section-cta::before{
-            content:'';position:absolute;inset:0;
-            background:rgba(74,59,47,.55);
-        }
-        .section-cta-content{position:relative;z-index:1;max-width:620px;margin:0 auto;}
-        .section-cta h2{
-            font-family:'Fraunces',serif;font-style:italic;
-            font-size:2.2rem;margin-bottom:14px;
-            text-shadow:0 2px 10px rgba(0,0,0,.4);
-        }
-        .section-cta p{
-            color:rgba(255,255,255,.85);font-size:1rem;
-            line-height:1.8;margin-bottom:34px;
-        }
-        .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-
-        /* ── Footer ── */
-        .footer-landing{background:#2E2318;color:#9C8A7A;padding:48px 40px 28px;}
-        .footer-inner{
-            max-width:1100px;margin:0 auto;
-            display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;
-        }
-        .footer-brand{color:#E8DFD0;font-size:1rem;font-weight:600;margin-bottom:10px;}
-        .footer-desc{font-size:.82rem;line-height:1.8;margin-bottom:16px;}
-        .footer-col h5{color:#B89368;font-size:.78rem;letter-spacing:.1em;margin-bottom:12px;}
-        .footer-col a{
-            display:block;color:#9C8A7A;font-size:.82rem;
-            text-decoration:none;margin-bottom:7px;transition:color .3s;
-        }
-        .footer-col a:hover{color:#E8DFD0;}
-        .footer-bottom{
-            max-width:1100px;margin:28px auto 0;
-            border-top:1px solid rgba(255,255,255,.08);
-            padding-top:18px;font-size:.75rem;color:#5C4A3C;
-            display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
-        }
-
-        /* ── 響應式 ── */
-        @media(max-width:900px){
-            .nav-landing .inner{padding:0 20px;}
-            .nav-landing .nav-links{gap:16px;}
-            .section-brand{grid-template-columns:1fr;}
-            .brand-img{height:300px;}
-            .brand-text{padding:48px 32px;}
-            .features-grid{grid-template-columns:1fr 1fr;gap:28px;}
-            .footer-inner{grid-template-columns:1fr 1fr;gap:28px;}
-        }
-        @media(max-width:600px){
-            .nav-landing .nav-links .hide-mob{display:none;}
-            .hero-logo img{max-width:200px;}
-            .features-grid{grid-template-columns:1fr;}
-            .footer-inner{grid-template-columns:1fr;}
-            .nav-landing .inner{height:54px;}
-        }
-    </style>
 </head>
 <body>
 
-<!-- 導覽列 -->
-<nav class="nav-landing">
-    <div class="inner">
-        <a href="landing.html">
- <img src="" alt="" style="height:32px;width:auto;filter:brightness(0) invert(1);">
-        </a>     <div class="nav-links">
-            <a href="index.html" class="hide-mob">品牌故事</a>
-            <a href="products.html">商品系列</a>
-            <a href="promotion.html" class="hide-mob">限時優惠</a>
-            <a href="father-day-88.html" class="highlight">88父親節</a>
-            <a href="about.html" class="hide-mob">關於我們</a>
-            <a href="javascript:void(0)" onclick="toggleCart()" class="nav-cart" id="cart-nav-link" style="position:relative;">
-                🛒 購物車
-                <span class="cart-nav-badge" style="display:none;position:absolute;top:-8px;right:-8px;background:#B97A5A;color:#fff;width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;font-size:.65rem;font-weight:bold;"></span>
-            </a>
-        </div>
+<div class="landing-hero-final">
+  <!-- LEFT: BRAND + PRODUCT INFO -->
+  <div class="landing-left-final">
+    
+    <div class="brand-embrace-enlacer">
+      <img src="senlacer-logo-nav.png" alt="擁抱 S'enlacer" style="max-width:320px;width:100%;height:auto;display:block;">
     </div>
-</nav>
+    
+    <div class="brand-tagline-final">擁抱好空氣 · 生活好健康</div>
 
-<!-- Hero 全螢幕 -->
-<section class="hero">
-    <div class="hero-content">
-        <div class="hero-logo">
-            <img src="" alt=">
-ORGANIC ESSENTIAL OIL · EMBRACE LIFE · HEAL YOUR SOUL</div>
-        <div class="hero-btns">
-            <a href="products.html" class="btn-primary">探索商品系列</a>
-            <a href="father-day-88.html" class="btn-88">🎁 88父親節限定</a>
-            <a href="https://lin.ee/t9Hj7ef" target="_blank" class="btn-ghost">📱 LINE 購買</a>
-        </div>
+    <div class="brand-vision-final">
+      菘蕾西 S'enlacer，以歐盟有機認證與英國土壤協會認證的精油、基底油與純露，將芳香療法的療癒帶入日常 —— 擁抱安心，療癒身．心．靈。
     </div>
-    <div class="hero-scroll">▼ 了解更多</div>
-</section>
 
-<!-- 品牌介紹 -->
-<section class="section-brand">
-    <div class="brand-img">
-        <img src="embrace-woman-organic.jpg" alt="菘蕾西有機精油品牌故事">
+    <div class="product-highlight-final">
+      <h4>🌿 英國原裝進口 1000ML 有機精油</h4>
+      <p>EEC/NOP/H&B · Soil Association 多項認證</p>
     </div>
-    <div class="brand-text">
-        <div class="eyebrow">BRAND STORY · 品牌故事</div>
-        <h2>S'enlacer<br>法文「相互擁抱」</h2>
-        <p>菘蕾西 S'enlacer，取自法文「s'enlacer」，意為「相互擁抱、相互纏繞」。我們相信，有機精油不只是香氣，更是一場身心靈的療癒之旅。</p>
-        <p>每一滴精油都承載著大地的恩賜，透過英國原裝進口、國際雙重認證的有機精油，我們希望把這份溫柔的擁抱，交到每一個需要療癒的靈魂手中。</p>
-        <a href="index.html" class="link-more">閱讀完整品牌故事 →</a>
-    </div>
-</section>
 
-<!-- 特色三欄 -->
-<section class="section-features">
-    <h2></h2>
-    <div class="features-grid">
-        <div class="feature-item">
-            <div class="icon">🌿</div>
-            <h3>英國原裝進口1000ML</h3>
-            <p></p>
-        </div>
-        <div class="feature-item">
-            <div class="icon">🏅</div>
-            <h3>四重國際認證</h3>
-            <p> EEC、NOP、H&B、Soil Association </p>
-        </div>
-        <div class="feature-item">
-            <div class="icon">💆</div>
-            <h3>療癒身心靈</h3>
-            <p>芳香療法融入日常，個人、家庭、SPA、企業採購，全方位身心療癒。</p>
-        </div>
+    <div class="certs-badges-final">
+      <span class="cert-badge-final">EEC</span>
+      <span class="cert-badge-final">NOP</span>
+      <span class="cert-badge-final">H&B</span>
+      <span class="cert-badge-final">Soil Association</span>
     </div>
-</section>
 
-<!-- 認證區 -->
-<section class="section-certs">
-    <h2>國際有機認證保障</h2>
-    <div class="cert-row">
-        <span class="cert-chip">EEC </span>
-        <span class="cert-chip">NOP </span>
-        <span class="cert-chip">H&amp;B </span>
-        <span class="cert-chip">Soil Association</span>
-        <span class="cert-chip">英國原裝進口</span>
-    </div>
-    <img src="soil-association-logo.jpg" alt="Soil Association 認證" class="cert-logo">
-    <p class="cert-note"></p>
-</section>
+    <p style="font-size:.85rem;opacity:.75;color:#5C4A3C;margin:28px 0;">
+      有機精油 · 有機基底油 · 有機純露<br>
+      適合個人、家庭、店面、企業採購
+    </p>
 
-<!-- CTA 大圖 -->
-<section class="section-cta">
-    <div class="section-cta-content">
-        <h2>有機療癒之旅</h2>
-        <p>19款精選有機精油、基底油與純露，從個人養護到企業採購，陪伴您每一刻的療癒。</p>
-        <div class="cta-btns">
-            <a href="products.html" class="btn-primary">瀏覽所有商品</a>
-            <a href="promotion.html" class="btn-ghost">查看限時優惠</a>
-            <a href="about.html" class="btn-ghost">企業採購洽詢</a>
-        </div>
+    <div class="landing-cta-final">
+      <button class="cta-btn-final" onclick="window.location.href='products.html'">🛒 探索商品</button>
+      <a href="https://lin.ee/t9Hj7ef" target="_blank" class="cta-btn-secondary-final">📱 LINE 購買</a>
     </div>
-</section>
+    <div style="margin-top:18px;">
+      <a href="father-day-88.html" style="display:inline-block;padding:10px 24px;background:#B89368;color:#fff;border-radius:30px;font-weight:700;text-decoration:none;letter-spacing:1px;">🎁 88父親節限定優惠 →</a>
+    </div>
+  </div>
 
-<!-- Footer -->
-<footer class="footer-landing">
-    <div class="footer-inner">
-        <div>
-            <div class="footer-brand"> 擁抱安心，療癒身．心．靈  </div>
-            <p class="footer-desc">擁抱好空氣 · 生活好健康<br>英國原裝進口有機精油品牌<br>EEC · NOP · H&B · Soil Association 認證</p>
-            <p class="footer-desc" style="font-style:italic;color:#B89368;font-size:.8rem;">「願祂喜悅我的默想，祂是我喜樂的泉源。」詩篇 104:34</p>
-        </div>
-        <div class="footer-col">
-            <h5>商品系列</h5>
-            <a href="products.html">有機精油</a>
-            <a href="products.html">基底油</a>
-            <a href="products.html">有機純露</a>
-            <a href="products.html">洗髮精</a>
-        </div>
-        <div class="footer-col">
-            <h5>品牌資訊</h5>
-            <a href="index.html">品牌故事</a>
-            <a href="about.html">關於我們</a>
-            <a href="promotion.html">限時優惠</a>
-            <a href="father-day-88.html">88父親節</a>
-        </div>
-        <div class="footer-col">
-            <h5>聯繫我們</h5>
-            <a href="https://www.facebook.com/senlacer" target="_blank">Facebook</a>
-            <a href="https://www.instagram.com/songleisi/" target="_blank">Instagram</a>
-            <a href="https://lin.ee/t9Hj7ef" target="_blank">LINE 訂購</a>
-            <a href="https://lin.ee/9zUQhq9" target="_blank">LINE 客服</a>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 S'enlacer 菘蕾西 All rights reserved.</span>
-        <span>Love.senlacer@gmail.com</span>
-    </div>
-</footer>
+  <!-- RIGHT: HERO IMAGE -->
+  <div class="landing-right-final">
+    <img src="spa-santorini-embrace-correct.jpg" alt="擁抱 S'enlacer — 有機生活美學" />
+    <div class="landing-badge-final">✨ Organic Embrace</div>
+  </div>
 
-<!-- 購物車側欄 -->
-<div id="cart-sidebar">
-    <div id="cart-sidebar-header">
-        <h3>🛒 購物車<span id="cart-badge" style="display:none;background:#B97A5A;color:#fff;width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center;font-size:.72rem;font-weight:bold;margin-left:8px;"></span></h3>
-        <button id="cart-sidebar-close" onclick="toggleCart()">✕</button>
+  <!-- FOOTER INFO -->
+  <div class="landing-footer-final">
+    <div>
+      <h4>品牌故事</h4>
+      <p>菘蕾西以「擁抱」為核心，將有機精油融入芳香療法與生活美學，讓每一個靈魂都能在自然懷抱中找到療癒。</p>
     </div>
-    <div id="cart-items-sidebar"></div>
-    <div id="cart-total-box">
-        <p style="font-size:1.2rem;color:var(--amber-deep);font-weight:bold;text-align:right;margin:0 0 12px;">總計: $<span id="total-price">0</span></p>
-        <button onclick="window.cart.checkout()" style="width:100%;padding:14px;background:var(--ink);color:var(--linen);border:none;border-radius:30px;font-size:1rem;font-weight:bold;cursor:pointer;">確認結帳 →</button>
+    <div>
+      <h4>有機承諾</h4>
+      <p>英國原裝進口，通過 EEC、NOP、H&B、Soil Association 認證，確保每一滴精油都經過嚴格的有機把關。</p>
     </div>
+    <div>
+      <h4>購買方式</h4>
+      <p>
+        <a href="products.html">線上購物</a>
+        <a href="father-day-88.html">88父親節限定</a>
+        <a href="https://lin.ee/t9Hj7ef" target="_blank">LINE 訂購</a>
+        <a href="about.html">企業採購</a>
+      </p>
+    </div>
+    <div>
+      <h4>聯繫我們</h4>
+      <p>
+        <a href="https://www.facebook.com/senlacer" target="_blank">Facebook 粉專</a>
+        <a href="https://www.instagram.com/songleisi/" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/groups/senlacer/" target="_blank">SPA 私塾</a>
+      </p>
+    </div>
+  </div>
+
 </div>
-<div id="cart-overlay" onclick="toggleCart()"></div>
 
 <script src="cart-system.js"></script>
-<script>
-function toggleCart(){
-    var s=document.getElementById('cart-sidebar'),o=document.getElementById('cart-overlay');
-    if(!s||!o)return;
-    if(s.classList.contains('open')){s.classList.remove('open');o.style.display='none';}
-    else{s.classList.add('open');o.style.display='block';renderCartSidebar();}
-}
-function renderCartSidebar(){
-    var items=window.cart?window.cart.items:[];
-    var con=document.getElementById('cart-items-sidebar');
-    var tot=document.getElementById('total-price');
-    if(!con)return;
-    if(!items.length){con.innerHTML='<p style="text-align:center;color:var(--sage);padding:40px 20px;">購物車為空</p>';if(tot)tot.textContent='0';return;}
-    var html='<div style="max-height:55vh;overflow-y:auto;padding:0 20px;">';
-    items.forEach(function(item,i){
-        var sub=item.price*item.quantity;
-        html+='<div style="padding:12px 0;border-bottom:1px solid var(--linen-dim);">';
-        html+='<div style="display:flex;justify-content:space-between;gap:10px;">';
-        html+='<div style="flex:1;"><p style="margin:0;font-weight:600;font-size:.88rem;color:var(--ink);">'+item.name+'</p>';
-        html+='<p style="margin:4px 0;font-size:.8rem;color:var(--sage);">'+(item.size||'')+'</p>';
-        html+='<div style="display:flex;align-items:center;gap:8px;margin-top:4px;">';
-        html+='<input type="number" min="1" value="'+item.quantity+'" onchange="window.cart.updateQuantity('+i+',this.value);renderCartSidebar();" style="width:50px;padding:4px;text-align:center;border:1px solid var(--amber);border-radius:4px;">';
-        html+='<span style="font-size:.82rem;color:var(--sage);">× $'+item.price+'</span></div></div>';
-        html+='<div style="text-align:right;"><p style="margin:0;color:var(--amber-deep);font-weight:bold;">$'+sub+'</p>';
-        html+='<button onclick="window.cart.removeItem('+i+');renderCartSidebar();" style="margin-top:6px;background:none;border:1px solid var(--terracotta);color:var(--terracotta);padding:3px 10px;border-radius:20px;cursor:pointer;font-size:.75rem;">移除</button>';
-        html+='</div></div></div>';
-    });
-    html+='</div>';
-    con.innerHTML=html;
-    if(tot)tot.textContent=window.cart.getTotal().toLocaleString();
-}
-</script>
+
+<div style="text-align: center; padding: 30px; color: #B89368; font-style: italic;">
+                <p>「願祂喜悅我的默想， 祂是我喜樂的泉源。」詩篇 104:34</p>
+                <p>「My meditation of him shall be sweet: I will be glad in the LORD.」Psalm 104:34</p>
+            </div>
+            
+<!-- 有機認證展示 -->
+<section style="background:#F3ECE0;padding:40px 20px;text-align:center;">
+  <div class="wrap">
+    <h3 style="font-family:'Fraunces',serif;font-size:1.5rem;color:#5C4A3C;margin-bottom:20px;">
+      有機認證保障
+    </h3>
+    <img src="soil-association-logo.jpg" alt="Soil Association 認證" style="max-width:100px;margin:0 auto;display:block;" />
+    <p style="color:#4A3B2F;margin-top:15px;">
+      EEC · NOP · H&B · Soil Association<br>
+      英國原裝進口，四重有機認證
+    </p>
+  </div>
+</section>
+
 </body>
 </html>
