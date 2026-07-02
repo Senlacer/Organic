@@ -25,10 +25,10 @@
         }
         .nav-landing .inner{
             max-width:1400px;margin:0 auto;
-            display:flex;align-items:center;justify-content:space-between;
-            padding:0 56px;height:64px;
+            display:flex;align-items:center;
+            padding:0 40px;height:64px;
         }
-        .nav-landing .nav-links{display:flex;align-items:center;gap:32px;margin-left:auto;}
+        .nav-landing .nav-links{display:flex;align-items:center;gap:32px;}
         .nav-landing .nav-links a{
             color:#5C4A3C;font-size:.85rem;text-decoration:none;
             letter-spacing:.04em;transition:color .3s;
@@ -48,14 +48,15 @@
             height:100vh;min-height:600px;
             position:relative;
             background:url('spa-santorini-embrace-correct.jpg') center/cover no-repeat;
-            display:flex;align-items:center;justify-content:center;
-            text-align:center;color:#fff;
+            display:flex;align-items:flex-end;justify-content:flex-start;
+            text-align:left;color:#fff;
+            padding-bottom:10vh;padding-left:6vw;
         }
         .hero::before{
             content:'';position:absolute;inset:0;
-            background:linear-gradient(170deg,rgba(74,59,47,.45) 0%,rgba(92,74,60,.2) 60%,rgba(0,0,0,.15) 100%);
+            background:linear-gradient(115deg,rgba(30,22,16,.62) 0%,rgba(40,30,22,.32) 30%,rgba(0,0,0,.02) 62%);
         }
-        .hero-content{position:relative;z-index:1;padding:0 20px;max-width:780px;}
+        .hero-content{position:relative;z-index:1;padding:0 20px;max-width:520px;text-align:left;}
         .hero-tagline{
             font-family:'Fraunces',serif;font-style:italic;
             font-size:clamp(1.6rem,3.5vw,2.6rem);
@@ -69,7 +70,7 @@
             color:rgba(255,255,255,.72);letter-spacing:.18em;
             margin-bottom:38px;
         }
-        .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+        .hero-btns{display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;}
         .hero-btns a,.cta-btns a{
             padding:13px 34px;border-radius:30px;
             font-size:.92rem;font-weight:600;text-decoration:none;
@@ -206,6 +207,8 @@
         @media(max-width:900px){
             .nav-landing .inner{padding:0 20px;}
             .nav-landing .nav-links{gap:16px;}
+            .hero{padding-left:6vw;padding-bottom:8vh;align-items:flex-end;justify-content:flex-start;}
+            .hero-content{max-width:100%;}
             .section-brand{grid-template-columns:1fr;}
             .brand-img{height:300px;}
             .brand-text{padding:48px 32px;}
@@ -225,9 +228,10 @@
 <!-- 導覽列 -->
 <nav class="nav-landing">
     <div class="inner">
-        <a href="landing.html" style="margin-right:auto;">
-            <img src="senlacer-logo-nav.png" alt="S'enlacer 菘蕾西" style="height:34px;width:auto;">
+        <a href="landing.html" style="flex-shrink:0;">
+            <img src="senlacer-logo-nav.png" alt="S'enlacer 菘蕾西" style="height:34px;width:auto;display:block;">
         </a>
+        <div style="flex:1;"></div>
         <div class="nav-links">
             <a href="index.html" class="hide-mob">品牌故事</a>
             <a href="products.html">商品系列</a>
@@ -363,7 +367,7 @@
     </div>
     <div id="cart-items-sidebar"></div>
     <div id="cart-total-box">
-        <p style="font-size:1.2rem;color:var(--amber-deep);font-weight:bold;text-align:right;margin:0 0 12px;">總計: $<span id="total-price">0</span></p>
+        <p style="font-size:1.2rem;color:var(--amber-deep);font-weight:bold;text-align:right;margin:0 0 12px;">總計: NT$<span id="total-price">0</span></p>
         <button onclick="window.cart.checkout()" style="width:100%;padding:14px;background:var(--ink);color:var(--linen);border:none;border-radius:30px;font-size:1rem;font-weight:bold;cursor:pointer;">確認結帳 →</button>
     </div>
 </div>

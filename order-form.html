@@ -81,7 +81,7 @@
         <div class="summary-box">
             <h3>購買商品</h3>
             <div id="summary-items"></div>
-            <div class="summary-total">訂單總計：$<span id="summary-total">0</span></div>
+            <div class="summary-total">訂單總計：NT$<span id="summary-total">0</span></div>
         </div>
 
         <!-- ATM轉帳資訊 -->
@@ -171,7 +171,7 @@
             <div id="r-order-num" style="font-size:.82rem;color:#888;margin-bottom:14px;"></div>
 
             <div id="r-items"></div>
-            <div class="r-total">訂單總計：$<span id="r-total"></span></div>
+            <div class="r-total">訂單總計：NT$<span id="r-total"></span></div>
 
             <div class="r-atm">
                 <strong>💳 ATM 轉帳資訊</strong><br>
@@ -230,7 +230,7 @@ window.addEventListener('DOMContentLoaded', function(){
     items.forEach(function(item){
         var sub=item.price*item.quantity;
         total+=sub;
-        html+='<div class="summary-row"><span>'+item.name+(item.size?' ('+item.size+')':'')+'<br><small style="color:var(--sage);">× '+item.quantity+'</small></span><span style="font-weight:600;color:var(--amber-deep);">$'+sub.toLocaleString()+'</span></div>';
+        html+='<div class="summary-row"><span>'+item.name+(item.size?' ('+item.size+')':'')+'<br><small style="color:var(--sage);">× '+item.quantity+'</small></span><span style="font-weight:600;color:var(--amber-deep);">NT$'+sub.toLocaleString()+'</span></div>';
     });
     con.innerHTML=html;
     tot.textContent=total.toLocaleString();
@@ -304,7 +304,7 @@ function buildReceipt(o){
 
     var rItems='';
     o.items.forEach(function(i){
-        rItems+='<div class="r-row"><span>'+i.name+(i.size?' ('+i.size+')':'')+'</span><span>×'+i.quantity+' $'+(i.price*i.quantity).toLocaleString()+'</span></div>';
+        rItems+='<div class="r-row"><span>'+i.name+(i.size?' ('+i.size+')':'')+'</span><span>×'+i.quantity+' NT$'+(i.price*i.quantity).toLocaleString()+'</span></div>';
     });
     document.getElementById('r-items').innerHTML=rItems;
     document.getElementById('r-total').textContent=o.total.toLocaleString();
@@ -400,7 +400,7 @@ function downloadReceiptImage(){
 function sendEmail(o){
     var itemsText = '';
     o.items.forEach(function(i){
-        itemsText += i.name + (i.size?' ('+i.size+')':'') + ' × ' + i.quantity + ' = $' + (i.price*i.quantity).toLocaleString() + '\n';
+        itemsText += i.name + (i.size?' ('+i.size+')':'') + ' × ' + i.quantity + ' = NT$' + (i.price*i.quantity).toLocaleString() + '\n';
     });
 
     var fullMessage =
@@ -410,7 +410,7 @@ function sendEmail(o){
         '【訂購者】\n姓名：' + o.ordererName + '\n電話：' + o.phone + '\nEMAIL：' + o.email + '\n\n' +
         '【收件人】\n姓名：' + o.receiverName + '\n電話：' + o.receiverPhone + '\n配送：' + o.delivery + '\n\n' +
         '【商品明細】\n' + itemsText + '\n' +
-        '訂單總計：$' + o.total.toLocaleString() + '\n\n' +
+        '訂單總計：NT$' + o.total.toLocaleString() + '\n\n' +
         '【ATM轉帳資訊】\n玉山銀行台中分行（代號808）\n帳號：1366-940-008489\n轉帳備註：' + o.orderNum + '\n\n' +
         (o.remarks ? '【備註】' + o.remarks + '\n\n' : '') +
         '轉帳完成後，請截圖收據或提供帳號後五碼，\n連同此訂單號碼上傳至 LINE 客服確認。\nhttps://lin.ee/9zUQhq9';
@@ -435,7 +435,7 @@ function sendEmail(o){
             收件人電話: o.receiverPhone,
             配送方式: o.delivery,
             商品明細: itemsText,
-            訂單總計: '$' + o.total.toLocaleString(),
+            訂單總計: 'NT$' + o.total.toLocaleString(),
             ATM轉帳: '玉山銀行台中分行 代號808 帳號1366-940-008489',
             轉帳備註: o.orderNum,
             顧客備註: o.remarks || '無',
@@ -465,7 +465,7 @@ function sendEmail(o){
                 訂單號碼: o.orderNum,
                 訂購時間: o.time,
                 商品明細: itemsText,
-                訂單總計: '$' + o.total.toLocaleString(),
+                訂單總計: 'NT$' + o.total.toLocaleString(),
                 ATM轉帳資訊: '玉山銀行台中分行 代號808 帳號1366-940-008489 備註請填' + o.orderNum,
                 完整訂單: fullMessage
             })
