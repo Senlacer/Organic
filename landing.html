@@ -22,6 +22,8 @@
             backdrop-filter:blur(14px);
             -webkit-backdrop-filter:blur(14px);
             border-bottom:1px solid rgba(184,147,104,.18);
+            max-width:none;margin:0;padding:0;
+            display:block;justify-content:normal;
         }
         .nav-landing .inner{
             max-width:1400px;margin:0 auto;
@@ -48,15 +50,15 @@
             height:100vh;min-height:600px;
             position:relative;
             background:url('spa-santorini-embrace-correct.jpg') center/cover no-repeat;
-            display:flex;align-items:flex-end;justify-content:flex-start;
-            text-align:left;color:#fff;
-            padding-bottom:10vh;padding-left:6vw;
+            display:flex;align-items:flex-start;justify-content:flex-end;
+            text-align:right;color:#fff;
+            padding-top:16vh;padding-right:7vw;
         }
         .hero::before{
             content:'';position:absolute;inset:0;
-            background:linear-gradient(115deg,rgba(30,22,16,.62) 0%,rgba(40,30,22,.32) 30%,rgba(0,0,0,.02) 62%);
+            background:radial-gradient(ellipse 640px 420px at 88% 20%,rgba(30,22,16,.55) 0%,rgba(40,30,22,.22) 55%,rgba(0,0,0,.02) 100%);
         }
-        .hero-content{position:relative;z-index:1;padding:0 20px;max-width:520px;text-align:left;}
+        .hero-content{position:relative;z-index:1;padding:0 20px;max-width:460px;text-align:right;}
         .hero-tagline{
             font-family:'Fraunces',serif;font-style:italic;
             font-size:clamp(1.6rem,3.5vw,2.6rem);
@@ -70,7 +72,7 @@
             color:rgba(255,255,255,.72);letter-spacing:.18em;
             margin-bottom:38px;
         }
-        .hero-btns{display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap;}
+        .hero-btns{display:flex;gap:14px;justify-content:flex-end;flex-wrap:wrap;}
         .hero-btns a,.cta-btns a{
             padding:13px 34px;border-radius:30px;
             font-size:.92rem;font-weight:600;text-decoration:none;
@@ -130,10 +132,14 @@
             display:grid;grid-template-columns:repeat(3,1fr);gap:40px;
             max-width:960px;margin:0 auto;
         }
-        .feature-item .icon{font-size:2.2rem;margin-bottom:16px;}
         .feature-item h3{
-            font-family:'Fraunces',serif;font-size:1.1rem;
-            color:#4A3B2F;margin-bottom:10px;
+            font-family:'Fraunces',serif;font-size:1.15rem;
+            color:#4A3B2F;margin-bottom:12px;
+            position:relative;padding-top:18px;
+        }
+        .feature-item h3::before{
+            content:'';display:block;width:32px;height:2px;
+            background:#B89368;margin:0 auto 16px;
         }
         .feature-item p{font-size:.88rem;color:#8C8169;line-height:1.75;}
 
@@ -207,7 +213,7 @@
         @media(max-width:900px){
             .nav-landing .inner{padding:0 20px;}
             .nav-landing .nav-links{gap:16px;}
-            .hero{padding-left:6vw;padding-bottom:8vh;align-items:flex-end;justify-content:flex-start;}
+            .hero{padding-left:5vw;padding-right:5vw;padding-top:12vh;align-items:flex-start;justify-content:flex-end;}
             .hero-content{max-width:100%;}
             .section-brand{grid-template-columns:1fr;}
             .brand-img{height:300px;}
@@ -279,17 +285,14 @@
     <p style="color:#8C8169;font-size:.92rem;margin:0 auto 46px;max-width:480px;line-height:1.8;">擁抱好空氣，生活好健康 —— 這是我們對每一位使用者最真摯的承諾</p>
     <div class="features-grid">
         <div class="feature-item">
-            <div class="icon">🌿</div>
             <h3>英國原裝進口</h3>
             <p>直接從英國原產地進口，嚴選有機農場，確保每一滴精油的純淨與品質。</p>
         </div>
         <div class="feature-item">
-            <div class="icon">🏅</div>
             <h3>四重國際認證</h3>
             <p>通過 EEC、NOP、H&B、Soil Association 四重有機認證，品質有保障。</p>
         </div>
         <div class="feature-item">
-            <div class="icon">💆</div>
             <h3>療癒身心靈</h3>
             <p>芳香療法融入日常，個人、家庭、SPA、企業採購，全方位身心療癒。</p>
         </div>
