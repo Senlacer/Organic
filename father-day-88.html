@@ -33,6 +33,9 @@
         .header-88 .nav-links a{color:#E8DFD0;font-size:.88rem;text-decoration:none;transition:color .3s;}
         .header-88 .nav-links a:hover{color:var(--gold);}
         .header-88 .nav-links a.active{color:var(--gold);font-weight:700;}
+        /* 修正：styles.css的#cart-nav-link深咖啡色規則會覆蓋此頁淺色文字，此處強制改回淺米色 */
+        .header-88 #cart-nav-link{color:#E8DFD0 !important;}
+        .header-88 #cart-nav-link:hover{color:var(--gold) !important;}
 
         /* Hero */
         .hero-88{position:relative;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('aromatherapy-porsche-hero.jpg') center/cover no-repeat;color:#fff;text-align:center;padding:120px 20px 100px;}
