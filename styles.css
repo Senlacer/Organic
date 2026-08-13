@@ -45,7 +45,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:18px 3
 @media (max-width:860px){.pillars{grid-template-columns:1fr;gap:46px;}
 }
 .featured{position:relative;background:var(--white);}
-.featured-photo{position:relative;min-height:560px;background:url('cedarwood-product-real.jpg') center 60%/cover no-repeat;display:flex;align-items:flex-end;}
+.featured-photo{position:relative;aspect-ratio:1707/958;min-height:280px;background:url('cedarwood-product-real.jpg') center/cover no-repeat;display:flex;align-items:flex-end;}
 .featured-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,6,0) 35%,rgba(20,14,6,.55) 100%);}
 .featured-inner{position:relative;z-index:2;padding:48px 32px 56px;max-width:1180px;margin:0 auto;width:100%;}
 .featured-inner .eyebrow{color:#F0DDB0;}
