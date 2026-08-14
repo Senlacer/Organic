@@ -1,4 +1,4 @@
-:root{--ink:#5C4A3C;--soil:#4A3B2F;--amber:#B89368;--amber-deep:#9C7A52;--linen:#F3ECE0;--linen-dim:#E8DFD0;--sage:#8C8169;--white:#FBF8F3;--terracotta:#B97A5A;}
+:root{--ink:#5C4A3C;--soil:#4A3B2F;--soil-soft:#7A6754;--amber:#B89368;--amber-deep:#9C7A52;--linen:#F3ECE0;--linen-dim:#E8DFD0;--sage:#8C8169;--white:#FBF8F3;--terracotta:#B97A5A;}
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--linen);color:var(--ink);font-family:'Noto Sans TC','Inter',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
@@ -283,7 +283,7 @@ a, button {
 .promo-head p{color:var(--sage);font-size:.95rem;}
 
 /* promotion.html 上方感性引言 */
-.promo-intro{background:var(--soil);color:var(--linen);padding:80px 20px 64px;text-align:center;}
+.promo-intro{background:var(--soil-soft);color:var(--linen);padding:80px 20px 64px;text-align:center;}
 .promo-intro .wrap{max-width:760px;}
 .promo-intro h2{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.6rem,3.2vw,2.3rem);color:var(--linen);margin-bottom:26px;}
 .promo-intro p{font-size:.98rem;line-height:1.9;opacity:.92;margin-bottom:18px;}
