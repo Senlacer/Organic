@@ -90,3 +90,25 @@ window.cart = new ShoppingCart();
 window.addEventListener('DOMContentLoaded', function() {
   window.cart.updateCartBadge();
 });
+
+// 手機版導覽選單開關（漢堡選單）
+function toggleMobileNav() {
+  var links = document.querySelector('.navlinks, .nav-drop');
+  var btn = document.querySelector('.nav-toggle');
+  if (!links || !btn) return;
+  var isOpen = links.classList.toggle('mobile-open');
+  btn.classList.toggle('active', isOpen);
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+}
+// 點擊選單連結後自動收合（避免切頁後選單仍展開）
+window.addEventListener('DOMContentLoaded', function() {
+  var links = document.querySelector('.navlinks, .nav-drop');
+  if (!links) return;
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('mobile-open');
+      var btn = document.querySelector('.nav-toggle');
+      if (btn) { btn.classList.remove('active'); btn.setAttribute('aria-expanded','false'); }
+    });
+  });
+});

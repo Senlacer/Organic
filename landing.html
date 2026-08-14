@@ -31,6 +31,7 @@
             padding:0 40px;height:64px;
         }
         .nav-landing .nav-links{display:flex;align-items:center;gap:32px;}
+        .nav-landing .nav-drop{display:flex;align-items:center;gap:32px;}
         .nav-landing .nav-links a{
             color:#5C4A3C;font-size:.85rem;text-decoration:none;
             letter-spacing:.04em;transition:color .3s;
@@ -221,8 +222,13 @@
             .features-grid{grid-template-columns:1fr 1fr;gap:28px;}
             .footer-inner{grid-template-columns:1fr 1fr;gap:28px;}
         }
+        @media(min-width:601px) and (max-width:860px){
+            .nav-landing .nav-toggle{display:none;}
+        }
         @media(max-width:600px){
-            .nav-landing .nav-links .hide-mob{display:none;}
+            .nav-landing .nav-drop{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#FBF8F3;border-bottom:1px solid rgba(184,147,104,.18);box-shadow:0 12px 24px rgba(74,59,47,.12);padding:6px 0;}
+            .nav-landing .nav-drop.mobile-open{display:flex;}
+            .nav-landing .nav-drop a{padding:14px 24px;}
             .features-grid{grid-template-columns:1fr;}
             .footer-inner{grid-template-columns:1fr;}
             .nav-landing .inner{height:54px;}
@@ -239,10 +245,13 @@
         </a>
         <div style="flex:1;"></div>
         <div class="nav-links">
-            <a href="index.html" class="hide-mob">品牌故事</a>
             <a href="products.html">商品系列</a>
-            <a href="promotion.html" class="hide-mob">限時優惠</a>
-            <a href="about.html" class="hide-mob">關於我們</a>
+            <div class="nav-drop">
+                <a href="index.html">品牌故事</a>
+                <a href="promotion.html">限時優惠</a>
+                <a href="about.html">關於我們</a>
+            </div>
+            <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="開啟選單" aria-expanded="false"><span></span><span></span><span></span></button>
             <a href="javascript:void(0)" onclick="toggleCart()" class="nav-cart" id="cart-nav-link" style="position:relative;">
                 🛒 購物車
                 <span class="cart-nav-badge" style="display:none;position:absolute;top:-8px;right:-8px;background:#B97A5A;color:#fff;width:18px;height:18px;border-radius:50%;align-items:center;justify-content:center;font-size:.65rem;font-weight:bold;"></span>
