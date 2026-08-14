@@ -111,7 +111,8 @@ footer{background:var(--ink);color:var(--linen);padding:80px 0 36px;}
 .page-banner-inner{position:relative;z-index:2;padding:0 32px 56px;max-width:1180px;margin:0 auto;width:100%;}
 .page-banner .eyebrow{color:#F0DDB0;}
 .page-banner h1{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:#F2E6CB;font-size:clamp(2.2rem,5vw,3.6rem);margin-top:10px;text-shadow:0 4px 30px rgba(0,0,0,.25);}
-.page-banner p{color:#F2E6CB;opacity:.85;max-width:480px;margin-top:14px;font-size:.98rem;}
+.page-banner p{color:#F2E6CB;opacity:.85;max-width:760px;margin-top:14px;font-size:.98rem;}
+@media (max-width:640px){.page-banner p{max-width:480px;}}
 .catalog{padding:100px 0;background:var(--linen);}
 .cat-tabs{display:flex;gap:14px;margin-bottom:54px;flex-wrap:wrap;}
 .cat-tab{font-size:.85rem;padding:9px 20px;border-radius:999px;border:1px solid rgba(74,63,48,.25);opacity:.75;}
@@ -140,7 +141,8 @@ footer{background:var(--ink);color:var(--linen);padding:80px 0 36px;}
 @media (max-width:860px){.about-story .wrap{grid-template-columns:1fr;}
 }
 .timeline{padding:110px 0;background:var(--soil);color:var(--linen);}
-.timeline .sec-head{color:var(--linen);}
+.timeline .sec-head{color:var(--linen);max-width:800px;}
+@media (max-width:640px){.timeline .sec-head{max-width:620px;}}
 .timeline .eyebrow{color:#E0A875;}
 .tl-row{display:grid;grid-template-columns:120px 1fr;gap:30px;padding:30px 0;border-top:1px solid rgba(241,236,224,.15);}
 .tl-row:first-of-type{border-top:none;margin-top:40px;}
@@ -264,6 +266,34 @@ a, button {
 .promo-head{text-align:center;padding:60px 20px 20px;background:var(--linen);}
 .promo-head h2{font-family:'Fraunces',serif;font-style:italic;font-size:2rem;color:var(--ink);margin-bottom:8px;}
 .promo-head p{color:var(--sage);font-size:.95rem;}
+
+/* promotion.html 上方感性引言 */
+.promo-intro{background:var(--soil);color:var(--linen);padding:80px 20px 64px;text-align:center;}
+.promo-intro .wrap{max-width:760px;}
+.promo-intro h2{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.6rem,3.2vw,2.3rem);color:var(--linen);margin-bottom:26px;}
+.promo-intro p{font-size:.98rem;line-height:1.9;opacity:.92;margin-bottom:18px;}
+.promo-intro-tags{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin:30px 0;padding:24px 0;border-top:1px solid rgba(243,236,224,.18);border-bottom:1px solid rgba(243,236,224,.18);}
+.promo-intro-tags span{font-family:'Noto Serif TC',serif;font-size:.92rem;color:#F0DDB0;letter-spacing:.04em;}
+.promo-intro-close{font-family:'Fraunces',serif;font-style:italic;color:#F0DDB0;font-size:1.05rem;margin-top:26px;}
+
+/* promotion.html 商品精選 Spotlight */
+.promo-feature{background:var(--white);padding:70px 20px;}
+.promo-feature-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;max-width:1100px;}
+.promo-feature-img{width:100%;height:100%;max-height:560px;object-fit:cover;border-radius:14px;display:block;box-shadow:0 12px 40px rgba(92,74,60,.18);}
+.promo-feature-text h3{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--ink);font-weight:600;line-height:1.4;margin:14px 0 6px;}
+.promo-feature-text .promo-en-lg{display:inline-block;font-size:.95rem;font-style:italic;color:var(--sage);font-weight:400;margin-top:6px;}
+.promo-feature-quote{font-family:'Noto Serif TC',serif;font-size:1rem;color:var(--amber-deep);line-height:1.8;margin:14px 0;padding-left:16px;border-left:2px solid var(--amber);}
+.promo-feature-specs{list-style:none;margin:22px 0;padding:0;font-size:.92rem;color:var(--ink);opacity:.88;line-height:2;}
+.promo-feature-price{font-size:1.35rem;color:var(--amber-deep);font-weight:700;margin:10px 0 16px;}
+.promo-feature-tagline{font-size:.92rem;color:var(--ink);opacity:.85;line-height:1.8;margin-bottom:22px;}
+.promo-feature .promo-btn{width:auto;padding:13px 32px;}
+
+@media (max-width:860px){
+  .promo-feature-inner{grid-template-columns:1fr;gap:32px;}
+  .promo-feature-img{max-height:420px;}
+  .promo-intro{padding:56px 20px 44px;}
+  .promo-intro-tags{gap:16px 24px;}
+}
 .promo-ctas{display:flex;justify-content:center;gap:16px;padding:20px;flex-wrap:wrap;}
 .promo-cta-link{color:var(--amber-deep);font-weight:600;text-decoration:none;font-size:.95rem;transition:color .3s;}
 .promo-cta-link:hover{color:var(--ink);}
