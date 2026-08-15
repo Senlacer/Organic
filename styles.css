@@ -284,7 +284,7 @@ a, button {
 
 /* promotion.html 上方感性引言 */
 .promo-intro{background:var(--soil-soft);color:var(--linen);padding:80px 20px 64px;text-align:center;}
-.promo-intro .wrap{max-width:760px;}
+.promo-intro .wrap{max-width:820px;}
 .promo-intro h2{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:clamp(1.6rem,3.2vw,2.3rem);color:var(--linen);margin-bottom:26px;}
 .promo-intro p{font-size:.98rem;line-height:1.9;opacity:.92;margin-bottom:18px;}
 .promo-intro-tags{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin:30px 0;padding:24px 0;border-top:1px solid rgba(243,236,224,.18);border-bottom:1px solid rgba(243,236,224,.18);}
