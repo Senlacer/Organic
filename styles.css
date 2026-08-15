@@ -229,14 +229,15 @@ a, button {
 .product-grid,.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px;padding:40px 5%;max-width:1400px;margin:0 auto;}
 .product-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(92,74,60,.08);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
 .product-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(92,74,60,.15);}
-.product-image{width:100%;height:260px;object-fit:cover;display:block;background:var(--linen-dim);}
+.product-image{width:100%;height:260px;object-fit:contain;display:block;background:var(--linen-dim);}
 .product-info{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1;}
 .product-badge{display:inline-block;background:var(--amber);color:#fff;font-size:.7rem;padding:4px 12px;border-radius:20px;width:fit-content;letter-spacing:.05em;}
 .product-name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);font-weight:600;margin-top:4px;}
 .product-en{font-size:.78rem;color:var(--sage);font-style:italic;letter-spacing:.03em;}
 .product-details{font-size:.85rem;color:var(--ink);opacity:.8;line-height:1.6;margin:6px 0;}
 .product-price{font-size:1.3rem;color:var(--amber-deep);font-weight:700;margin:8px 0;}
-.product-btns{display:flex;gap:10px;margin-top:auto;}
+.product-btns{display:flex;gap:10px;margin-top:auto;flex-wrap:wrap;}
+.size-select-wrap{flex-basis:100%;width:100%;margin:8px 0;}
 .add-btn{flex:1;background:var(--ink);color:var(--linen);border:none;padding:12px;border-radius:30px;cursor:pointer;font-size:.9rem;transition:background .3s;}
 .add-btn:hover{background:var(--soil);}
 .line-btn{background:var(--linen-dim);color:var(--ink);border:none;padding:12px 18px;border-radius:30px;cursor:pointer;font-size:.9rem;transition:background .3s;}
@@ -246,7 +247,7 @@ a, button {
 .promo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px;padding:40px 5%;max-width:1400px;margin:0 auto;}
 .promo-card{background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(92,74,60,.08);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
 .promo-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(92,74,60,.15);}
-.promo-image{width:100%;height:260px;object-fit:cover;display:block;background:var(--linen-dim);}
+.promo-image{width:100%;height:260px;object-fit:contain;display:block;background:var(--linen-dim);}
 .promo-info{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1;}
 .promo-badge{display:inline-block;background:var(--terracotta);color:#fff;font-size:.7rem;padding:4px 12px;border-radius:20px;width:fit-content;letter-spacing:.05em;}
 .promo-name{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);font-weight:600;margin-top:4px;line-height:1.4;}
