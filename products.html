@@ -46,6 +46,27 @@
   </div>
 </section>
 
+<section class="promo-feature" style="background:var(--linen);">
+  <div class="wrap promo-feature-inner">
+    <img src="oil-50-100ml-globe.jpg" alt="有機沙棘仁油 Organic Seabuckthorn Kernel Oil" class="promo-feature-img">
+    <div class="promo-feature-text">
+      <span class="promo-badge">基底油精選</span>
+      <h3>有機沙棘仁油<br><span class="promo-en-lg">Organic Seabuckthorn Kernel Oil</span></h3>
+      <p class="promo-feature-quote">源自芬蘭北極圈純淨環境，日照長且無汙染，質地清透金黃，是深層修護與抗老保養的黃金基底油</p>
+      <ul class="promo-feature-specs">
+        <li><strong>脂肪酸平衡</strong>：富含 Omega-3（α-亞麻酸）與 Omega-6（亞油酸），比例相當</li>
+        <li><strong>溫和修護</strong>：日常保養維持水分健康，具良好抗發炎與抗氧化特性</li>
+        <li><strong>皮膚保養</strong>：深層保濕、舒緩乾燥、維持肌膚彈性，改善乾燥與抗老</li>
+        <li><strong>抗老抗氧化</strong>：含維生素E等成分，有助對抗自由基</li>
+        <li><strong>黏膜與身體健康</strong>：支持細胞更新，對消化道與內部黏膜具良好保健作用</li>
+      </ul>
+      <div class="promo-feature-price">20ML $888 ｜ 30ML $1,200 ｜ 100ML $3,600 ｜ 1000ML $32,000</div>
+      <p class="promo-feature-tagline">產地：芬蘭．萃取：冷壓．果實．種籽——極圈純淨孕育，常作為臉部精華油或調和基底油使用</p>
+      <button class="promo-btn" onclick="(function(){var s=document.getElementById('size-product-33');window.cart.addToCart({id:'product-33-feature', name:'有機沙棘仁油', size:'20ML', price:888, quantity:1}); toggleCart();})()">🛒 加入購物車</button>
+    </div>
+  </div>
+</section>
+
 <section style="background: #FBF8F3; padding: 60px 20px;">
   <div class="wrap">
     
@@ -56,36 +77,6 @@
     </div>
 
     <div class="product-grid">
-      <!-- 33. 有機沙棘仁油 (moved to top) -->
-      <div class="product-card">
-        <img src="products-100ml.jpg" alt="Organic Seabuckthorn Kernel Oil" class="product-image" loading="lazy" />
-        <div class="product-info">
-          <span class="product-badge">基底油精選</span>
-          <div class="product-name">有機沙棘仁油</div>
-          <div class="product-en">Organic Seabuckthorn Kernel Oil</div>
-          <div class="product-details">
-            Hippophae rhamnoides<br>
-            產地：芬蘭<br>
-            萃取：冷壓．果實．種籽<br>
-            質地清透，富含 Omega-3、Omega-6，溫和修護、滋潤保濕、抗老抗氧化<br>
-            <strong>1000ML $32,000元</strong>
-          </div>
-          <div class="product-price">$888 起</div>
-          <div class="product-btns">
-            <div class="size-select-wrap">
-              <select id="size-product-33" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius:20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
-                <option value="888" data-size="20ML">20ML — $888</option>
-                <option value="1200" data-size="30ML">30ML — $1,200</option>
-                <option value="3600" data-size="100ML">100ML — $3,600</option>
-                <option value="32000" data-size="1000ML">1000ML — $32,000</option>
-              </select>
-            </div>
-            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-33');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-33'+opt.dataset.size,name:'有機沙棘仁油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
-            <button class="line-btn" onclick="window.open('https://lin.ee/9zUQhq9','_blank')">LINE</button>
-          </div>
-        </div>
-      </div>
-
       <!-- 1. 洗髮精 -->
       <div class="product-card">
         <img src="shampoo-hero.jpg" alt="洗髮精" class="product-image" />
@@ -133,10 +124,7 @@
           <div class="product-name">有機複方精油<br>芳療級SPA洗髮精</div>
           <div class="product-en">Organic Aromatherapy-Grade SPA Shampoo</div>
           <div class="product-details">
-            可任選一款精油加購（10ML）：<br>
-            有機真正薰衣草精油 (High Altitude) Organic Lavender<br>
-            有機快樂鼠尾草精油 (麝香鼠尾草) Organic Clary Sage<br>
-            有機歐薄荷精油（Mentha piperita) Organic Peppermint<br>
+            配方：有機真正薰衣草精油 (High Altitude)、有機快樂鼠尾草精油 (麝香鼠尾草)、有機歐薄荷精油 (Mentha piperita)<br>
             單一容量 500ML $750
           </div>
           <div class="product-price">$750</div>
@@ -144,26 +132,19 @@
           <!-- 加購選項 -->
           <div style="margin:14px 0;padding:12px 14px;background:#F3ECE0;border-radius:10px;border:1px dashed #B89368;">
             <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;color:#5C4A3C;cursor:pointer;">
-              <input type="checkbox" id="addon-check-34" style="width:16px;height:16px;accent-color:#B89368;">
-              <span>✨ 加購精油 10ML（原價$390）只要加購價 <strong style="color:#B97A5A;">$27</strong></span>
+              <input type="checkbox" id="addon-orange-34" style="width:16px;height:16px;accent-color:#B89368;">
+              <span>✨ 加購 <strong>有機甜橙精油 10ML</strong>（原價$390）只要加購價 <strong style="color:#B97A5A;">$27</strong></span>
             </label>
-            <select id="addon-select-34" style="width:100%;margin-top:8px;padding:8px;border:1px solid var(--amber);border-radius:20px;background:var(--white);color:var(--ink);font-size:.85rem;">
-              <option value="有機真正薰衣草精油(High Altitude)10ML">有機真正薰衣草精油 (High Altitude) 10ML</option>
-              <option value="有機快樂鼠尾草精油(麝香鼠尾草)10ML">有機快樂鼠尾草精油 (麝香鼠尾草) 10ML</option>
-              <option value="有機歐薄荷精油(Mentha piperita)10ML">有機歐薄荷精油（Mentha piperita）10ML</option>
-            </select>
-            <p style="margin:6px 0 0 0;font-size:.85rem;color:#9C7A52;">
-              洗髮精＋精油 全套優惠價 <strong style="font-size:1.05rem;">$777</strong> 🍀 幸運數字優惠
+            <p style="margin:6px 0 0 24px;font-size:.85rem;color:#9C7A52;">
+              洗髮精＋甜橙精油 全套優惠價 <strong style="font-size:1.05rem;">$777</strong> 🍀 幸運數字優惠
             </p>
           </div>
 
           <div class="product-btns">
             <button class="add-btn" onclick="
-              var addon = document.getElementById('addon-check-34').checked;
-              var sel = document.getElementById('addon-select-34');
-              var oilName = sel.options[sel.selectedIndex].text;
+              var addon = document.getElementById('addon-orange-34').checked;
               if (addon) {
-                window.cart.addToCart({id:'product-34-bundle-'+sel.value, name:'有機複方精油芳療級SPA洗髮精500ML＋加購'+oilName+'（幸運777組合）', size:'500ML+10ML', price:777, quantity:1});
+                window.cart.addToCart({id:'product-34-bundle', name:'有機複方精油芳療級SPA洗髮精500ML（組合一）＋加購甜橙精油10ML（幸運777組合）', size:'500ML+10ML', price:777, quantity:1});
               } else {
                 window.cart.addToCart({id:'product-34', name:'有機複方精油芳療級SPA洗髮精 500ML（組合一）', size:'500ML', price:750, quantity:1});
               }
@@ -182,10 +163,7 @@
           <div class="product-name">有機複方精油<br>芳療級SPA洗髮精</div>
           <div class="product-en">Organic Aromatherapy-Grade SPA Shampoo</div>
           <div class="product-details">
-            可任選一款精油加購（10ML）：<br>
-            有機大西洋雪松精油 Organic Cedarwood Atlas (Cedrus atlantica)<br>
-            有機甜橙精油 Organic Orange Essential Oil<br>
-            有機歐薄荷精油（Mentha piperita) 產地：英國．萃取：葉．蒸餾法<br>
+            配方：有機大西洋雪松精油 Atlas (Cedrus atlantica)、有機甜橙精油、有機歐薄荷精油 (Mentha piperita，英國．葉．蒸餾法)<br>
             單一容量 500ML $750
           </div>
           <div class="product-price">$750</div>
@@ -193,26 +171,19 @@
           <!-- 加購選項 -->
           <div style="margin:14px 0;padding:12px 14px;background:#F3ECE0;border-radius:10px;border:1px dashed #B89368;">
             <label style="display:flex;align-items:center;gap:8px;font-size:.92rem;color:#5C4A3C;cursor:pointer;">
-              <input type="checkbox" id="addon-check-35" style="width:16px;height:16px;accent-color:#B89368;">
-              <span>✨ 加購精油 10ML（原價$390）只要加購價 <strong style="color:#B97A5A;">$27</strong></span>
+              <input type="checkbox" id="addon-orange-35" style="width:16px;height:16px;accent-color:#B89368;">
+              <span>✨ 加購 <strong>有機甜橙精油 10ML</strong>（原價$390）只要加購價 <strong style="color:#B97A5A;">$27</strong></span>
             </label>
-            <select id="addon-select-35" style="width:100%;margin-top:8px;padding:8px;border:1px solid var(--amber);border-radius:20px;background:var(--white);color:var(--ink);font-size:.85rem;">
-              <option value="有機大西洋雪松精油Atlas10ML">有機大西洋雪松精油 Atlas 10ML</option>
-              <option value="有機甜橙精油10ML">有機甜橙精油 10ML</option>
-              <option value="有機歐薄荷精油(Mentha piperita)10ML">有機歐薄荷精油（Mentha piperita）10ML</option>
-            </select>
-            <p style="margin:6px 0 0 0;font-size:.85rem;color:#9C7A52;">
-              洗髮精＋精油 全套優惠價 <strong style="font-size:1.05rem;">$777</strong> 🍀 幸運數字優惠
+            <p style="margin:6px 0 0 24px;font-size:.85rem;color:#9C7A52;">
+              洗髮精＋甜橙精油 全套優惠價 <strong style="font-size:1.05rem;">$777</strong> 🍀 幸運數字優惠
             </p>
           </div>
 
           <div class="product-btns">
             <button class="add-btn" onclick="
-              var addon = document.getElementById('addon-check-35').checked;
-              var sel = document.getElementById('addon-select-35');
-              var oilName = sel.options[sel.selectedIndex].text;
+              var addon = document.getElementById('addon-orange-35').checked;
               if (addon) {
-                window.cart.addToCart({id:'product-35-bundle-'+sel.value, name:'有機複方精油芳療級SPA洗髮精500ML＋加購'+oilName+'（幸運777組合）', size:'500ML+10ML', price:777, quantity:1});
+                window.cart.addToCart({id:'product-35-bundle', name:'有機複方精油芳療級SPA洗髮精500ML（組合二）＋加購甜橙精油10ML（幸運777組合）', size:'500ML+10ML', price:777, quantity:1});
               } else {
                 window.cart.addToCart({id:'product-35', name:'有機複方精油芳療級SPA洗髮精 500ML（組合二）', size:'500ML', price:750, quantity:1});
               }
@@ -810,6 +781,36 @@
         </div>
       </div>
 
+      <!-- 33. 有機沙棘仁油 -->
+      <div class="product-card">
+        <img src="products-100ml.jpg" alt="Organic Seabuckthorn Kernel Oil" class="product-image" loading="lazy" />
+        <div class="product-info">
+          <span class="product-badge">基底油/植物油</span>
+          <div class="product-name">有機沙棘仁油</div>
+          <div class="product-en">Organic Seabuckthorn Kernel Oil</div>
+          <div class="product-details">
+            Hippophae rhamnoides<br>
+            產地：芬蘭<br>
+            萃取：冷壓．果實．種籽<br>
+            質地清透，富含 Omega-3、Omega-6，溫和修護、滋潤保濕、抗老抗氧化<br>
+            <strong>1000ML $32,000元</strong>
+          </div>
+          <div class="product-price">$888 起</div>
+          <div class="product-btns">
+            <div class="size-select-wrap">
+              <select id="size-product-33" style="width:100%;padding:8px;border:1px solid var(--amber);border-radius:20px;margin-bottom:8px;background:var(--white);color:var(--ink);font-size:.88rem;">
+                <option value="888" data-size="20ML">20ML — $888</option>
+                <option value="1200" data-size="30ML">30ML — $1,200</option>
+                <option value="3600" data-size="100ML">100ML — $3,600</option>
+                <option value="32000" data-size="1000ML">1000ML — $32,000</option>
+              </select>
+            </div>
+            <button class="add-btn" onclick="(function(){var s=document.getElementById('size-product-33');var opt=s.options[s.selectedIndex];window.cart.addToCart({id:'product-33'+opt.dataset.size,name:'有機沙棘仁油',size:opt.dataset.size,price:parseInt(opt.value),quantity:1});toggleCart();})()">🛒 加入購物車</button>
+            <button class="line-btn" onclick="window.open('https://lin.ee/9zUQhq9','_blank')">LINE</button>
+          </div>
+        </div>
+      </div>
+
 
           <div style="grid-column:1/-1;border-top:1px solid rgba(92,74,60,.14);padding-top:40px;margin-top:8px;margin-bottom:4px;">
         <span style="color:var(--amber-deep);font-size:.78rem;letter-spacing:.12em;font-weight:600;">CATEGORY</span>
@@ -903,27 +904,6 @@
       </div>
     </div>
 
-  </div>
-</section>
-
-<section class="promo-feature" style="background:var(--linen);">
-  <div class="wrap promo-feature-inner">
-    <img src="oil-50-100ml-globe.jpg" alt="有機沙棘仁油 Organic Seabuckthorn Kernel Oil" class="promo-feature-img">
-    <div class="promo-feature-text">
-      <span class="promo-badge">基底油精選</span>
-      <h3>有機沙棘仁油<br><span class="promo-en-lg">Organic Seabuckthorn Kernel Oil</span></h3>
-      <p class="promo-feature-quote">源自芬蘭北極圈純淨環境，日照長且無汙染，質地清透金黃，是深層修護與抗老保養的黃金基底油</p>
-      <ul class="promo-feature-specs">
-        <li><strong>脂肪酸平衡</strong>：富含 Omega-3（α-亞麻酸）與 Omega-6（亞油酸），比例相當</li>
-        <li><strong>溫和修護</strong>：日常保養維持水分健康，具良好抗發炎與抗氧化特性</li>
-        <li><strong>皮膚保養</strong>：深層保濕、舒緩乾燥、維持肌膚彈性，改善乾燥與抗老</li>
-        <li><strong>抗老抗氧化</strong>：含維生素E等成分，有助對抗自由基</li>
-        <li><strong>黏膜與身體健康</strong>：支持細胞更新，對消化道與內部黏膜具良好保健作用</li>
-      </ul>
-      <div class="promo-feature-price">20ML $888 ｜ 30ML $1,200 ｜ 100ML $3,600 ｜ 1000ML $32,000</div>
-      <p class="promo-feature-tagline">產地：芬蘭．萃取：冷壓．果實．種籽——極圈純淨孕育，常作為臉部精華油或調和基底油使用</p>
-      <button class="promo-btn" onclick="(function(){var s=document.getElementById('size-product-33');window.cart.addToCart({id:'product-33-feature', name:'有機沙棘仁油', size:'20ML', price:888, quantity:1}); toggleCart();})()">🛒 加入購物車</button>
-    </div>
   </div>
 </section>
 
